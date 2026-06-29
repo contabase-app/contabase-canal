@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "channel": "stable",
+  "version": null,
+  "release_type": "stable",
+  "published_at": null,
+  "message": "Nenhuma release stable publicada ainda. Use /beta/install.sh ou fixe CONTABASE_VERSION."
+}

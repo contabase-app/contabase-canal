@@ -40,62 +40,152 @@
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       background: #0f172a; color: #e2e8f0; display: flex;
       align-items: center; justify-content: center; min-height: 100vh;
-      line-height: 1.6; padding: 1rem;
+      line-height: 1.6; padding: 1rem; overflow-x: hidden;
     }
-    .container { max-width: 680px; width: 100%; padding: 2rem 0; }
-    .logo { text-align: center; margin-bottom: 1.5rem; }
-    .logo img { max-width: 200px; height: auto; }
-    p { margin-bottom: 1rem; color: #94a3b8; }
-    .code-block { position: relative; margin-bottom: 1.5rem; }
+    .container { max-width: 720px; width: 100%; padding: 2rem 0; }
+
+    /* Logo */
+    .logo { text-align: center; margin-bottom: 2rem; }
+    .logo img { max-width: 240px; height: auto; }
+    .intro { text-align: center; color: #94a3b8; font-size: 0.9375rem; margin-bottom: 2rem; }
+
+    /* Cards */
+    .card {
+      border: 1px solid #1e293b; border-radius: 0.75rem;
+      background: #111827; padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .card.card-primary {
+      border-color: #3b82f6; background: linear-gradient(135deg, #1e293b 0%, #111827 100%);
+      box-shadow: 0 0 0 1px rgba(59,130,246,0.3);
+    }
+    .card.card-muted {
+      border-color: #1e293b; background: #0f172a; opacity: 0.70;
+    }
+
+    .card-header {
+      display: flex; align-items: center; gap: 0.625rem;
+      margin-bottom: 0.625rem; flex-wrap: wrap;
+    }
+    .card-title {
+      font-size: 1rem; font-weight: 600; color: #e2e8f0;
+    }
+    .card-title-muted { color: #64748b; }
+
+    .badge {
+      display: inline-block; font-size: 0.625rem; font-weight: 600;
+      padding: 0.1875rem 0.5rem; border-radius: 9999px;
+      text-transform: uppercase; letter-spacing: 0.05em; line-height: 1.5;
+    }
+    .badge-primary { background: #1d4ed8; color: #bfdbfe; }
+    .badge-muted { background: #1e293b; color: #64748b; border: 1px solid #334155; }
+
+    .card-desc {
+      color: #94a3b8; font-size: 0.875rem; margin-bottom: 1rem;
+    }
+    .card-desc-muted { color: #64748b; }
+
+    .card-desc code, .card code {
+      background: #1e293b; padding: 0.125rem 0.375rem; border-radius: 0.25rem;
+      font-size: 0.8125rem; color: #cbd5e1;
+    }
+
+    /* Code block inside card */
+    .code-block {
+      position: relative; border: 1px solid #334155; border-radius: 0.5rem;
+      background: #1e293b; overflow: hidden;
+    }
+    .card-primary .code-block { border-color: #3b82f6; }
     pre {
-      background: #1e293b; padding: 1rem 3rem 1rem 1rem; border-radius: 0.5rem;
-      overflow-x: auto; border: 1px solid #334155; font-size: 0.8125rem;
-      line-height: 1.5; tab-size: 2;
+      padding: 0.875rem 5rem 0.875rem 1rem; overflow-x: auto;
+      font-size: 0.8125rem; line-height: 1.5; tab-size: 2;
+      margin: 0; -webkit-overflow-scrolling: touch;
     }
-    pre code { background: none; padding: 0; color: #e2e8f0; white-space: pre; }
-    .cmd { color: #a5b4fc; user-select: none; }
+    pre code {
+      background: none; padding: 0; color: #e2e8f0; white-space: pre;
+      font-family: ui-monospace, 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+    }
+
     .copy-btn {
       position: absolute; top: 0.5rem; right: 0.5rem;
-      background: #334155; color: #94a3b8; border: 1px solid #475569;
+      background: #334155; color: #cbd5e1; border: 1px solid #475569;
       border-radius: 0.375rem; padding: 0.25rem 0.625rem;
       font-size: 0.75rem; cursor: pointer; line-height: 1.5;
       transition: background 0.15s, color 0.15s; font-family: inherit;
+      white-space: nowrap; z-index: 1;
     }
     .copy-btn:hover, .copy-btn:focus-visible {
-      background: #475569; color: #e2e8f0; outline: none;
+      background: #475569; color: #f1f5f9; outline: none;
     }
     .copy-btn:focus-visible { box-shadow: 0 0 0 2px #38bdf8; }
     .copy-btn.copied { background: #065f46; color: #6ee7b7; border-color: #059669; }
-    .links { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .card-primary .copy-btn { background: #1e40af; border-color: #2563eb; color: #bfdbfe; }
+    .card-primary .copy-btn:hover, .card-primary .copy-btn:focus-visible {
+      background: #1d4ed8; color: #e2e8f0;
+    }
+    .card-primary .copy-btn.copied { background: #065f46; color: #6ee7b7; border-color: #059669; }
+
+    /* Footer */
+    .links { display: flex; gap: 1rem; flex-wrap: wrap; padding-top: 0.5rem; }
     .links a { color: #38bdf8; text-decoration: none; font-size: 0.875rem; }
     .links a:hover { text-decoration: underline; }
+
     @media (max-width: 480px) {
       .container { padding: 1rem 0; }
-      pre { font-size: 0.75rem; padding: 0.75rem 2.5rem 0.75rem 0.75rem; }
+      .card { padding: 1.125rem; margin-bottom: 1rem; }
+      .card-title { font-size: 0.9375rem; }
+      .card-desc { font-size: 0.8125rem; }
+      .intro { font-size: 0.875rem; margin-bottom: 1.5rem; }
+      pre { font-size: 0.75rem; padding: 0.75rem 4.25rem 0.75rem 0.75rem; }
+      .copy-btn { top: 0.375rem; right: 0.375rem; font-size: 0.6875rem; padding: 0.1875rem 0.5rem; }
     }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="logo">
-      <img src="/assets/logo-horizontal.png" alt="ContaBase" width="200">
+      <img src="/assets/logo-horizontal.png" alt="ContaBase" width="223" height="38">
     </div>
-    <p>Canal público de instalação da base financeira privada, self-hosted e AGPL-3.0.</p>
+    <p class="intro">Canal público de instalação da base financeira privada, self-hosted e AGPL-3.0.</p>
 
-    <div class="code-block">
-      <pre><code><span class="cmd">$ </span>curl -fsSLo /tmp/contabase-install.sh https://get-contabase.pages.dev/install.sh && bash /tmp/contabase-install.sh</code></pre>
-      <button class="copy-btn" data-copy="curl -fsSLo /tmp/contabase-install.sh https://get-contabase.pages.dev/install.sh && bash /tmp/contabase-install.sh" aria-label="Copiar comando">Copiar</button>
+    <!-- Beta Pública (Recomendada) -->
+    <div class="card card-primary">
+      <div class="card-header">
+        <h2 class="card-title">Beta Pública</h2>
+        <span class="badge badge-primary">Recomendada</span>
+      </div>
+      <p class="card-desc">Instale a versão beta mais recente. O canal é atualizado a cada nova release beta.</p>
+      <div class="code-block">
+        <pre><code>curl -fsSLo /tmp/contabase-install.sh https://get-contabase.pages.dev/beta/install.sh && bash /tmp/contabase-install.sh</code></pre>
+        <button class="copy-btn" data-copy="curl -fsSLo /tmp/contabase-install.sh https://get-contabase.pages.dev/beta/install.sh && bash /tmp/contabase-install.sh" aria-label="Copiar comando">Copiar</button>
+      </div>
     </div>
 
-    <p>Com versão específica (<code>v0.1.0-beta.2</code>):</p>
-    <div class="code-block">
-      <pre><code><span class="cmd">$ </span>curl -fsSLo /tmp/contabase-install.sh https://get-contabase.pages.dev/install.sh && CONTABASE_VERSION=v0.1.0-beta.2 bash /tmp/contabase-install.sh</code></pre>
-      <button class="copy-btn" data-copy="curl -fsSLo /tmp/contabase-install.sh https://get-contabase.pages.dev/install.sh && CONTABASE_VERSION=v0.1.0-beta.2 bash /tmp/contabase-install.sh" aria-label="Copiar comando">Copiar</button>
+    <!-- Estável (Em breve) -->
+    <div class="card card-muted">
+      <div class="card-header">
+        <h2 class="card-title card-title-muted">Estável</h2>
+        <span class="badge badge-muted">Em breve</span>
+      </div>
+      <p class="card-desc card-desc-muted">Disponível após a primeira release estável.</p>
+    </div>
+
+    <!-- Versão Específica (Manual) -->
+    <div class="card">
+      <div class="card-header">
+        <h2 class="card-title">Versão Específica</h2>
+        <span class="badge badge-muted">Manual</span>
+      </div>
+      <p class="card-desc">Fixe uma versão específica com a variável <code>CONTABASE_VERSION</code>:</p>
+      <div class="code-block">
+        <pre><code>curl -fsSLo /tmp/contabase-install.sh https://get-contabase.pages.dev/beta/install.sh && CONTABASE_VERSION=v0.1.0-beta.3 bash /tmp/contabase-install.sh</code></pre>
+        <button class="copy-btn" data-copy="curl -fsSLo /tmp/contabase-install.sh https://get-contabase.pages.dev/beta/install.sh && CONTABASE_VERSION=v0.1.0-beta.3 bash /tmp/contabase-install.sh" aria-label="Copiar comando">Copiar</button>
+      </div>
     </div>
 
     <div class="links">
       <a href="https://github.com/contabase-app/contabase">Repositório</a>
-      <a href="/install.sh">Install.sh</a>
+      <a href="/install.sh">install.sh</a>
       <a href="/beta/install.sh">Beta</a>
     </div>
   </div>
