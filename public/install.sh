@@ -12,7 +12,7 @@ set -euo pipefail
 #   curl -fsSLo /tmp/contabase-install.sh https://get-contabase.pages.dev/install.sh && CONTABASE_VERSION=v0.2.0 bash /tmp/contabase-install.sh
 # ==============================================================================
 
-DEFAULT_VERSION="v0.1.0-beta.1"
+DEFAULT_VERSION="v0.1.0-beta.2"
 PUBLIC_RAW_BASE="https://raw.githubusercontent.com/contabase-app/contabase"
 
 say() { printf '%s\n' "$*"; }
