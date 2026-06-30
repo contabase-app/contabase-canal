@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#0f172a">
+  <meta name="theme-color" content="#0F131A">
   <title>ContaBase — Canal de Instalação</title>
-  <meta name="description" content="Canal público de instalação do ContaBase, a base financeira privada, self-hosted e AGPL-3.0.">
+  <meta name="description"
+    content="Canal público de instalação do ContaBase, a base financeira privada, self-hosted e AGPL-3.0.">
   <meta name="robots" content="noindex,nofollow,noarchive">
 
   <!-- Open Graph -->
@@ -13,7 +15,8 @@
   <meta property="og:site_name" content="ContaBase">
   <meta property="og:locale" content="pt_BR">
   <meta property="og:title" content="ContaBase — Canal de Instalação">
-  <meta property="og:description" content="Canal público de instalação do ContaBase, a base financeira privada, self-hosted e AGPL-3.0.">
+  <meta property="og:description"
+    content="Canal público de instalação do ContaBase, a base financeira privada, self-hosted e AGPL-3.0.">
   <meta property="og:url" content="https://get-contabase.pages.dev">
   <meta property="og:image" content="https://get-contabase.pages.dev/assets/pwa-logo-source.png">
   <meta property="og:image:type" content="image/png">
@@ -24,7 +27,8 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="ContaBase — Canal de Instalação">
-  <meta name="twitter:description" content="Canal público de instalação do ContaBase, a base financeira privada, self-hosted e AGPL-3.0.">
+  <meta name="twitter:description"
+    content="Canal público de instalação do ContaBase, a base financeira privada, self-hosted e AGPL-3.0.">
   <meta name="twitter:image" content="https://get-contabase.pages.dev/assets/pwa-logo-source.png">
   <meta name="twitter:image:alt" content="Logo do ContaBase">
 
@@ -34,191 +38,704 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: #0f172a; color: #e2e8f0; display: flex;
-      align-items: center; justify-content: center; min-height: 100vh;
-      line-height: 1.6; padding: 1rem; overflow-x: hidden;
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
-    .container { max-width: 720px; width: 100%; padding: 2rem 0; }
+
+    :root {
+      --bg: #0F131A;
+      --bg-card: #151A23;
+      --bg-card-hover: #1a2130;
+      --bg-elevated: #1D222B;
+      --border: #2a3343;
+      --border-accent: #6E27DA;
+      --text: #f8fafc;
+      --text-secondary: #cbd5e1;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      --accent: #6E27DA;
+      --accent-soft: rgba(110, 39, 218, 0.12);
+      --accent-glow: rgba(110, 39, 218, 0.25);
+      --cta: #22c55e;
+      --cta-hover: #16a34a;
+      --danger: #ef4444;
+      --radius: 0.75rem;
+      --radius-sm: 0.5rem;
+    }
+
+    body {
+      font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      line-height: 1.6;
+      padding: 1rem;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .container {
+      max-width: 720px;
+      width: 100%;
+      padding: 2rem 0;
+    }
 
     /* Logo */
-    .logo { text-align: center; margin-bottom: 2rem; }
-    .logo img { max-width: 240px; height: auto; }
-    .intro { text-align: center; color: #94a3b8; font-size: 0.9375rem; margin-bottom: 2rem; }
+    .logo {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .logo a {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .logo-text {
+      font-family: 'Geist Sans', 'IBM Plex Sans', sans-serif;
+      font-size: 2.25rem;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      line-height: 1;
+    }
+
+    .logo-text-accent {
+      color: #7107E6;
+    }
+
+    .logo-text-base {
+      color: var(--text);
+    }
+
+    .intro {
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 0.9375rem;
+      margin-bottom: 2.5rem;
+      font-weight: 400;
+      letter-spacing: 0.01em;
+    }
 
     /* Cards */
     .card {
-      border: 1px solid #1e293b; border-radius: 0.75rem;
-      background: #111827; padding: 1.5rem;
-      margin-bottom: 1.5rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--bg-elevated);
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      transition: border-color 0.2s ease, background 0.2s ease;
     }
+
+    .card:hover {
+      background: var(--bg-card-hover);
+    }
+
     .card.card-primary {
-      border-color: #3b82f6; background: linear-gradient(135deg, #1e293b 0%, #111827 100%);
-      box-shadow: 0 0 0 1px rgba(59,130,246,0.3);
+      border-color: var(--border-accent);
+      background: linear-gradient(135deg, var(--accent-soft) 0%, var(--bg-elevated) 100%);
+      box-shadow: 0 0 0 1px var(--accent-glow), 0 4px 20px rgba(110, 39, 218, 0.10);
     }
+
+    .card.card-primary:hover {
+      border-color: #8B5CF6;
+    }
+
     .card.card-muted {
-      border-color: #1e293b; background: #0f172a; opacity: 0.70;
+      border-color: var(--border);
+      background: var(--bg);
+      opacity: 0.6;
+      cursor: default;
+    }
+
+    .card.card-muted:hover {
+      background: var(--bg);
     }
 
     .card-header {
-      display: flex; align-items: center; gap: 0.625rem;
-      margin-bottom: 0.625rem; flex-wrap: wrap;
+      display: flex;
+      align-items: center;
+      gap: 0.625rem;
+      margin-bottom: 0.5rem;
+      flex-wrap: wrap;
     }
+
     .card-title {
-      font-size: 1rem; font-weight: 600; color: #e2e8f0;
+      font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', 'Fira Code', monospace;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text);
+      letter-spacing: -0.01em;
     }
-    .card-title-muted { color: #64748b; }
+
+    .card-title-muted {
+      color: var(--text-dim);
+    }
 
     .badge {
-      display: inline-block; font-size: 0.625rem; font-weight: 600;
-      padding: 0.1875rem 0.5rem; border-radius: 9999px;
-      text-transform: uppercase; letter-spacing: 0.05em; line-height: 1.5;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 0.625rem;
+      font-weight: 600;
+      padding: 0.1875rem 0.625rem;
+      border-radius: 9999px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      line-height: 1.5;
     }
-    .badge-primary { background: #1d4ed8; color: #bfdbfe; }
-    .badge-muted { background: #1e293b; color: #64748b; border: 1px solid #334155; }
+
+    .badge-primary {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .badge-muted {
+      background: transparent;
+      color: var(--text-dim);
+      border: 1px solid var(--border);
+    }
 
     .card-desc {
-      color: #94a3b8; font-size: 0.875rem; margin-bottom: 1rem;
-    }
-    .card-desc-muted { color: #64748b; }
-
-    .card-desc code, .card code {
-      background: #1e293b; padding: 0.125rem 0.375rem; border-radius: 0.25rem;
-      font-size: 0.8125rem; color: #cbd5e1;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      margin-bottom: 1rem;
+      line-height: 1.6;
     }
 
-    /* Code block inside card */
+    .card-desc-muted {
+      color: var(--text-dim);
+    }
+
+    .card-desc code {
+      background: rgba(255, 255, 255, 0.06);
+      padding: 0.125rem 0.375rem;
+      border-radius: 0.25rem;
+      font-size: 0.8125rem;
+      color: #ffffff;
+      font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', 'Fira Code', monospace;
+    }
+
+    /* Code block */
     .code-block {
-      position: relative; border: 1px solid #334155; border-radius: 0.5rem;
-      background: #1e293b; overflow: hidden;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.625rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      background: #0F131A;
+      padding: 0.875rem;
+      transition: border-color 0.2s ease;
     }
-    .card-primary .code-block { border-color: #3b82f6; }
+
+    .card-primary .code-block {
+      border-color: rgba(110, 39, 218, 0.3);
+    }
+
     pre {
-      padding: 0.875rem 5rem 0.875rem 1rem; overflow-x: auto;
-      font-size: 0.8125rem; line-height: 1.5; tab-size: 2;
-      margin: 0; -webkit-overflow-scrolling: touch;
+      flex: 1 1 auto;
+      min-width: 0;
+      padding: 0;
+      margin: 0;
+      font-size: 0.8125rem;
+      line-height: 1.6;
+      tab-size: 2;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      word-break: break-word;
     }
-    pre code {
-      background: none; padding: 0; color: #e2e8f0; white-space: pre;
-      font-family: ui-monospace, 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+
+    pre code,
+    .code-block code {
+      background: transparent;
+      padding: 0;
+      border-radius: 0;
+      color: #e5e7eb;
+      font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+      font-weight: 400;
     }
 
     .copy-btn {
-      position: absolute; top: 0.5rem; right: 0.5rem;
-      background: #334155; color: #cbd5e1; border: 1px solid #475569;
-      border-radius: 0.375rem; padding: 0.25rem 0.625rem;
-      font-size: 0.75rem; cursor: pointer; line-height: 1.5;
-      transition: background 0.15s, color 0.15s; font-family: inherit;
-      white-space: nowrap; z-index: 1;
+      flex-shrink: 0;
+      align-self: flex-start;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.375rem;
+      background: var(--border);
+      color: #e5e7eb;
+      border: 1px solid #3b4758;
+      border-radius: 0.375rem;
+      padding: 0.4375rem 0.75rem;
+      font-size: 0.75rem;
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-weight: 500;
+      cursor: pointer;
+      line-height: 1.2;
+      transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+      white-space: nowrap;
     }
-    .copy-btn:hover, .copy-btn:focus-visible {
-      background: #475569; color: #f1f5f9; outline: none;
-    }
-    .copy-btn:focus-visible { box-shadow: 0 0 0 2px #38bdf8; }
-    .copy-btn.copied { background: #065f46; color: #6ee7b7; border-color: #059669; }
-    .card-primary .copy-btn { background: #1e40af; border-color: #2563eb; color: #bfdbfe; }
-    .card-primary .copy-btn:hover, .card-primary .copy-btn:focus-visible {
-      background: #1d4ed8; color: #e2e8f0;
-    }
-    .card-primary .copy-btn.copied { background: #065f46; color: #6ee7b7; border-color: #059669; }
 
-    /* Footer */
-    .links { display: flex; gap: 1rem; flex-wrap: wrap; padding-top: 0.5rem; }
-    .links a { color: #38bdf8; text-decoration: none; font-size: 0.875rem; }
-    .links a:hover { text-decoration: underline; }
+    .copy-btn:hover {
+      background: #3b4758;
+      color: #fff;
+      border-color: #556273;
+    }
+
+    .copy-btn:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 2px var(--accent);
+    }
+
+    .copy-btn.copied {
+      background: #065f46;
+      color: #6ee7b7;
+      border-color: #059669;
+    }
+
+    .copy-btn .icon-copy,
+    .copy-btn .icon-check {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+    }
+
+    .copy-btn .icon-check {
+      display: none;
+    }
+
+    .copy-btn.copied .icon-copy {
+      display: none;
+    }
+
+    .copy-btn.copied .icon-check {
+      display: block;
+    }
+
+    /* Footer links */
+    .links {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      padding-top: 1rem;
+    }
+
+    .links a,
+    .link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      padding: 0.5rem 0.875rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      background: transparent;
+      transition: color 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+      cursor: pointer;
+      font-family: 'IBM Plex Sans', sans-serif;
+      letter-spacing: 0.01em;
+    }
+
+    .links a:hover,
+    .link-btn:hover {
+      color: var(--text);
+      background: var(--bg-card);
+      border-color: #3b4758;
+    }
+
+    .links a:hover svg,
+    .link-btn:hover svg {
+      opacity: 1;
+    }
+
+    .links a svg,
+    .link-btn svg {
+      width: 16px;
+      height: 16px;
+      opacity: 0.6;
+      transition: opacity 0.15s ease;
+      flex-shrink: 0;
+    }
+
+    .links a.github-link svg {
+      color: #f8fafc;
+      opacity: 0.85;
+    }
+
+    /* Muted card info row */
+    .card-muted-row {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .card-muted-row svg {
+      width: 16px;
+      height: 16px;
+      color: var(--text-dim);
+    }
+
+    /* Error states */
+    .badge-error {
+      background: #451a1a;
+      color: #fca5a5;
+      border: 1px solid #7f1d1d;
+    }
+
+    .copy-btn:disabled,
+    .copy-btn.is-disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+    }
+
+    .stable-available .card-desc {
+      color: var(--text-muted);
+    }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
 
     @media (max-width: 480px) {
-      .container { padding: 1rem 0; }
-      .card { padding: 1.125rem; margin-bottom: 1rem; }
-      .card-title { font-size: 0.9375rem; }
-      .card-desc { font-size: 0.8125rem; }
-      .intro { font-size: 0.875rem; margin-bottom: 1.5rem; }
-      pre { font-size: 0.75rem; padding: 0.75rem 4.25rem 0.75rem 0.75rem; }
-      .copy-btn { top: 0.375rem; right: 0.375rem; font-size: 0.6875rem; padding: 0.1875rem 0.5rem; }
+      .container {
+        padding: 1rem 0;
+      }
+
+      .logo {
+        margin-bottom: 1.75rem;
+      }
+
+      .logo-text {
+        font-size: 1.75rem;
+      }
+
+      .intro {
+        font-size: 0.875rem;
+        margin-bottom: 1.75rem;
+      }
+
+      .card {
+        padding: 1.125rem;
+        margin-bottom: 0.75rem;
+      }
+
+      .card-title {
+        font-size: 0.875rem;
+      }
+
+      .card-desc {
+        font-size: 0.8125rem;
+      }
+
+      .code-block {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.5rem;
+        padding: 0.75rem;
+      }
+
+      pre {
+        font-size: 0.75rem;
+      }
+
+      .copy-btn {
+        align-self: stretch;
+        font-size: 0.75rem;
+        padding: 0.4375rem 0.75rem;
+      }
+
+      .copy-btn .icon-copy,
+      .copy-btn .icon-check {
+        width: 14px;
+        height: 14px;
+      }
+
+      .links {
+        gap: 0.375rem;
+      }
+
+      .links a,
+      .link-btn {
+        font-size: 0.75rem;
+        padding: 0.4375rem 0.75rem;
+      }
     }
   </style>
 </head>
+
 <body>
   <div class="container">
     <div class="logo">
-      <img src="/assets/logo-horizontal.png" alt="ContaBase" width="223" height="38">
+      <a href="/">
+        <span class="logo-text">
+          <span class="logo-text-accent">Conta</span><span class="logo-text-base">Base</span>
+        </span>
+      </a>
     </div>
-    <p class="intro">Canal público de instalação da base financeira privada, self-hosted e AGPL-3.0.</p>
+    <p class="intro">
+      Sistema financeiro de código aberto (AGPL-3.0) para uso próprio, familiar ou pequeno negócio.
+      Roda no seu servidor, guarda os dados em SQLite e não depende de nuvem externa.
+      Sem SaaS, sem telemetria, sem envio de dados a terceiros.
+    </p>
 
     <!-- Beta Pública (Recomendada) -->
-    <div class="card card-primary">
+    <div class="card card-primary" id="card-beta">
       <div class="card-header">
         <h2 class="card-title">Beta Pública</h2>
         <span class="badge badge-primary">Recomendada</span>
       </div>
       <p class="card-desc">Instale a versão beta mais recente. O canal é atualizado a cada nova release beta.</p>
       <div class="code-block">
-        <pre><code>curl -fsSLo /tmp/contabase-install.sh https://get-contabase.pages.dev/beta/install.sh && bash /tmp/contabase-install.sh</code></pre>
-        <button class="copy-btn" data-copy="curl -fsSLo /tmp/contabase-install.sh https://get-contabase.pages.dev/beta/install.sh && bash /tmp/contabase-install.sh" aria-label="Copiar comando">Copiar</button>
+        <pre><code id="cmd-beta"><!-- preenchido via JS --></code></pre>
+        <button class="copy-btn" id="btn-copy-beta"
+          data-copy=""
+          aria-label="Copiar comando">
+          <svg class="icon-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+          </svg>
+          <svg class="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          <span>Copiar</span>
+        </button>
       </div>
     </div>
 
-    <!-- Estável (Em breve) -->
-    <div class="card card-muted">
+    <!-- Estável (Em breve / ativado por JS) -->
+    <div class="card card-muted" id="card-stable">
       <div class="card-header">
-        <h2 class="card-title card-title-muted">Estável</h2>
-        <span class="badge badge-muted">Em breve</span>
+        <h2 class="card-title card-title-muted" id="stable-title">Estável</h2>
+        <span class="badge badge-muted" id="stable-badge">Em breve</span>
       </div>
-      <p class="card-desc card-desc-muted">Disponível após a primeira release estável.</p>
+      <p class="card-desc card-desc-muted" id="stable-desc">
+        <span class="card-muted-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="12" y1="8" x2="12" y2="12"/>
+            <line x1="12" y1="16" x2="12.01" y2="16"/>
+          </svg>
+          Disponível após a primeira release estável.
+        </span>
+      </p>
+      <div class="code-block" id="stable-code-block" style="display:none">
+        <pre><code id="cmd-stable"><!-- preenchido via JS --></code></pre>
+        <button class="copy-btn" id="btn-copy-stable"
+          data-copy=""
+          aria-label="Copiar comando">
+          <svg class="icon-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+          </svg>
+          <svg class="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          <span>Copiar</span>
+        </button>
+      </div>
     </div>
 
     <!-- Versão Específica (Manual) -->
-    <div class="card">
+    <div class="card" id="card-manual">
       <div class="card-header">
         <h2 class="card-title">Versão Específica</h2>
         <span class="badge badge-muted">Manual</span>
       </div>
       <p class="card-desc">Fixe uma versão específica com a variável <code>CONTABASE_VERSION</code>:</p>
       <div class="code-block">
-        <pre><code>curl -fsSLo /tmp/contabase-install.sh https://get-contabase.pages.dev/beta/install.sh && CONTABASE_VERSION=v0.1.0-beta.3 bash /tmp/contabase-install.sh</code></pre>
-        <button class="copy-btn" data-copy="curl -fsSLo /tmp/contabase-install.sh https://get-contabase.pages.dev/beta/install.sh && CONTABASE_VERSION=v0.1.0-beta.3 bash /tmp/contabase-install.sh" aria-label="Copiar comando">Copiar</button>
+        <pre><code id="cmd-manual"><!-- preenchido via JS --></code></pre>
+        <button class="copy-btn" id="btn-copy-manual"
+          data-copy=""
+          aria-label="Copiar comando">
+          <svg class="icon-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+          </svg>
+          <svg class="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          <span>Copiar</span>
+        </button>
       </div>
     </div>
 
     <div class="links">
-      <a href="https://github.com/contabase-app/contabase">Repositório</a>
-      <a href="/install.sh">install.sh</a>
-      <a href="/beta/install.sh">Beta</a>
+      <a href="https://github.com/contabase-app/contabase" class="github-link" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+        </svg>
+        GitHub
+      </a>
+      <a href="/install.sh">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="7 10 12 15 17 10"/>
+          <line x1="12" y1="15" x2="12" y2="3"/>
+        </svg>
+        install.sh
+      </a>
+      <a href="/beta/install.sh">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="7 10 12 15 17 10"/>
+          <line x1="12" y1="15" x2="12" y2="3"/>
+        </svg>
+        Beta
+      </a>
     </div>
   </div>
 
   <script>
-    document.querySelectorAll('.copy-btn').forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        var text = btn.getAttribute('data-copy');
-        if (!text) return;
-        if (navigator.clipboard && navigator.clipboard.writeText) {
-          navigator.clipboard.writeText(text).then(done, fallback);
-        } else {
-          fallback();
-        }
-        function done() {
-          btn.classList.add('copied');
-          btn.textContent = 'Copiado';
-          setTimeout(function() {
-            btn.classList.remove('copied');
-            btn.textContent = 'Copiar';
-          }, 2000);
-        }
-        function fallback() {
-          var ta = document.createElement('textarea');
-          ta.value = text;
-          ta.style.position = 'fixed'; ta.style.opacity = '0';
-          document.body.appendChild(ta);
-          ta.select();
-          try { document.execCommand('copy'); done(); } catch(e) {}
-          document.body.removeChild(ta);
-        }
-      });
+    var BETA_COMMAND = 'curl -fsSLo /tmp/contabase-install.sh https://get-contabase.pages.dev/beta/install.sh && bash /tmp/contabase-install.sh';
+    var STABLE_COMMAND = 'curl -fsSLo /tmp/contabase-install.sh https://get-contabase.pages.dev/install.sh && bash /tmp/contabase-install.sh';
+
+    var el = function(id) { return document.getElementById(id); };
+
+    function setCommand(idCode, idBtn, cmd) {
+      var code = el(idCode);
+      var btn = el(idBtn);
+      if (!code || !btn) return;
+      code.textContent = cmd;
+      btn.setAttribute('data-copy', cmd);
+    }
+
+    function disableBtn(id) {
+      var btn = el(id);
+      if (btn) { btn.disabled = true; btn.classList.add('is-disabled'); }
+    }
+
+    function setErrorBadge(idCard, message) {
+      var card = el(idCard);
+      if (!card) return;
+      var header = card.querySelector('.card-header');
+      if (!header) return;
+      var existing = header.querySelector('.badge-error');
+      if (existing) existing.remove();
+      var badge = document.createElement('span');
+      badge.className = 'badge badge-error';
+      badge.textContent = message || 'Erro';
+      header.appendChild(badge);
+    }
+
+    function renderStable(manifest) {
+      var card = el('card-stable');
+      if (!card) return;
+      if (!manifest || !manifest.version) {
+        // stays as-is: card-muted with "Disponível após a primeira release estável."
+        return;
+      }
+      // stable available: upgrade card
+      card.classList.remove('card-muted');
+      card.classList.add('stable-available');
+      var title = el('stable-title');
+      if (title) title.classList.remove('card-title-muted');
+      var badge = el('stable-badge');
+      if (badge) { badge.className = 'badge badge-primary'; badge.textContent = 'Disponível'; }
+      var desc = el('stable-desc');
+      if (desc) {
+        desc.classList.remove('card-desc-muted');
+        desc.textContent = 'Instale a versão estável via canal recomendado.';
+      }
+      var block = el('stable-code-block');
+      if (block) block.style.display = 'flex';
+      setCommand('cmd-stable', 'btn-copy-stable', STABLE_COMMAND);
+    }
+
+    function renderBeta(manifest) {
+      var ok = manifest && manifest.version && typeof manifest.version === 'string' && manifest.version.length > 0;
+      if (!ok) {
+        // beta manifest failure: error badges + disable dependent buttons
+        setErrorBadge('card-beta', 'Erro ao carregar');
+        disableBtn('btn-copy-beta');
+        setErrorBadge('card-manual', 'Erro ao carregar');
+        disableBtn('btn-copy-manual');
+        // still show beta command text (URL is fixed) but greyed out
+        setCommand('cmd-beta', 'btn-copy-beta', BETA_COMMAND);
+        return;
+      }
+      // beta OK: populate commands
+      setCommand('cmd-beta', 'btn-copy-beta', BETA_COMMAND);
+      var manualCmd = 'curl -fsSLo /tmp/contabase-install.sh https://get-contabase.pages.dev/beta/install.sh && CONTABASE_VERSION=' + manifest.version + ' bash /tmp/contabase-install.sh';
+      setCommand('cmd-manual', 'btn-copy-manual', manualCmd);
+    }
+
+    // event delegation for all copy buttons
+    document.addEventListener('click', function(e) {
+      var btn = e.target.closest('.copy-btn');
+      if (!btn || btn.disabled) return;
+      var text = btn.getAttribute('data-copy');
+      if (!text) return;
+      function done() {
+        btn.classList.add('copied');
+        var span = btn.querySelector('span');
+        if (span) span.textContent = 'Copiado';
+        btn.setAttribute('aria-label', 'Copiado');
+        setTimeout(function() {
+          btn.classList.remove('copied');
+          if (span) span.textContent = 'Copiar';
+          btn.setAttribute('aria-label', 'Copiar comando');
+        }, 2000);
+      }
+      function fallback() {
+        var ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed'; ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand('copy'); done(); } catch (e) { }
+        document.body.removeChild(ta);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } else {
+        fallback();
+      }
+    });
+
+    // fetch manifests and render
+    Promise.allSettled([
+      fetch('/channels/beta.json').then(function(r) {
+        if (!r.ok) throw new Error('beta fetch failed');
+        return r.json();
+      }),
+      fetch('/channels/stable.json').then(function(r) {
+        if (!r.ok) throw new Error('stable fetch failed');
+        return r.json();
+      })
+    ]).then(function(results) {
+      var beta = results[0];
+      var stable = results[1];
+      renderBeta(beta.status === 'fulfilled' ? beta.value : null);
+      renderStable(stable.status === 'fulfilled' ? stable.value : null);
     });
   </script>
 </body>
+
 </html>
