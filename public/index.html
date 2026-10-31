@@ -4,738 +4,328 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#0F131A">
-  <title>ContaBase — Canal de Instalação</title>
-  <meta name="description"
-    content="Canal público de instalação do ContaBase, a base financeira privada, self-hosted e AGPL-3.0.">
-  <meta name="robots" content="noindex,nofollow,noarchive">
+  <title>ContaBase | Base financeira self-hosted, privada e open-source</title>
+  <meta name="description" content="Organize contas, cartões, faturas, metas e relatórios em uma base financeira open-source, multiusuário e self-hosted. Comece pela Beta pública.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://get-contabase.pages.dev/">
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="ContaBase">
   <meta property="og:locale" content="pt_BR">
-  <meta property="og:title" content="ContaBase — Canal de Instalação">
-  <meta property="og:description"
-    content="Canal público de instalação do ContaBase, a base financeira privada, self-hosted e AGPL-3.0.">
-  <meta property="og:url" content="https://get-contabase.pages.dev">
-  <meta property="og:image" content="https://get-contabase.pages.dev/assets/pwa-logo-source.png">
+  <meta property="og:title" content="ContaBase | Base financeira self-hosted, privada e open-source">
+  <meta property="og:description" content="Organize contas, cartões, faturas, metas e relatórios em uma base financeira open-source, multiusuário e self-hosted. Comece pela Beta pública.">
+  <meta property="og:url" content="https://get-contabase.pages.dev/">
+  <meta property="og:image" content="https://get-contabase.pages.dev/assets/branding/og-light.png">
   <meta property="og:image:type" content="image/png">
-  <meta property="og:image:width" content="1547">
-  <meta property="og:image:height" content="1547">
-  <meta property="og:image:alt" content="Logo do ContaBase">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="ContaBase, sua base financeira privada">
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="ContaBase — Canal de Instalação">
-  <meta name="twitter:description"
-    content="Canal público de instalação do ContaBase, a base financeira privada, self-hosted e AGPL-3.0.">
-  <meta name="twitter:image" content="https://get-contabase.pages.dev/assets/pwa-logo-source.png">
-  <meta name="twitter:image:alt" content="Logo do ContaBase">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ContaBase | Base financeira self-hosted, privada e open-source">
+  <meta name="twitter:description" content="Organize contas, cartões, faturas, metas e relatórios em uma base financeira open-source, multiusuário e self-hosted. Comece pela Beta pública.">
+  <meta name="twitter:image" content="https://get-contabase.pages.dev/assets/branding/og-light.png">
+  <meta name="twitter:image:alt" content="ContaBase, sua base financeira privada">
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="/assets/contabase-logo.svg">
+  <meta name="theme-color" content="#f3f4f6" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#161a20" media="(prefers-color-scheme: dark)">
+  <meta name="color-scheme" content="light dark">
+
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-
-  <style>
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    :root {
-      --bg: #0F131A;
-      --bg-card: #151A23;
-      --bg-card-hover: #1a2130;
-      --bg-elevated: #1D222B;
-      --border: #2a3343;
-      --border-accent: #6E27DA;
-      --text: #f8fafc;
-      --text-secondary: #cbd5e1;
-      --text-muted: #94a3b8;
-      --text-dim: #64748b;
-      --accent: #6E27DA;
-      --accent-soft: rgba(110, 39, 218, 0.12);
-      --accent-glow: rgba(110, 39, 218, 0.25);
-      --cta: #22c55e;
-      --cta-hover: #16a34a;
-      --danger: #ef4444;
-      --radius: 0.75rem;
-      --radius-sm: 0.5rem;
-    }
-
-    body {
-      font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      line-height: 1.6;
-      padding: 1rem;
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
-    .container {
-      max-width: 720px;
-      width: 100%;
-      padding: 2rem 0;
-    }
-
-    /* Logo */
-    .logo {
-      text-align: center;
-      margin-bottom: 2.5rem;
-    }
-
-    .logo a {
-      display: inline-flex;
-      align-items: center;
-      text-decoration: none;
-      cursor: pointer;
-      user-select: none;
-    }
-
-    .logo-text {
-      font-family: 'Geist Sans', 'IBM Plex Sans', sans-serif;
-      font-size: 2.25rem;
-      font-weight: 700;
-      letter-spacing: -0.025em;
-      line-height: 1;
-    }
-
-    .logo-text-accent {
-      color: #7107E6;
-    }
-
-    .logo-text-base {
-      color: var(--text);
-    }
-
-    .intro {
-      text-align: center;
-      color: var(--text-secondary);
-      font-size: 0.9375rem;
-      margin-bottom: 2.5rem;
-      font-weight: 400;
-      letter-spacing: 0.01em;
-    }
-
-    /* Cards */
-    .card {
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      background: var(--bg-elevated);
-      padding: 1.5rem;
-      margin-bottom: 1rem;
-      transition: border-color 0.2s ease, background 0.2s ease;
-    }
-
-    .card:hover {
-      background: var(--bg-card-hover);
-    }
-
-    .card.card-primary {
-      border-color: var(--border-accent);
-      background: linear-gradient(135deg, var(--accent-soft) 0%, var(--bg-elevated) 100%);
-      box-shadow: 0 0 0 1px var(--accent-glow), 0 4px 20px rgba(110, 39, 218, 0.10);
-    }
-
-    .card.card-primary:hover {
-      border-color: #8B5CF6;
-    }
-
-    .card.card-muted {
-      border-color: var(--border);
-      background: var(--bg);
-      opacity: 0.6;
-      cursor: default;
-    }
-
-    .card.card-muted:hover {
-      background: var(--bg);
-    }
-
-    .card-header {
-      display: flex;
-      align-items: center;
-      gap: 0.625rem;
-      margin-bottom: 0.5rem;
-      flex-wrap: wrap;
-    }
-
-    .card-title {
-      font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', 'Fira Code', monospace;
-      font-size: 0.9375rem;
-      font-weight: 600;
-      color: var(--text);
-      letter-spacing: -0.01em;
-    }
-
-    .card-title-muted {
-      color: var(--text-dim);
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.25rem;
-      font-family: 'JetBrains Mono', ui-monospace, monospace;
-      font-size: 0.625rem;
-      font-weight: 600;
-      padding: 0.1875rem 0.625rem;
-      border-radius: 9999px;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      line-height: 1.5;
-    }
-
-    .badge-primary {
-      background: var(--accent);
-      color: #fff;
-    }
-
-    .badge-muted {
-      background: transparent;
-      color: var(--text-dim);
-      border: 1px solid var(--border);
-    }
-
-    .card-desc {
-      color: var(--text-muted);
-      font-size: 0.875rem;
-      margin-bottom: 1rem;
-      line-height: 1.6;
-    }
-
-    .card-desc-muted {
-      color: var(--text-dim);
-    }
-
-    .card-desc code {
-      background: rgba(255, 255, 255, 0.06);
-      padding: 0.125rem 0.375rem;
-      border-radius: 0.25rem;
-      font-size: 0.8125rem;
-      color: #ffffff;
-      font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', 'Fira Code', monospace;
-    }
-
-    /* Code block */
-    .code-block {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.625rem;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      background: #0F131A;
-      padding: 0.875rem;
-      transition: border-color 0.2s ease;
-    }
-
-    .card-primary .code-block {
-      border-color: rgba(110, 39, 218, 0.3);
-    }
-
-    pre {
-      flex: 1 1 auto;
-      min-width: 0;
-      padding: 0;
-      margin: 0;
-      font-size: 0.8125rem;
-      line-height: 1.6;
-      tab-size: 2;
-      white-space: pre-wrap;
-      overflow-wrap: anywhere;
-      word-break: break-word;
-    }
-
-    pre code,
-    .code-block code {
-      background: transparent;
-      padding: 0;
-      border-radius: 0;
-      color: #e5e7eb;
-      font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
-      font-weight: 400;
-    }
-
-    .copy-btn {
-      flex-shrink: 0;
-      align-self: flex-start;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.375rem;
-      background: var(--border);
-      color: #e5e7eb;
-      border: 1px solid #3b4758;
-      border-radius: 0.375rem;
-      padding: 0.4375rem 0.75rem;
-      font-size: 0.75rem;
-      font-family: 'IBM Plex Sans', sans-serif;
-      font-weight: 500;
-      cursor: pointer;
-      line-height: 1.2;
-      transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
-      white-space: nowrap;
-    }
-
-    .copy-btn:hover {
-      background: #3b4758;
-      color: #fff;
-      border-color: #556273;
-    }
-
-    .copy-btn:focus-visible {
-      outline: none;
-      box-shadow: 0 0 0 2px var(--accent);
-    }
-
-    .copy-btn.copied {
-      background: #065f46;
-      color: #6ee7b7;
-      border-color: #059669;
-    }
-
-    .copy-btn .icon-copy,
-    .copy-btn .icon-check {
-      width: 14px;
-      height: 14px;
-      flex-shrink: 0;
-    }
-
-    .copy-btn .icon-check {
-      display: none;
-    }
-
-    .copy-btn.copied .icon-copy {
-      display: none;
-    }
-
-    .copy-btn.copied .icon-check {
-      display: block;
-    }
-
-    /* Footer links */
-    .links {
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-      padding-top: 1rem;
-    }
-
-    .links a,
-    .link-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: var(--text-muted);
-      text-decoration: none;
-      font-size: 0.8125rem;
-      font-weight: 500;
-      padding: 0.5rem 0.875rem;
-      border-radius: var(--radius-sm);
-      border: 1px solid var(--border);
-      background: transparent;
-      transition: color 0.15s ease, background 0.15s ease, border-color 0.15s ease;
-      cursor: pointer;
-      font-family: 'IBM Plex Sans', sans-serif;
-      letter-spacing: 0.01em;
-    }
-
-    .links a:hover,
-    .link-btn:hover {
-      color: var(--text);
-      background: var(--bg-card);
-      border-color: #3b4758;
-    }
-
-    .links a:hover svg,
-    .link-btn:hover svg {
-      opacity: 1;
-    }
-
-    .links a svg,
-    .link-btn svg {
-      width: 16px;
-      height: 16px;
-      opacity: 0.6;
-      transition: opacity 0.15s ease;
-      flex-shrink: 0;
-    }
-
-    .links a.github-link svg {
-      color: #f8fafc;
-      opacity: 0.85;
-    }
-
-    /* Muted card info row */
-    .card-muted-row {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .card-muted-row svg {
-      width: 16px;
-      height: 16px;
-      color: var(--text-dim);
-    }
-
-    /* Error states */
-    .badge-error {
-      background: #451a1a;
-      color: #fca5a5;
-      border: 1px solid #7f1d1d;
-    }
-
-    .copy-btn:disabled,
-    .copy-btn.is-disabled {
-      opacity: 0.35;
-      cursor: not-allowed;
-    }
-
-    .stable-available .card-desc {
-      color: var(--text-muted);
-    }
-
-    /* Reduced motion */
-    @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .container {
-        padding: 1rem 0;
-      }
-
-      .logo {
-        margin-bottom: 1.75rem;
-      }
-
-      .logo-text {
-        font-size: 1.75rem;
-      }
-
-      .intro {
-        font-size: 0.875rem;
-        margin-bottom: 1.75rem;
-      }
-
-      .card {
-        padding: 1.125rem;
-        margin-bottom: 0.75rem;
-      }
-
-      .card-title {
-        font-size: 0.875rem;
-      }
-
-      .card-desc {
-        font-size: 0.8125rem;
-      }
-
-      .code-block {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0.5rem;
-        padding: 0.75rem;
-      }
-
-      pre {
-        font-size: 0.75rem;
-      }
-
-      .copy-btn {
-        align-self: stretch;
-        font-size: 0.75rem;
-        padding: 0.4375rem 0.75rem;
-      }
-
-      .copy-btn .icon-copy,
-      .copy-btn .icon-check {
-        width: 14px;
-        height: 14px;
-      }
-
-      .links {
-        gap: 0.375rem;
-      }
-
-      .links a,
-      .link-btn {
-        font-size: 0.75rem;
-        padding: 0.4375rem 0.75rem;
-      }
-    }
-  </style>
+  <link rel="preload" href="/assets/fonts/geist-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/geist-sans-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <script src="/assets/theme-init.js"></script>
+  <link rel="stylesheet" href="/assets/site.css">
+  <script src="/assets/site.js" defer></script>
 </head>
 
 <body>
-  <div class="container">
-    <div class="logo">
-      <a href="/">
-        <span class="logo-text">
-          <span class="logo-text-accent">Conta</span><span class="logo-text-base">Base</span>
-        </span>
-      </a>
-    </div>
-    <p class="intro">
-      Sistema financeiro de código aberto (AGPL-3.0) para uso próprio, familiar ou pequeno negócio.
-      Roda no seu servidor, guarda os dados em SQLite e não depende de nuvem externa.
-      Sem SaaS, sem telemetria, sem envio de dados a terceiros.
-    </p>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
 
-    <!-- Beta Pública (Recomendada) -->
-    <div class="card card-primary" id="card-beta">
-      <div class="card-header">
-        <h2 class="card-title">Beta Pública</h2>
-        <span class="badge badge-primary">Recomendada</span>
-      </div>
-      <p class="card-desc">Instale a versão beta mais recente. O canal é atualizado a cada nova release beta.</p>
-      <div class="code-block">
-        <pre><code id="cmd-beta"><!-- preenchido via JS --></code></pre>
-        <button class="copy-btn" id="btn-copy-beta"
-          data-copy=""
-          aria-label="Copiar comando">
-          <svg class="icon-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
-            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="/" aria-label="ContaBase, início">
+        <img class="brand-logo brand-logo--light" src="/assets/branding/logo-light.png" width="260" height="80" alt="ContaBase">
+        <img class="brand-logo brand-logo--dark" src="/assets/branding/logo-dark.png" width="260" height="80" alt="ContaBase">
+      </a>
+
+      <div class="header-actions">
+        <nav class="desktop-nav" aria-label="Principal">
+          <a href="#beneficios">Benefícios</a>
+          <a href="#instalacao">Instalação</a>
+          <a href="#transparencia">Transparência</a>
+          <a href="https://github.com/contabase-app/contabase/tree/beta" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.1 3.29 9.42 7.86 10.96.58.1.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.7 5.41-5.27 5.69.41.35.78 1.05.78 2.12 0 1.53-.01 2.76-.01 3.14 0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z"/></svg>GitHub</a>
+        </nav>
+
+        <button class="icon-button" type="button" data-theme-toggle aria-label="Ativar tema escuro" aria-pressed="false">
+          <svg class="theme-icon theme-icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.8A8.5 8.5 0 1 1 11.2 3a6.6 6.6 0 0 0 9.8 9.8Z"/>
           </svg>
-          <svg class="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="20 6 9 17 4 12"/>
+          <svg class="theme-icon theme-icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"/>
           </svg>
-          <span>Copiar</span>
         </button>
+
+        <details class="mobile-menu" data-mobile-menu>
+          <summary class="menu-button">Menu</summary>
+          <nav class="mobile-nav" aria-label="Menu móvel">
+            <a href="#beneficios">Benefícios</a>
+            <a href="#instalacao">Instalação</a>
+            <a href="#transparencia">Transparência</a>
+            <a href="https://github.com/contabase-app/contabase/tree/beta" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.1 3.29 9.42 7.86 10.96.58.1.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.7 5.41-5.27 5.69.41.35.78 1.05.78 2.12 0 1.53-.01 2.76-.01 3.14 0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z"/></svg>GitHub</a>
+          </nav>
+        </details>
       </div>
     </div>
+  </header>
 
-    <!-- Estável (Em breve / ativado por JS) -->
-    <div class="card card-muted" id="card-stable">
-      <div class="card-header">
-        <h2 class="card-title card-title-muted" id="stable-title">Estável</h2>
-        <span class="badge badge-muted" id="stable-badge">Em breve</span>
+  <main id="conteudo">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="kicker">Base financeira self-hosted</p>
+          <h1 id="hero-title">Suas finanças.<br>Seus dados.<br>Seu controle.</h1>
+          <p class="hero-sub">Uma plataforma financeira open-source, multiusuário e self-hosted para organizar contas pessoais e de negócios, no seu próprio servidor.</p>
+          <div class="hero-actions">
+            <a class="button button--primary" href="#instalacao">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+              Instalar ContaBase Beta
+            </a>
+            <a class="button button--secondary" href="https://github.com/contabase-app/contabase/tree/beta" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.1 3.29 9.42 7.86 10.96.58.1.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.7 5.41-5.27 5.69.41.35.78 1.05.78 2.12 0 1.53-.01 2.76-.01 3.14 0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z"/></svg>
+              Conhecer o código
+            </a>
+          </div>
+          <p class="hero-status">Beta pública disponível. Ainda não existe versão Stable pública.</p>
+        </div>
+
+        <aside class="hero-panel" aria-label="Princípios da instalação">
+          <img class="hero-mark" src="/assets/branding/logo-mark.png" width="256" height="256" alt="">
+          <p class="panel-title">O cofre fica no seu servidor.</p>
+          <ul class="panel-list">
+            <li><strong>Dados</strong><span>SQLite na sua instalação</span></li>
+            <li><strong>Acesso</strong><span>Navegador e PWA</span></li>
+            <li><strong>Licença</strong><span>AGPL-3.0</span></li>
+          </ul>
+        </aside>
       </div>
-      <p class="card-desc card-desc-muted" id="stable-desc">
-        <span class="card-muted-row">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"/>
-            <line x1="12" y1="8" x2="12" y2="12"/>
-            <line x1="12" y1="16" x2="12.01" y2="16"/>
-          </svg>
-          Disponível após a primeira release estável.
-        </span>
-      </p>
-      <div class="code-block" id="stable-code-block" style="display:none">
-        <pre><code id="cmd-stable"><!-- preenchido via JS --></code></pre>
-        <button class="copy-btn" id="btn-copy-stable"
-          data-copy=""
-          aria-label="Copiar comando">
-          <svg class="icon-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
-            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
-          </svg>
-          <svg class="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="20 6 9 17 4 12"/>
-          </svg>
-          <span>Copiar</span>
-        </button>
+    </section>
+
+    <section class="section" id="beneficios" aria-labelledby="beneficios-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="kicker">Controle</p>
+            <h2 id="beneficios-title">O que fica sob seu controle</h2>
+          </div>
+          <p class="section-lede">O ContaBase não é um SaaS. A instalação, o banco e as chaves ficam no ambiente que você administra.</p>
+        </div>
+
+        <div class="benefit-lead">
+          <h3>Privacidade por arquitetura</h3>
+          <p>Os dados financeiros ficam na sua instalação. Não há telemetria, analytics ou envio de dados para terceiros.</p>
+        </div>
+
+        <dl class="benefit-list">
+          <div class="benefit-item">
+            <dt>Self-hosted</dt>
+            <dd>Roda em Docker, VPS ou LXC. Você decide onde e como a aplicação é executada, sem depender de uma nuvem externa para operar.</dd>
+          </div>
+          <div class="benefit-item">
+            <dt>Multiusuário</dt>
+            <dd>Pessoas da mesma casa ou equipe podem compartilhar a organização financeira com permissões por workspace.</dd>
+          </div>
+          <div class="benefit-item">
+            <dt>Workspaces</dt>
+            <dd>Separe a vida pessoal e o negócio em ambientes Pessoal e Business, com dados e contexto próprios.</dd>
+          </div>
+          <div class="benefit-item">
+            <dt>Organização</dt>
+            <dd>Contas, cartões, lançamentos, faturas, metas e relatórios no mesmo lugar, com histórico e fechamento mensal.</dd>
+          </div>
+          <div class="benefit-item">
+            <dt>Investimentos <span class="status-label">Experimental</span></dt>
+            <dd>O cadastro e as novas aplicações estão em evolução. Adoção histórica e resgates financeiros das novas aplicações ainda não estão disponíveis.</dd>
+          </div>
+        </dl>
       </div>
+    </section>
+
+    <section class="section" id="instalacao" aria-labelledby="instalacao-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="kicker">Instalação</p>
+            <h2 id="instalacao-title">Comece pela Beta pública.</h2>
+          </div>
+          <p class="section-lede">O canal Beta é o caminho disponível hoje. O instalador guiado escolhe entre Docker, binário de release ou source e pergunta os dados de acesso.</p>
+        </div>
+
+        <div class="version-line" aria-live="polite">
+          <span class="version-label">Canal Beta</span>
+          <span class="version-value" data-beta-version>consultando...</span>
+          <span class="version-state" data-beta-status data-beta-status-text>Consultando o manifest do canal.</span>
+        </div>
+
+        <p class="install-note">Stable: não publicada. Consulte as <a href="https://github.com/contabase-app/contabase/releases" target="_blank" rel="noopener noreferrer">Releases</a> para ver as versões publicadas.</p>
+        <noscript>
+          <p class="install-note">O JavaScript está desativado. A versão é resolvida pelo instalador do canal Beta.</p>
+        </noscript>
+
+        <div class="code-block">
+          <div class="code-head">
+            <span class="code-label">Instalação rápida</span>
+            <button class="copy-button" type="button" data-copy-target="cmd-quick">
+              <span data-copy-label>Copiar</span>
+              <span class="sr-only" data-copy-status aria-live="polite"></span>
+            </button>
+          </div>
+          <pre><code id="cmd-quick">curl -fsSLo /tmp/contabase-install.sh https://get-contabase.pages.dev/beta/install.sh &amp;&amp; bash /tmp/contabase-install.sh</code></pre>
+        </div>
+
+        <div class="code-block" data-beta-pinned hidden>
+          <div class="code-head">
+            <span class="code-label">Versão fixa</span>
+            <button class="copy-button" type="button" data-copy-target="cmd-pinned" disabled>
+              <span data-copy-label>Copiar</span>
+              <span class="sr-only" data-copy-status aria-live="polite"></span>
+            </button>
+          </div>
+          <pre><code id="cmd-pinned">A versão será exibida após consultar o canal.</code></pre>
+        </div>
+        <p class="field-note">O comando com versão fixa usa a tag exibida acima. Não use main, beta ou latest como versão.</p>
+
+        <div class="methods">
+          <article class="method">
+            <h3>Docker Compose</h3>
+            <p>Instalação com Docker Compose a partir de um clone da tag publicada. O instalador guiado pergunta porta, URL e proxy.</p>
+            <a href="https://github.com/contabase-app/contabase/blob/beta/docs/instalacao-docker.md" target="_blank" rel="noopener noreferrer">Guia Docker</a>
+          </article>
+          <article class="method">
+            <h3>Linux, VPS ou LXC</h3>
+            <p>Binários oficiais da GitHub Release com systemd. Indicado para VPS ou LXC sem Docker.</p>
+            <a href="https://github.com/contabase-app/contabase/blob/beta/docs/instalacao-lxc-vps.md" target="_blank" rel="noopener noreferrer">Guia LXC/VPS</a>
+          </article>
+          <article class="method">
+            <h3>Compilação por source</h3>
+            <p>Compilação local com Go e Node para quem quer revisar ou adaptar o código.</p>
+            <a href="https://github.com/contabase-app/contabase/blob/beta/docs/instalacao.md" target="_blank" rel="noopener noreferrer">Guia de instalação</a>
+          </article>
+          <article class="method">
+            <h3>Atualização</h3>
+            <p>Use <code>sudo contabase-update vX.Y.Z</code> ou <code>sudo contabase-update --channel beta</code> em uma instalação existente.</p>
+            <a href="https://github.com/contabase-app/contabase/blob/beta/docs/atualizacao.md" target="_blank" rel="noopener noreferrer">Guia de atualização</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="transparencia" aria-labelledby="transparencia-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="kicker">Transparência</p>
+            <h2 id="transparencia-title">Saiba exatamente o que você está executando.</h2>
+          </div>
+          <p class="section-lede">A instalação pública é uma cadeia de arquivos verificáveis. Cada etapa tem uma responsabilidade e pode ser lida antes da execução.</p>
+        </div>
+
+        <ol class="chain">
+          <li>
+            <span class="step">01</span>
+            <div>
+              <h3>Bootstrap do canal</h3>
+              <p>O arquivo <code>/beta/install.sh</code> consulta o manifest do canal e baixa o instalador da tag publicada. Ele não executa o conteúdo do manifest.</p>
+              <div class="chain-links">
+                <a href="/beta/install.sh">Abrir o script bruto</a>
+                <a href="/bootstrap.html">Ler como texto</a>
+                <a href="https://github.com/contabase-app/contabase-canal/blob/main/public/beta/install.sh" target="_blank" rel="noopener noreferrer">Código no GitHub</a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <span class="step">02</span>
+            <div>
+              <h3>Manifest da versão</h3>
+              <p><code>/channels/beta.json</code> declara a tag Beta atual. A página usa esse manifest para exibir a versão e montar o comando com versão fixa.</p>
+              <div class="chain-links">
+                <a href="/channels/beta.json">Abrir o manifest</a>
+                <a href="https://github.com/contabase-app/contabase-canal/blob/main/public/channels/beta.json" target="_blank" rel="noopener noreferrer">Código no GitHub</a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <span class="step">03</span>
+            <div>
+              <h3>Instalador da tag</h3>
+              <p>O instalador oficial da tag baixa o helper e valida a versão e os artefatos da release antes de encaminhar a instalação.</p>
+              <div class="chain-links">
+                <a href="https://github.com/contabase-app/contabase/releases" target="_blank" rel="noopener noreferrer" data-tag-script>Script da tag</a>
+                <a href="https://github.com/contabase-app/contabase/releases" target="_blank" rel="noopener noreferrer" data-tag-release>Release da versão</a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <span class="step">04</span>
+            <div>
+              <h3>Método escolhido</h3>
+              <p>O instalador guiado encaminha para Docker, binário de release ou source. Cada método tem seu próprio guia e seus próprios requisitos.</p>
+              <div class="chain-links">
+                <a href="https://github.com/contabase-app/contabase/blob/beta/docs/instalacao-docker.md" target="_blank" rel="noopener noreferrer">Docker</a>
+                <a href="https://github.com/contabase-app/contabase/blob/beta/docs/instalacao-lxc-vps.md" target="_blank" rel="noopener noreferrer">LXC/VPS</a>
+                <a href="https://github.com/contabase-app/contabase/blob/beta/docs/instalacao.md" target="_blank" rel="noopener noreferrer">Source</a>
+              </div>
+            </div>
+          </li>
+        </ol>
+
+        <div class="code-block">
+          <div class="code-head">
+            <span class="code-label">Baixar, inspecionar e executar</span>
+            <button class="copy-button" type="button" data-copy-target="cmd-inspect">
+              <span data-copy-label>Copiar</span>
+              <span class="sr-only" data-copy-status aria-live="polite"></span>
+            </button>
+          </div>
+          <pre><code id="cmd-inspect">curl -fsSLo /tmp/contabase-install.sh https://get-contabase.pages.dev/beta/install.sh
+less /tmp/contabase-install.sh
+bash /tmp/contabase-install.sh</code></pre>
+        </div>
+
+        <p class="note">Ler apenas o bootstrap não audita a instalação inteira. Confira também o manifest, o instalador da tag e os checksums dos artefatos antes de executar.</p>
+
+        <div class="release-links">
+          <a href="https://github.com/contabase-app/contabase/releases" target="_blank" rel="noopener noreferrer">GitHub Releases</a>
+          <a href="https://github.com/contabase-app/contabase/releases" target="_blank" rel="noopener noreferrer" data-tag-checksums>Checksums dos artefatos</a>
+          <a href="https://github.com/contabase-app/contabase/blob/beta/docs/instalacao.md" target="_blank" rel="noopener noreferrer">Documentação de instalação</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img class="footer-mark" src="/assets/branding/logo-mark.png" width="256" height="256" alt="">
+          <p><strong>ContaBase</strong><br>Beta pública. Sem Stable.</p>
+        </div>
+        <nav class="footer-links" aria-label="Rodapé">
+          <a href="https://github.com/contabase-app/contabase/tree/beta" target="_blank" rel="noopener noreferrer">Código</a>
+          <a href="https://github.com/contabase-app/contabase/blob/beta/docs/instalacao.md" target="_blank" rel="noopener noreferrer">Documentação</a>
+          <a href="https://github.com/contabase-app/contabase/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">Licença AGPL-3.0</a>
+          <a href="https://github.com/contabase-app/contabase/blob/main/SECURITY.md" target="_blank" rel="noopener noreferrer">Segurança</a>
+          <a href="https://github.com/contabase-app/contabase/blob/main/PRIVACY.md" target="_blank" rel="noopener noreferrer">Privacidade</a>
+          <a href="https://github.com/contabase-app/contabase/releases" target="_blank" rel="noopener noreferrer">Releases</a>
+        </nav>
+      </div>
+      <p class="footer-meta">AGPL-3.0. Sem telemetria. Os dados ficam na sua instalação.</p>
     </div>
-
-    <!-- Versão Específica (Manual) -->
-    <div class="card" id="card-manual">
-      <div class="card-header">
-        <h2 class="card-title">Versão Específica</h2>
-        <span class="badge badge-muted">Manual</span>
-      </div>
-      <p class="card-desc">Fixe uma versão específica com a variável <code>CONTABASE_VERSION</code>:</p>
-      <div class="code-block">
-        <pre><code id="cmd-manual"><!-- preenchido via JS --></code></pre>
-        <button class="copy-btn" id="btn-copy-manual"
-          data-copy=""
-          aria-label="Copiar comando">
-          <svg class="icon-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
-            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
-          </svg>
-          <svg class="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="20 6 9 17 4 12"/>
-          </svg>
-          <span>Copiar</span>
-        </button>
-      </div>
-    </div>
-
-    <div class="links">
-      <a href="https://github.com/contabase-app/contabase" class="github-link" target="_blank" rel="noopener noreferrer">
-        <svg viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
-        </svg>
-        GitHub
-      </a>
-      <a href="/install.sh">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-          <polyline points="7 10 12 15 17 10"/>
-          <line x1="12" y1="15" x2="12" y2="3"/>
-        </svg>
-        install.sh
-      </a>
-      <a href="/beta/install.sh">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-          <polyline points="7 10 12 15 17 10"/>
-          <line x1="12" y1="15" x2="12" y2="3"/>
-        </svg>
-        Beta
-      </a>
-    </div>
-  </div>
-
-  <script>
-    var BETA_COMMAND = 'curl -fsSLo /tmp/contabase-install.sh https://get-contabase.pages.dev/beta/install.sh && bash /tmp/contabase-install.sh';
-    var STABLE_COMMAND = 'curl -fsSLo /tmp/contabase-install.sh https://get-contabase.pages.dev/install.sh && bash /tmp/contabase-install.sh';
-
-    var el = function(id) { return document.getElementById(id); };
-
-    function setCommand(idCode, idBtn, cmd) {
-      var code = el(idCode);
-      var btn = el(idBtn);
-      if (!code || !btn) return;
-      code.textContent = cmd;
-      btn.setAttribute('data-copy', cmd);
-    }
-
-    function disableBtn(id) {
-      var btn = el(id);
-      if (btn) { btn.disabled = true; btn.classList.add('is-disabled'); }
-    }
-
-    function setErrorBadge(idCard, message) {
-      var card = el(idCard);
-      if (!card) return;
-      var header = card.querySelector('.card-header');
-      if (!header) return;
-      var existing = header.querySelector('.badge-error');
-      if (existing) existing.remove();
-      var badge = document.createElement('span');
-      badge.className = 'badge badge-error';
-      badge.textContent = message || 'Erro';
-      header.appendChild(badge);
-    }
-
-    function renderStable(manifest) {
-      var card = el('card-stable');
-      if (!card) return;
-      if (!manifest || !manifest.version) {
-        // stays as-is: card-muted with "Disponível após a primeira release estável."
-        return;
-      }
-      // stable available: upgrade card
-      card.classList.remove('card-muted');
-      card.classList.add('stable-available');
-      var title = el('stable-title');
-      if (title) title.classList.remove('card-title-muted');
-      var badge = el('stable-badge');
-      if (badge) { badge.className = 'badge badge-primary'; badge.textContent = 'Disponível'; }
-      var desc = el('stable-desc');
-      if (desc) {
-        desc.classList.remove('card-desc-muted');
-        desc.textContent = 'Instale a versão estável via canal recomendado.';
-      }
-      var block = el('stable-code-block');
-      if (block) block.style.display = 'flex';
-      setCommand('cmd-stable', 'btn-copy-stable', STABLE_COMMAND);
-    }
-
-    function renderBeta(manifest) {
-      var ok = manifest && manifest.version && typeof manifest.version === 'string' && manifest.version.length > 0;
-      if (!ok) {
-        // beta manifest failure: error badges + disable dependent buttons
-        setErrorBadge('card-beta', 'Erro ao carregar');
-        disableBtn('btn-copy-beta');
-        setErrorBadge('card-manual', 'Erro ao carregar');
-        disableBtn('btn-copy-manual');
-        // still show beta command text (URL is fixed) but greyed out
-        setCommand('cmd-beta', 'btn-copy-beta', BETA_COMMAND);
-        return;
-      }
-      // beta OK: populate commands
-      setCommand('cmd-beta', 'btn-copy-beta', BETA_COMMAND);
-      var manualCmd = 'curl -fsSLo /tmp/contabase-install.sh https://get-contabase.pages.dev/beta/install.sh && CONTABASE_VERSION=' + manifest.version + ' bash /tmp/contabase-install.sh';
-      setCommand('cmd-manual', 'btn-copy-manual', manualCmd);
-    }
-
-    // event delegation for all copy buttons
-    document.addEventListener('click', function(e) {
-      var btn = e.target.closest('.copy-btn');
-      if (!btn || btn.disabled) return;
-      var text = btn.getAttribute('data-copy');
-      if (!text) return;
-      function done() {
-        btn.classList.add('copied');
-        var span = btn.querySelector('span');
-        if (span) span.textContent = 'Copiado';
-        btn.setAttribute('aria-label', 'Copiado');
-        setTimeout(function() {
-          btn.classList.remove('copied');
-          if (span) span.textContent = 'Copiar';
-          btn.setAttribute('aria-label', 'Copiar comando');
-        }, 2000);
-      }
-      function fallback() {
-        var ta = document.createElement('textarea');
-        ta.value = text;
-        ta.style.position = 'fixed'; ta.style.opacity = '0';
-        document.body.appendChild(ta);
-        ta.select();
-        try { document.execCommand('copy'); done(); } catch (e) { }
-        document.body.removeChild(ta);
-      }
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(text).then(done, fallback);
-      } else {
-        fallback();
-      }
-    });
-
-    // fetch manifests and render
-    Promise.allSettled([
-      fetch('/channels/beta.json').then(function(r) {
-        if (!r.ok) throw new Error('beta fetch failed');
-        return r.json();
-      }),
-      fetch('/channels/stable.json').then(function(r) {
-        if (!r.ok) throw new Error('stable fetch failed');
-        return r.json();
-      })
-    ]).then(function(results) {
-      var beta = results[0];
-      var stable = results[1];
-      renderBeta(beta.status === 'fulfilled' ? beta.value : null);
-      renderStable(stable.status === 'fulfilled' ? stable.value : null);
-    });
-  </script>
+  </footer>
 </body>
 
 </html>
