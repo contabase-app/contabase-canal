@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "channel": "beta",
-  "version": "v1.0.0-beta.6",
+  "version": "v1.0.0-beta.7",
   "release_type": "beta",
-  "published_at": "2026-10-31T01:34:01Z",
-  "notes_url": "https://github.com/contabase-app/contabase/releases/tag/v1.0.0-beta.6"
+  "published_at": "2026-11-01T23:09:58Z",
+  "notes_url": "https://github.com/contabase-app/contabase/releases/tag/v1.0.0-beta.7"
 }
