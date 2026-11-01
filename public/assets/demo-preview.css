@@ -1,0 +1,280 @@
+/* Interactive ContaBase demo inside the landing page. */
+
+/* Chromium-style chrome shared with the landing page; kept here so the
+   demonstration section renders on its own. */
+.lp-tab {
+  min-height: 44px;
+  padding: 0 14px;
+  border: 1px solid var(--control-border);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.lp-tab:hover {
+  background: var(--surface-hover);
+  color: var(--text);
+}
+
+.lp-screen-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 14px;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface-raised);
+}
+
+.lp-screen-dots {
+  display: flex;
+  gap: 5px;
+}
+
+.lp-screen-dots i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--border-strong);
+}
+
+.lp-screen-url {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.lp-screen-tag {
+  padding: 3px 8px;
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.lp-demo-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.lp-demo-device {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.lp-demo-device .lp-tab[aria-pressed="true"] {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+}
+
+.lp-demo-screen-picker {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+}
+
+.lp-demo-screen-label {
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.lp-demo-screen-select {
+  min-height: 44px;
+  max-width: 100%;
+  padding: 0 38px 0 13px;
+  border: 1px solid var(--control-border);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.lp-demo-screen-select:hover {
+  background: var(--surface-hover);
+}
+
+.lp-demo-screen-select:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.lp-demo-shell {
+  position: relative;
+}
+
+.lp-demo-browser {
+  overflow: hidden;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-card);
+  background: var(--surface);
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.28);
+}
+
+.lp-demo-browser .lp-screen-bar {
+  background: var(--surface-raised);
+}
+
+.lp-demo-browser-viewport {
+  position: relative;
+  aspect-ratio: 1440 / 900;
+  overflow: hidden;
+  background: #090c12;
+}
+
+.lp-demo-browser-viewport iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1440px;
+  height: 900px;
+  border: 0;
+  background: #0b0e14;
+  transform: scale(var(--lp-demo-scale, 1));
+  transform-origin: top left;
+}
+
+.lp-demo-phone-wrap {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0 4px;
+}
+
+.lp-demo-phone {
+  width: min(406px, 100%);
+  padding: 8px;
+  border: 1px solid #2a313d;
+  border-radius: 44px;
+  background: #050608;
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.44), inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+
+.lp-demo-phone-viewport {
+  position: relative;
+  width: 100%;
+  height: 844px;
+  overflow: hidden;
+  border-radius: 36px;
+  background: #090c12;
+}
+
+.lp-demo-phone-viewport iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #0b0e14;
+}
+
+.lp-demo-fallback {
+  position: absolute;
+  inset: 0;
+  overflow: auto;
+  background: #090c12;
+  -webkit-overflow-scrolling: touch;
+}
+
+.lp-demo-fallback img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.lp-demo-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.lp-demo-note {
+  max-width: 82ch;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.8125rem;
+  line-height: 1.55;
+}
+
+.lp-demo-capture-toggle {
+  min-height: 44px;
+  padding: 0 2px;
+  border: 0;
+  background: transparent;
+  color: var(--accent-strong);
+  font: inherit;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.lp-demo-capture-toggle:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.lp-demo-browser[hidden],
+.lp-demo-phone-wrap[hidden],
+.lp-demo-fallback[hidden],
+.lp-demo-browser-viewport iframe[hidden],
+.lp-demo-phone-viewport iframe[hidden] {
+  display: none !important;
+}
+
+@media (max-width: 720px) {
+  .lp-demo-screen-picker {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .lp-demo-screen-select {
+    flex: 1;
+  }
+
+  .lp-demo-phone {
+    padding: 6px;
+    border-radius: 38px;
+  }
+
+  .lp-demo-phone-viewport {
+    height: clamp(520px, 72vh, 844px);
+    border-radius: 32px;
+  }
+
+  .lp-demo-foot {
+    align-items: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lp-demo-browser,
+  .lp-demo-phone {
+    box-shadow: none;
+  }
+}

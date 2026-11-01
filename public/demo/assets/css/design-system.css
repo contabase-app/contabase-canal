@@ -1,0 +1,1205 @@
+/* ContaBase Design System — Tokens & Components
+   Shared by the authenticated shell and standalone product surfaces.
+   Do not add page-specific styles here. This file is the single source of truth
+   for all --cb-* tokens and .cb-* component classes. */
+
+/* --- Design System Tokens --- */
+:root {
+  --cb-bg: #F2F4F7;
+  --cb-bg-soft: #EEF1F5;
+
+  --cb-surface-1: #F8FAFC;
+  --cb-surface-2: #F1F5F9;
+  --cb-surface-3: #E9EEF5;
+  --cb-surface-overlay: rgba(248, 250, 252, 0.92);
+
+  --cb-border-subtle: #DDE3EC;
+  --cb-border-strong: #C9D2DF;
+  --cb-border-focus: #7C5CFF;
+  --cb-field-focus-border: color-mix(in srgb, var(--cb-border-strong) 35%, var(--cb-text-muted));
+
+  --cb-text-main: #1F2937;
+  --cb-text-muted: #64748B;
+  --cb-text-subtle: #94A3B8;
+  --cb-text-inverse: #F8FAFC;
+
+  --cb-accent: #7C5CFF;
+  --cb-accent-solid: #6D28D9;
+  --cb-accent-hover: #7C3AED;
+  --cb-accent-text: #FFFFFF;
+  --cb-accent-soft: rgba(124, 92, 255, 0.12);
+
+  --cb-success: #22C55E;
+  --cb-danger: #EF4444;
+  --cb-warning: #F59E0B;
+  --cb-info: #38BDF8;
+}
+
+.dark {
+  --cb-bg: #0F131A;
+  --cb-bg-soft: #121720;
+
+  --cb-surface-1: #151A22;
+  --cb-surface-2: #1C222C;
+  --cb-surface-3: #232B36;
+  --cb-surface-overlay: rgba(21, 26, 34, 0.94);
+
+  --cb-border-subtle: #2A313D;
+  --cb-border-strong: #3A4453;
+  --cb-border-focus: #7C5CFF;
+
+  --cb-text-main: #E6E9EE;
+  --cb-text-muted: #97A1AE;
+  --cb-text-subtle: #6F7A89;
+  --cb-text-inverse: #0F131A;
+
+  --cb-accent: #7C5CFF;
+  --cb-accent-solid: #6D28D9;
+  --cb-accent-hover: #7C3AED;
+  --cb-accent-text: #FFFFFF;
+  --cb-accent-soft: rgba(124, 92, 255, 0.18);
+
+  --cb-success: #22C55E;
+  --cb-danger: #EF4444;
+  --cb-warning: #F59E0B;
+  --cb-info: #38BDF8;
+}
+
+/* --- Component Classes --- */
+
+/* Institution artwork is supplied with its final background. Keep the same
+   geometry in every shell and let the surrounding emblem define only size. */
+.institution-logo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* The global display rule must not override Tailwind's hidden utility. */
+.institution-logo.hidden { display: none; }
+
+/* Cards */
+.cb-card-muted {
+  background-color: var(--cb-surface-2);
+  border-radius: 8px;
+  padding: 0.75rem;
+}
+
+/* Tabs */
+/* Tabs — implementação canônica para páginas que ainda não carregam
+   premium.css. Mesmo contrato de .ui-tabs/.ui-tab: container 12px, item 8px,
+   superfície neutra, seleção violeta e foco visível. Nenhuma página deve
+   redeclarar esta geometria. */
+.cb-tabs {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  border: var(--ui-border-width, 1px) solid var(--ui-border, var(--cb-border-subtle));
+  border-radius: var(--ui-radius-tab, 12px);
+  background-color: var(--ui-tab-bg, var(--cb-surface-2));
+}
+.cb-tab {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 38px;
+  padding: 0 12px;
+  border: 1px solid transparent;
+  border-radius: var(--ui-radius-tab-item, 8px);
+  background-color: transparent;
+  color: var(--ui-text-muted, var(--cb-text-muted));
+  font-size: 12px;
+  font-weight: 620;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color var(--ui-transition, 160ms ease), border-color var(--ui-transition, 160ms ease), color var(--ui-transition, 160ms ease);
+}
+.cb-tab-active {
+  border-color: var(--ui-tab-active-border, transparent);
+  background-color: var(--ui-tab-active-bg, var(--cb-accent-soft));
+  color: var(--ui-tab-active-fg, var(--cb-accent-solid));
+  box-shadow: inset 0 1px 0 #ffffff14;
+}
+.cb-tab-inactive:hover {
+  background-color: var(--ui-surface-hover, var(--cb-surface-3));
+  color: var(--ui-text, var(--cb-text-main));
+}
+.cb-tab:focus-visible {
+  outline: 2px solid var(--ui-focus, var(--cb-border-focus));
+  outline-offset: 2px;
+}
+
+/* Month selector — shared by Lançamentos, Contas and Relatórios. */
+[data-month-selector] {
+  --month-surface: var(--cb-surface-1);
+  --month-surface-hover: var(--cb-surface-3);
+  --month-border: var(--cb-border-subtle);
+  --month-border-strong: var(--cb-border-strong);
+  --month-text: var(--cb-text-muted);
+  --month-text-subtle: var(--cb-text-subtle);
+  --month-active: var(--cb-accent);
+  --month-active-surface: var(--cb-accent-soft);
+  --month-active-text: var(--cb-accent-solid);
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.625rem !important;
+  min-height: 3.25rem;
+}
+
+[data-month-rail-viewport] {
+  min-width: 0;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+  scroll-snap-type: x proximity;
+}
+
+[data-month-rail-viewport]::-webkit-scrollbar { display: none; }
+
+[data-month-rail] {
+  display: flex;
+  width: max-content;
+  min-width: max-content;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.125rem 0.25rem;
+}
+
+.month-btn {
+  display: flex;
+  min-width: 3rem;
+  min-height: 2.75rem;
+  flex: 0 0 auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.125rem;
+  scroll-snap-align: center;
+  border: 1px solid transparent;
+  border-radius: var(--ui-radius-control, 0.625rem);
+  background: transparent;
+  color: var(--month-text);
+  font-size: 0.75rem;
+  font-weight: 650;
+  line-height: 1.05;
+  transition: border-color 160ms ease, background-color 160ms ease, color 160ms ease;
+}
+
+.month-btn > span:first-child { font-variant-numeric: tabular-nums; }
+.month-btn > span:last-child { color: var(--month-text); font-size: 0.625rem; font-weight: 560; }
+.month-btn:hover { border-color: var(--month-border); background: var(--month-surface-hover); color: var(--cb-text-main); }
+.month-btn[data-month-current="true"] { border-color: color-mix(in srgb, var(--month-active) 42%, var(--month-border)); color: var(--month-active); }
+.month-btn[data-month-active="true"] { border-color: color-mix(in srgb, var(--month-active) 58%, var(--month-border)); background: var(--month-active-surface); color: var(--month-active-text); }
+.month-btn[data-month-active="true"] > span:last-child { color: var(--month-active-text); }
+.month-btn:focus-visible,
+.month-control:focus-visible { outline: 2px solid var(--month-active); outline-offset: 2px; }
+
+.month-controls { gap: 0.375rem !important; }
+.month-control {
+  display: inline-grid;
+  width: 2.75rem;
+  min-width: 2.75rem;
+  height: 2.75rem;
+  place-items: center;
+  border: 1px solid var(--month-border);
+  border-radius: var(--ui-radius-control, 0.625rem);
+  background: var(--month-surface);
+  color: var(--month-text);
+  transition: border-color 160ms ease, background-color 160ms ease, color 160ms ease;
+}
+.month-control:hover { border-color: var(--month-border-strong); background: var(--month-surface-hover); color: var(--cb-text-main); }
+.month-control-current { border-color: color-mix(in srgb, var(--month-active) 50%, var(--month-border)); background: var(--month-active-surface); color: var(--month-active); }
+.month-control svg { width: 1rem; height: 1rem; }
+
+.cb-v2 [data-month-selector] {
+  --month-surface: var(--v2-surface);
+  --month-surface-hover: var(--v2-surface-hover);
+  --month-border: var(--v2-border);
+  --month-border-strong: var(--v2-border-strong);
+  --month-text: var(--v2-muted);
+  --month-text-subtle: var(--v2-subtle);
+  --month-active: var(--v2-accent);
+  --month-active-surface: var(--v2-accent-soft);
+  --month-active-text: var(--v2-accent-strong);
+}
+
+/* Continuous competence rail shared by Lançamentos, Contas, Relatórios and
+   the individual invoice detail. Each page keeps its own URL/HTMX contract. */
+:is(.cb-v2-transactions-main, .cb-v2-contas-main, .cb-v2-relatorios-main, .cb-v2-faturas-main) [data-month-selector] {
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 10px !important;
+  margin-bottom: 22px;
+  padding: 12px;
+  border: 1px solid var(--month-border);
+  border-radius: 16px; /* component-specific rail radius; between card and panel */
+  background: var(--month-surface);
+}
+
+:is(.cb-v2-transactions-main, .cb-v2-contas-main, .cb-v2-relatorios-main, .cb-v2-faturas-main) [data-month-rail-viewport] { grid-column: 2; }
+
+:is(.cb-v2-transactions-main, .cb-v2-contas-main, .cb-v2-relatorios-main, .cb-v2-faturas-main) [data-month-rail] {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  width: 100%;
+  min-width: 0;
+  gap: 5px;
+  padding: 0;
+}
+
+:is(.cb-v2-transactions-main, .cb-v2-contas-main, .cb-v2-relatorios-main, .cb-v2-faturas-main) .month-btn {
+  display: grid;
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+  padding: 7px 8px;
+  place-items: center;
+  border-radius: var(--ui-radius-control, 10px);
+  font-size: inherit;
+  font-weight: inherit;
+  gap: 0;
+  line-height: 1.05;
+}
+
+:is(.cb-v2-transactions-main, .cb-v2-contas-main, .cb-v2-relatorios-main, .cb-v2-faturas-main) .month-btn > span:first-child { font-size: 11px; font-weight: 700; }
+:is(.cb-v2-transactions-main, .cb-v2-contas-main, .cb-v2-relatorios-main, .cb-v2-faturas-main) .month-btn > span:last-child { margin-top: 3px; font-size: 9px; font-weight: inherit; opacity: 1; }
+:is(.cb-v2-transactions-main, .cb-v2-contas-main, .cb-v2-relatorios-main, .cb-v2-faturas-main) .month-btn:hover { border-color: transparent; background: var(--ui-surface-hover); }
+:is(.cb-v2-transactions-main, .cb-v2-contas-main, .cb-v2-relatorios-main, .cb-v2-faturas-main) .month-btn[data-month-current="true"] { border-color: color-mix(in srgb, var(--ui-accent) 38%, transparent); background: transparent; color: var(--ui-accent-strong); }
+:is(.cb-v2-transactions-main, .cb-v2-contas-main, .cb-v2-relatorios-main, .cb-v2-faturas-main) .month-btn[data-month-active="true"] {
+  border-color: var(--ui-month-active-border);
+  background: var(--ui-month-active-bg);
+  color: var(--ui-month-active-fg);
+  box-shadow: inset 0 1px 0 #ffffff14;
+}
+:is(.cb-v2-transactions-main, .cb-v2-contas-main, .cb-v2-relatorios-main, .cb-v2-faturas-main) .month-btn[data-month-active="true"] > span:last-child { color: var(--ui-month-active-fg); }
+
+:is(.cb-v2-transactions-main, .cb-v2-contas-main, .cb-v2-relatorios-main, .cb-v2-faturas-main) .month-controls { display: contents; }
+
+:is(.cb-v2-transactions-main, .cb-v2-contas-main, .cb-v2-relatorios-main, .cb-v2-faturas-main) .month-control {
+  position: relative;
+  width: 36px;
+  min-width: 36px;
+  height: 36px;
+  border-radius: var(--ui-radius-control, 10px);
+  background: var(--ui-surface-raised);
+}
+
+:is(.cb-v2-transactions-main, .cb-v2-contas-main, .cb-v2-relatorios-main, .cb-v2-faturas-main) .month-control:first-child { grid-column: 1; grid-row: 1; }
+:is(.cb-v2-transactions-main, .cb-v2-contas-main, .cb-v2-relatorios-main) .month-control-current { display: none !important; }
+:is(.cb-v2-transactions-main, .cb-v2-contas-main, .cb-v2-relatorios-main, .cb-v2-faturas-main) .month-control:last-child { grid-column: 3; grid-row: 1; }
+
+/* The visual control follows the compact Faturas rail. Its hit area remains
+   comfortably tappable without changing the measured layout. */
+@media (max-width: 767px) {
+  :is(.cb-v2-transactions-main, .cb-v2-contas-main, .cb-v2-relatorios-main, .cb-v2-faturas-main) .month-control::before {
+    position: absolute;
+    inset: -5px;
+    content: "";
+  }
+}
+
+.cb-v2-faturas-main .cb-card-dense [data-month-selector] { margin-bottom: 0; }
+
+@media (min-width: 768px) {
+  [data-month-rail] { width: 100%; min-width: 0; justify-content: space-between; gap: 0.25rem; }
+  .month-btn { min-width: 3.25rem; }
+}
+
+@media (max-width: 639px) {
+  [data-month-selector] { gap: 0.5rem !important; }
+  [data-month-rail] { gap: 0.1875rem; padding-inline: 0.125rem; }
+  .month-btn { min-width: 2.875rem; min-height: 2.75rem; font-size: 0.75rem; }
+  .month-controls { gap: 0.25rem !important; }
+  .month-control { width: 2.5rem; min-width: 2.5rem; height: 2.75rem; }
+
+  :is(.cb-v2-transactions-main, .cb-v2-contas-main, .cb-v2-relatorios-main, .cb-v2-faturas-main) [data-month-selector] {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: 7px !important;
+    margin-inline: -2px;
+    padding: 9px;
+  }
+  :is(.cb-v2-transactions-main, .cb-v2-contas-main, .cb-v2-relatorios-main, .cb-v2-faturas-main) [data-month-rail] {
+    display: flex;
+    width: max-content;
+    min-width: max-content;
+    gap: 6px;
+  }
+  :is(.cb-v2-transactions-main, .cb-v2-contas-main, .cb-v2-relatorios-main, .cb-v2-faturas-main) [data-month-rail-viewport] { scroll-behavior: smooth; }
+  :is(.cb-v2-transactions-main, .cb-v2-contas-main, .cb-v2-relatorios-main, .cb-v2-faturas-main) .month-btn {
+    width: 50px;
+    min-width: 50px;
+    min-height: 0;
+    padding: 6px;
+  }
+  :is(.cb-v2-transactions-main, .cb-v2-contas-main, .cb-v2-relatorios-main, .cb-v2-faturas-main) .month-control {
+    width: 34px;
+    min-width: 34px;
+    height: 34px;
+    border-radius: var(--ui-radius-control, 10px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .month-btn,
+  .month-control { transition-duration: 0.01ms; }
+}
+
+/* Buttons */
+.cb-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: var(--ui-radius-button, 12px);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.cb-button-primary {
+  background-color: var(--cb-accent-solid);
+  color: var(--cb-accent-text);
+  border-color: transparent;
+}
+.cb-button-primary:hover {
+  background-color: var(--cb-accent-hover);
+}
+.cb-button-secondary {
+  background-color: var(--cb-surface-2);
+  border: 1px solid var(--cb-border-strong);
+  color: var(--cb-text-main);
+}
+.cb-button-secondary:hover {
+  background-color: var(--cb-surface-3);
+}
+
+/* Invoice actions stay full-width rows at every breakpoint for clear priority. */
+.cb-invoice-action {
+  min-height: 3.25rem;
+  flex-direction: row;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  font-size: 0.6875rem;
+  line-height: 1.25;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+.cb-invoice-action > i {
+  width: 0.875rem;
+  height: 0.875rem;
+}
+.cb-invoice-action-label {
+  display: inline;
+  text-align: left;
+}
+.cb-invoice-action-label > span { display: inline; }
+.cb-invoice-action-label > span + span::before { content: " "; }
+
+/* Swipe guidance is a mobile footer, never a card. It stays out of desktop,
+   tablet and pointer-only layouts. */
+.cb-v2-swipe-hint {
+  display: none;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 12px 18px;
+  border-top: 1px solid var(--cb-border-subtle);
+  background: var(--cb-surface-2);
+  color: var(--cb-text-muted);
+  font-size: 11.5px;
+  line-height: 1.5;
+}
+@media (max-width: 767px) {
+  .cb-v2-swipe-hint { display: flex; }
+}
+.cb-v2-swipe-hint-icon {
+  width: 15px;
+  height: 15px;
+  flex: 0 0 auto;
+  margin-top: 2px;
+  color: var(--cb-text-subtle);
+}
+.cb-v2-swipe-hint strong { color: var(--cb-text-main); font-weight: 620; }
+.cb-button-ghost {
+  background-color: transparent;
+  color: var(--cb-text-muted);
+}
+.cb-button-ghost:hover {
+  background-color: var(--cb-surface-3);
+  color: var(--cb-text-main);
+}
+/* Disabled is a shared state contract for every page that uses .cb-button. */
+.cb-button:disabled,
+.cb-button[aria-disabled="true"] {
+  opacity: var(--ui-disabled-opacity, .5);
+  cursor: not-allowed;
+}
+
+/* FAB (Floating Action Button) */
+.cb-fab {
+  background-color: var(--cb-accent-solid);
+  color: var(--cb-accent-text);
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s;
+}
+.cb-fab:hover {
+  background-color: var(--cb-accent-hover);
+}
+
+/* Segmented Control */
+.cb-segmented {
+  background-color: var(--cb-surface-2);
+  border: 1px solid var(--cb-border-subtle);
+  border-radius: 14px;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.cb-segmented button {
+  flex: 1;
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  color: var(--cb-text-muted) !important;
+  background: transparent;
+  border: 1px solid transparent;
+  font-weight: 600;
+  font-size: 0.75rem;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+.cb-segmented button:hover {
+  background-color: var(--cb-surface-3);
+  color: var(--cb-text-main) !important;
+}
+/* Active styles generated by form-meta.js. */
+.cb-segmented button.bg-violet-500\/20,
+.cb-segmented button.bg-orange-500\/20 {
+  background-color: var(--cb-accent-solid) !important;
+  color: var(--cb-accent-text) !important;
+  border-color: transparent !important;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+/* Phase E — Override tabs.js injected utility classes inside .cb-segmented
+   tabs.js applies bg-white / dark:bg-zinc-900 / text-indigo-650 on active
+   dashboard tabs. These scoped overrides force Design System colors. */
+.cb-segmented button.bg-white {
+  background-color: var(--cb-accent-solid) !important;
+  color: var(--cb-accent-text) !important;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+.dark .cb-segmented button.dark\:bg-zinc-900 {
+  background-color: var(--cb-accent-solid) !important;
+  color: var(--cb-accent-text) !important;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+/* Input */
+.cb-input {
+  background-color: var(--cb-surface-2);
+  border: 1px solid var(--cb-border-strong);
+  color: var(--cb-text-main);
+  height: 2.5rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  border-radius: var(--ui-radius-control, 12px);
+  font-size: 0.875rem;
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+}
+.cb-input-search {
+  padding-left: 2.5rem !important;
+}
+.cb-input:focus {
+  border-color: var(--cb-field-focus-border);
+}
+.cb-input::placeholder {
+  color: var(--cb-text-subtle);
+}
+
+/* Label */
+.cb-label {
+  color: var(--cb-text-muted);
+  font-size: 0.625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: block;
+  margin-bottom: 0.375rem;
+}
+
+/* Empty State */
+.cb-empty-state {
+  background-color: color-mix(in srgb, var(--cb-surface-1) 50%, transparent);
+  border: 1px dashed var(--cb-border-subtle);
+  border-radius: 12px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Metric row — divider-based internal rows for financial panels (Phase F.1: remove nested card look)
+   Phase F.1.b: increased padding/min-height for better readability */
+.cb-metric-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.625rem 0;
+  min-height: 2.75rem;
+  border-bottom: 1px solid var(--cb-border-subtle);
+}
+.cb-metric-row:last-child {
+  border-bottom: none;
+}
+
+.cb-modal {
+  background-color: var(--cb-surface-1);
+  border: 1px solid var(--cb-border-strong);
+}
+
+/* Text utilities */
+.cb-text-main { color: var(--cb-text-main); }
+.cb-text-muted { color: var(--cb-text-muted); }
+.cb-text-subtle { color: var(--cb-text-subtle); }
+
+/* --- Phase F — Dense financial UI kit (P.40.a) ---
+   Base visual para cards compactos, progresso e chips.
+   Mantém compatibilidade com componentes anteriores; não altera lógica. */
+
+/* Dense card — mais informação por tela, sem perder touch target */
+.cb-card-dense {
+  background-color: var(--cb-surface-1);
+  border: 1px solid var(--cb-border-subtle);
+  border-radius: 1rem;
+  padding: 0.75rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.cb-card-dense:hover {
+  border-color: var(--cb-border-strong);
+  box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.06);
+}
+.dark .cb-card-dense:hover {
+  box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.25);
+}
+
+/* Status chip — pill discreto, >=11px, contraste AA */
+.cb-status-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.625rem;
+  border-radius: 999px;
+  font-size: 0.6875rem;
+  line-height: 1;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.cb-status-chip-success { background: color-mix(in srgb, var(--cb-success) 12%, transparent); color: color-mix(in srgb, var(--cb-success) 75%, var(--cb-text-main)); }
+.cb-status-chip-warning { background: color-mix(in srgb, var(--cb-warning) 12%, transparent); color: color-mix(in srgb, var(--cb-warning) 75%, var(--cb-text-main)); }
+.cb-status-chip-danger  { background: color-mix(in srgb, var(--cb-danger) 12%, transparent); color: color-mix(in srgb, var(--cb-danger) 75%, var(--cb-text-main)); }
+.cb-status-chip-info    { background: var(--cb-accent-soft); color: var(--cb-accent-solid); }
+.cb-status-chip-neutral { background: var(--cb-surface-3); color: var(--cb-text-muted); }
+.dark .cb-status-chip-success { background: color-mix(in srgb, var(--cb-success) 18%, transparent); color: color-mix(in srgb, var(--cb-success) 90%, var(--cb-text-main)); }
+.dark .cb-status-chip-warning { background: color-mix(in srgb, var(--cb-warning) 18%, transparent); color: color-mix(in srgb, var(--cb-warning) 90%, var(--cb-text-main)); }
+.dark .cb-status-chip-danger  { background: color-mix(in srgb, var(--cb-danger) 18%, transparent); color: color-mix(in srgb, var(--cb-danger) 90%, var(--cb-text-main)); }
+.dark .cb-status-chip-info    { background: color-mix(in srgb, var(--cb-accent) 18%, transparent); color: color-mix(in srgb, var(--cb-accent) 90%, var(--cb-text-main)); }
+.dark .cb-status-chip-neutral { background: var(--cb-surface-3); color: var(--cb-text-subtle); }
+
+/* Superfícies semânticas estáticas para templates autenticados. Valores por
+   registro (cor de conta, largura e posição) continuam explícitos no ponto de uso. */
+.cb-flash-danger {
+  border-color: color-mix(in srgb, var(--cb-danger) 25%, var(--cb-border-subtle));
+  background: color-mix(in srgb, var(--cb-danger) 8%, transparent);
+  color: var(--cb-danger);
+}
+.cb-flash-success {
+  border-color: color-mix(in srgb, var(--cb-success) 25%, var(--cb-border-subtle));
+  background: color-mix(in srgb, var(--cb-success) 8%, transparent);
+  color: var(--cb-success);
+}
+.cb-tone-accent { --cb-tone: var(--cb-accent); }
+.cb-tone-info { --cb-tone: var(--cb-info); }
+.cb-tone-success { --cb-tone: var(--cb-success); }
+.cb-tone-warning { --cb-tone: var(--cb-warning); }
+.cb-tone-danger { --cb-tone: var(--cb-danger); }
+.cb-tone-surface { background: color-mix(in srgb, var(--cb-tone) 10%, transparent); }
+.cb-tone-icon { background: color-mix(in srgb, var(--cb-tone) 12%, transparent); }
+.cb-tone-icon-bordered { border: 1px solid color-mix(in srgb, var(--cb-tone) 20%, transparent); }
+.cb-tone-state-panel {
+  border: 1px solid color-mix(in srgb, var(--cb-tone) 20%, var(--cb-border-subtle));
+  background: color-mix(in srgb, var(--cb-tone) 5%, transparent);
+}
+.cb-tone-notice {
+  background: color-mix(in srgb, var(--cb-tone) 10%, transparent);
+  color: color-mix(in srgb, var(--cb-tone) 75%, var(--cb-text-main));
+}
+.cb-tone-text-muted { color: color-mix(in srgb, var(--cb-tone) 65%, var(--cb-text-muted)); }
+
+/* Estados finitos de categoria, fatura e vencimento. Esses estados não
+   carregam dados do usuário e podem permanecer em folhas externas sob CSP. */
+.cb-category-type-income {
+  background: color-mix(in srgb, var(--cb-success) 10%, transparent);
+  color: var(--cb-success);
+}
+.cb-category-type-expense {
+  background: color-mix(in srgb, var(--cb-danger) 10%, transparent);
+  color: var(--cb-danger);
+}
+.cb-invoice-row-overdue,
+.cb-invoice-row-overdue:hover {
+  background: color-mix(in srgb, var(--cb-danger) 6%, var(--cb-surface-1));
+}
+.cb-row-dense.cb-overdue-payable,
+.cb-row-dense.cb-overdue-payable:hover {
+  border-color: color-mix(in srgb, var(--cb-danger) 20%, var(--cb-border-subtle));
+  background: color-mix(in srgb, var(--cb-danger) 6%, var(--cb-surface-1));
+}
+.cb-row-dense.cb-overdue-receivable,
+.cb-row-dense.cb-overdue-receivable:hover {
+  border-color: color-mix(in srgb, var(--cb-warning) 20%, var(--cb-border-subtle));
+  background: color-mix(in srgb, var(--cb-warning) 6%, var(--cb-surface-1));
+}
+.cb-invoice-payable-icon {
+  background: color-mix(in srgb, var(--cb-danger) 12%, transparent);
+  color: var(--cb-danger);
+}
+.cb-invoice-receivable-icon {
+  background: color-mix(in srgb, var(--cb-text-subtle) 12%, transparent);
+  color: var(--cb-text-subtle);
+}
+
+/* Meta menu — ações discretas no canto do card */
+.cb-meta-menu {
+  position: relative;
+  display: inline-flex;
+}
+.cb-meta-menu-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 0.625rem;
+  color: var(--cb-text-muted);
+  background-color: transparent;
+  border: 1px solid transparent;
+  transition: all 0.15s;
+  cursor: pointer;
+}
+.cb-meta-menu-toggle:hover {
+  background-color: var(--cb-surface-2);
+  color: var(--cb-text-main);
+  border-color: var(--cb-border-subtle);
+}
+.cb-meta-menu-panel {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 0.25rem);
+  z-index: 30;
+  min-width: 11rem;
+  background-color: var(--cb-surface-1);
+  border: 1px solid var(--cb-border-strong);
+  border-radius: 0.875rem;
+  padding: 0.375rem;
+  box-shadow: 0 10px 24px -4px rgba(0, 0, 0, 0.08);
+}
+.dark .cb-meta-menu-panel {
+  box-shadow: 0 10px 24px -4px rgba(0, 0, 0, 0.45);
+}
+.cb-meta-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  text-align: left;
+  padding: 0.5rem 0.625rem;
+  border-radius: 0.625rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--cb-text-main);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+.cb-meta-menu-item:hover {
+  background-color: var(--cb-surface-2);
+}
+
+/* Micro text — mínimo aceitável para labels secundários */
+.cb-text-micro {
+  font-size: 0.6875rem;
+  line-height: 1.25;
+}
+
+/* --- Phase G — Financial Typography (P.43.d) ---
+   Classes tipográficas reutilizáveis para valores e labels financeiros.
+   Baseadas em tokens --cb-*; compatíveis com dark/light. */
+
+/* Section title — cabeçalhos de seção como "Resumo da Fatura", "Limite do cartão" */
+.cb-section-title {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--cb-text-muted);
+}
+
+/* Label — rótulo secundário padrão */
+.cb-label {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--cb-text-subtle);
+}
+
+/* Label micro — rótulo menor para métricas compactas */
+.cb-label-micro {
+  font-size: 0.625rem;
+  font-weight: 600;
+  color: var(--cb-text-subtle);
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+/* Value secondary — valor financeiro secundário */
+.cb-value-secondary {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--cb-text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Muted text — texto auxiliar discreto */
+.cb-muted-text {
+  font-size: 0.6875rem;
+  color: var(--cb-text-subtle);
+}
+
+/* Row-like dense list item — interactive, with hover */
+.cb-row-dense {
+  background-color: var(--cb-surface-1);
+  border: 1px solid var(--cb-border-subtle);
+  border-radius: 1rem;
+  padding: 0.75rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.cb-row-dense:hover {
+  border-color: var(--cb-border-strong);
+  box-shadow: 0 2px 8px -2px rgba(0, 0, 0, 0.05);
+}
+.dark .cb-row-dense:hover {
+  box-shadow: 0 2px 8px -2px rgba(0, 0, 0, 0.25);
+}
+
+/* --- Phase F.1 — Dashboard redesign: panel, list, stat classes --- */
+
+/* Panel — static container, no hover shadow, subtle border only */
+.cb-panel {
+  background-color: var(--cb-surface-1);
+  border: 1px solid var(--cb-border-subtle);
+  border-radius: 1rem;
+  padding: 0.75rem;
+}
+
+/* Warning banner — subtle left-accent alert using DS tokens */
+.cb-banner-warning {
+  background-color: color-mix(in srgb, var(--cb-warning) 6%, transparent);
+  border-left: 3px solid color-mix(in srgb, var(--cb-warning) 55%, transparent);
+  border-radius: 0 0.75rem 0.75rem 0;
+}
+.dark .cb-banner-warning {
+  background-color: color-mix(in srgb, var(--cb-warning) 8%, transparent);
+  border-left-color: color-mix(in srgb, var(--cb-warning) 50%, transparent);
+}
+
+/* Authenticated workspace palette. The concrete value is supplied only by
+   /workspace/colors.css after strict hexadecimal validation. */
+[data-cb-color] {
+  --ic: var(--cb-runtime-color-value, #6b7280);
+  --v2-provider: var(--cb-runtime-color-value, #6b7280);
+  --emblem-color: var(--cb-runtime-color-value, #6b7280);
+}
+
+.emblem-wrap-solid {
+  background-color: var(--ic, #6b7280);
+}
+
+.icon-colored,
+.text-colored {
+  color: var(--ic, #6b7280);
+}
+
+.icon-wrap-colored {
+  border-color: color-mix(in srgb, var(--ic, #6b7280) 38%, transparent);
+  background-color: color-mix(in srgb, var(--ic, #6b7280) 13%, transparent);
+}
+
+.cb-runtime-color-text {
+  color: var(--cb-runtime-color-value, #6b7280);
+}
+
+/* Dynamic layout uses the Web Animations API so CSP can reject style attributes. */
+[data-swipe-content] { transform: translateX(0); }
+[data-swipe-bg-left],
+[data-swipe-bg-right] { opacity: 0; transform: scaleX(0.88); }
+[data-swipe-notification] { touch-action: pan-y; }
+#global-tooltip { top: 0; left: 0; }
+
+/* --- Seletor de ícones (Categorias, Limites e Metas) ---
+   Componente reutilizável: trigger compacto + diálogo nativo com busca e grid.
+   As cores vêm dos tokens --cb-*, então o mesmo bloco atende Dark e Light. */
+
+.cb-icon-picker {
+  display: block;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.cb-icon-picker > .cb-label {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.cb-icon-trigger {
+  display: flex;
+  width: 100%;
+  min-height: 48px;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 12px;
+  border: 1px solid var(--cb-border-subtle);
+  border-radius: 12px;
+  background: var(--cb-surface-2);
+  color: var(--cb-text-main);
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 180ms ease, background-color 180ms ease;
+}
+
+.cb-icon-trigger:hover {
+  border-color: var(--cb-border-focus);
+}
+
+.cb-icon-trigger-mark,
+.cb-icon-preview-mark,
+.cb-icon-choice-mark {
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid color-mix(in srgb, var(--cb-accent) 32%, transparent);
+  background: var(--cb-accent-soft);
+  color: var(--cb-accent);
+}
+
+.cb-icon-trigger-mark {
+  width: 30px;
+  height: 30px;
+  border-radius: 9px;
+}
+
+.cb-icon-trigger-mark svg { width: 16px; height: 16px; }
+
+.cb-icon-trigger-copy {
+  display: grid;
+  min-width: 0;
+  flex: 1 1 auto;
+  gap: 1px;
+}
+
+.cb-icon-trigger-copy strong {
+  overflow: hidden;
+  font-size: 13px;
+  font-weight: 640;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cb-icon-trigger-copy small {
+  overflow: hidden;
+  color: var(--cb-text-subtle);
+  font-size: 11px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cb-icon-trigger-chevron {
+  flex: 0 0 auto;
+  width: 16px;
+  height: 16px;
+  color: var(--cb-text-muted);
+}
+
+.cb-icon-dialog {
+  width: min(560px, 94vw);
+  max-height: min(86vh, 720px);
+  margin: auto;
+  padding: 0;
+  border: 0;
+  border-radius: 18px;
+  background: transparent;
+  color: var(--cb-text-main);
+  overflow: visible;
+}
+
+.cb-icon-dialog::backdrop {
+  background: rgba(6, 9, 14, 0.66);
+  backdrop-filter: blur(3px);
+}
+
+.cb-icon-dialog-panel {
+  display: flex;
+  max-height: min(86vh, 720px);
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--cb-border-subtle);
+  border-radius: 18px;
+  background: var(--cb-surface-1);
+  box-shadow: 0 24px 48px rgba(2, 6, 23, 0.4);
+}
+
+.cb-icon-dialog-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px 18px 12px;
+}
+
+.cb-icon-dialog-header h2 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.cb-icon-dialog-header p {
+  margin: 4px 0 0;
+  color: var(--cb-text-muted);
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.cb-icon-dialog-close {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--cb-text-muted);
+  cursor: pointer;
+}
+
+.cb-icon-dialog-close:hover {
+  background: var(--cb-surface-2);
+  color: var(--cb-text-main);
+}
+
+.cb-icon-dialog-close svg { width: 16px; height: 16px; }
+
+.cb-icon-preview {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 18px 12px;
+  padding: 11px 13px;
+  border: 1px solid var(--cb-border-subtle);
+  border-radius: 12px;
+  background: var(--cb-surface-2);
+}
+
+.cb-icon-preview-mark {
+  width: 38px;
+  height: 38px;
+  border-radius: 11px;
+}
+
+.cb-icon-preview-mark svg { width: 20px; height: 20px; }
+
+.cb-icon-preview-copy {
+  display: grid;
+  min-width: 0;
+  gap: 2px;
+}
+
+.cb-icon-preview-copy strong {
+  font-size: 13px;
+  font-weight: 660;
+}
+
+.cb-icon-preview-copy small {
+  color: var(--cb-text-muted);
+  font-size: 11px;
+}
+
+.cb-icon-search {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0 18px 12px;
+  padding: 0 13px;
+  border: 1px solid var(--cb-border-subtle);
+  border-radius: 12px;
+  background: var(--cb-surface-2);
+  color: var(--cb-text-muted);
+}
+
+.cb-icon-search:focus-within {
+  border-color: var(--cb-field-focus-border);
+}
+
+html[data-input-modality="keyboard"] .cb-icon-search:focus-within {
+  outline: 2px solid var(--ui-focus);
+  outline-offset: 2px;
+}
+
+.cb-icon-search svg { width: 16px; height: 16px; flex: 0 0 auto; }
+
+.cb-icon-search input {
+  width: 100%;
+  height: 44px;
+  border: 0;
+  background: transparent;
+  color: var(--cb-text-main);
+  font: inherit;
+  font-size: 13px;
+  outline: none;
+}
+
+.cb-icon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(148px, 1fr));
+  gap: 6px;
+  align-content: start;
+  overflow-y: auto;
+  padding: 0 18px 18px;
+}
+
+.cb-icon-group-title {
+  grid-column: 1 / -1;
+  margin: 10px 0 2px;
+  color: var(--cb-text-subtle);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.cb-icon-group-title:first-child { margin-top: 0; }
+
+.cb-icon-choice {
+  display: flex;
+  min-height: 44px;
+  align-items: center;
+  gap: 9px;
+  padding: 7px 9px;
+  border: 1px solid transparent;
+  border-radius: 11px;
+  background: var(--cb-surface-2);
+  color: var(--cb-text-main);
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 160ms ease, background-color 160ms ease;
+}
+
+/* A busca usa .hidden; também respeitar o atributo nativo. */
+.cb-icon-choice.hidden,
+.cb-icon-choice[hidden] { display: none; }
+
+.cb-icon-choice:hover {
+  border-color: var(--cb-border-strong);
+  background: var(--cb-surface-3);
+}
+
+.cb-icon-choice[aria-pressed="true"] {
+  border-color: var(--cb-border-focus);
+  background: var(--cb-accent-soft);
+}
+
+.cb-icon-choice-mark {
+  width: 28px;
+  height: 28px;
+  border-radius: 9px;
+}
+
+.cb-icon-choice-mark svg { width: 15px; height: 15px; }
+
+.cb-icon-choice-copy {
+  display: grid;
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.cb-icon-choice-copy strong {
+  overflow: hidden;
+  font-size: 12px;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cb-icon-choice-copy small {
+  color: var(--cb-text-subtle);
+  font-size: 10px;
+}
+
+.cb-icon-choice-check {
+  display: none;
+  flex: 0 0 auto;
+  color: var(--cb-accent);
+}
+
+.cb-icon-choice-check svg { width: 15px; height: 15px; }
+
+.cb-icon-choice[aria-pressed="true"] .cb-icon-choice-check { display: block; }
+
+.cb-icon-empty {
+  margin: 0 18px 18px;
+  color: var(--cb-text-muted);
+  font-size: 12px;
+}
+
+.cb-icon-choice:focus-visible,
+.cb-icon-trigger:focus-visible,
+.cb-icon-dialog-close:focus-visible {
+  outline: 2px solid var(--cb-accent);
+  outline-offset: 2px;
+}
+
+@media (max-width: 767px) {
+  .cb-icon-dialog {
+    width: 100vw;
+    max-width: 100vw;
+    max-height: 92vh;
+    border-radius: 18px 18px 0 0;
+    margin: auto auto 0;
+  }
+
+  .cb-icon-dialog-panel { border-radius: 18px 18px 0 0; }
+
+  .cb-icon-grid { grid-template-columns: repeat(auto-fill, minmax(132px, 1fr)); }
+}

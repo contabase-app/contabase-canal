@@ -1,0 +1,810 @@
+/* ContaBase Relatorios Styles — P.44.a redesigned with Design System */
+
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+
+.btn-tactile { transition: all 0.15s ease; }
+.btn-tactile:active { transform: scale(0.97); }
+
+/* Cores dos dois grupos fixos da composição (Personal), via tokens. */
+.reports-legend-essential { color: var(--ui-success); }
+.reports-legend-lifestyle { color: var(--ui-accent); }
+.reports-legend-dot { background-color: currentColor; }
+
+/* Paleta fechada entregue pelo servidor para os gráficos de composição. */
+[data-report-stroke="#10B981"] { --cb-report-stroke: #10B981; }
+[data-report-stroke="#6366F1"] { --cb-report-stroke: #6366F1; }
+[data-report-stroke="#F59E0B"] { --cb-report-stroke: #F59E0B; }
+[data-report-stroke="#EC4899"] { --cb-report-stroke: #EC4899; }
+[data-report-stroke="#14B8A6"] { --cb-report-stroke: #14B8A6; }
+[data-report-stroke="#8B5CF6"] { --cb-report-stroke: #8B5CF6; }
+[data-report-stroke="#F97316"] { --cb-report-stroke: #F97316; }
+[data-report-stroke="#06B6D4"] { --cb-report-stroke: #06B6D4; }
+[data-report-stroke="rgb(16 185 129)"] { --cb-report-stroke: rgb(16 185 129); }
+[data-report-stroke="rgb(99 102 241)"] { --cb-report-stroke: rgb(99 102 241); }
+[data-report-stroke="rgb(236 72 153)"] { --cb-report-stroke: rgb(236 72 153); }
+[data-report-stroke="rgb(245 158 11)"] { --cb-report-stroke: rgb(245 158 11); }
+[data-report-stroke="rgb(14 165 233)"] { --cb-report-stroke: rgb(14 165 233); }
+[data-report-stroke="rgb(168 85 247)"] { --cb-report-stroke: rgb(168 85 247); }
+[data-report-stroke="rgb(239 68 68)"] { --cb-report-stroke: rgb(239 68 68); }
+[data-report-stroke="rgb(249 115 22)"] { --cb-report-stroke: rgb(249 115 22); }
+[data-report-stroke="rgb(234 179 8)"] { --cb-report-stroke: rgb(234 179 8); }
+.cb-report-stroke-dot { background-color: var(--cb-report-stroke); }
+
+/* --- Gráficos (donuts SVG inline) ---------------------------------------
+   A geometria, os strokes servidos pelo backend e os percentuais não mudam.
+   Esta camada padroniza track, tipografia, legenda e estados vazios. */
+.reports-chart-title {
+    margin: 0 0 2px;
+    color: var(--ui-text);
+    font-size: 14px;
+    font-weight: 650;
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+}
+
+.reports-chart-caption {
+    margin: 0 0 18px;
+    color: var(--ui-text-muted);
+    font-size: var(--ui-fs-sm);
+    line-height: 1.45;
+}
+
+.reports-chart-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+}
+
+@media (min-width: 640px) {
+    .reports-chart-body {
+        flex-direction: row;
+        justify-content: center;
+        gap: 24px;
+        max-width: 620px;
+        margin-inline: auto;
+    }
+}
+
+.reports-donut {
+    flex: 0 0 auto;
+    width: 144px;
+    height: 144px;
+    transform: rotate(-90deg);
+}
+
+.reports-donut-track { stroke: var(--ui-progress-track); }
+.reports-donut-essential { stroke: var(--ui-success); }
+.reports-donut-lifestyle { stroke: var(--ui-accent); }
+
+.reports-chart-legend {
+    display: grid;
+    flex: 1 1 auto;
+    gap: 10px;
+    width: 100%;
+    max-width: 360px;
+    min-width: 0;
+}
+
+.reports-chart-legend > div {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 12px;
+}
+
+.reports-chart-legend > div > div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+}
+
+.reports-chart-legend .cb-report-stroke-dot,
+.reports-chart-legend .reports-legend-dot {
+    width: 9px;
+    height: 9px;
+    flex: 0 0 auto;
+    border: 0;
+    border-radius: 999px;
+}
+
+/* Nomes longos quebram em vez de sumir; a categoria nunca é truncada. */
+.reports-chart-legend .truncate {
+    overflow: visible;
+    text-overflow: clip;
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+
+.reports-chart-legend > div > div > span:last-child {
+    font-size: var(--ui-fs-sm);
+    font-weight: 600;
+    line-height: 1.35;
+}
+
+.reports-chart-legend-value {
+    color: var(--ui-text);
+    font-size: var(--ui-fs-sm);
+    font-weight: 600;
+    line-height: 1.35;
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum" 1;
+    white-space: nowrap;
+}
+
+/* Estado sem dados dos gráficos, sem tocar nos empty states de tabela. */
+.cb-card-dense:has(.reports-chart-title) .cb-empty-state {
+    padding: 30px 12px;
+}
+
+.cb-card-dense:has(.reports-chart-title) .cb-empty-state p {
+    color: var(--ui-text-subtle);
+    font-size: var(--ui-fs-sm);
+    line-height: 1.45;
+}
+
+
+/* --- Tabelas financeiras (DRE, Caixa, Extrato) -------------------------
+   Superfície única por painel; separadores horizontais discretos; sem card
+   por célula/linha. Valores com tabular-nums e totais com peso maior. */
+.reports-table-panel {
+    padding: var(--ui-panel-pad);
+}
+
+.reports-dre,
+.reports-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: var(--ui-fs-sm);
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum" 1;
+}
+
+.reports-dre-th,
+.reports-table-th {
+    padding: 10px 12px;
+    border: 0;
+    border-bottom: 1px solid var(--ui-border);
+    background: color-mix(in srgb, var(--ui-surface-raised) 72%, transparent);
+    color: var(--ui-text-muted);
+    font-size: 11px;
+    font-weight: 650;
+    line-height: 1.3;
+    letter-spacing: 0.01em;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.reports-dre-td,
+.reports-table-td {
+    padding: 11px 12px;
+    border: 0;
+    border-bottom: 1px solid var(--ui-border);
+    background: transparent;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.reports-dre tbody tr:last-child .reports-dre-td,
+.reports-table tbody tr:last-child .reports-table-td {
+    border-bottom: 0;
+}
+
+.reports-dre tbody tr:hover .reports-dre-td,
+.reports-table tbody tr:hover .reports-table-td {
+    background: var(--ui-surface-raised);
+}
+
+/* Coluna de resultado/projeção: realce por token, sem violeta/sky fixos. */
+.reports-col-result {
+    background: color-mix(in srgb, var(--ui-accent) 5%, transparent);
+}
+
+.reports-dre-th.reports-col-result {
+    color: var(--ui-accent-strong);
+}
+
+.reports-col-projected {
+    background: color-mix(in srgb, var(--ui-info) 5%, transparent);
+}
+
+.reports-dre-th.reports-col-projected {
+    color: var(--ui-info);
+}
+
+/* Extrato: densidade própria e descrição com quebra (sem truncar). */
+.reports-table--extrato .reports-table-td {
+    padding: 12px;
+}
+
+.reports-table--daily .reports-table-td {
+    padding: 10px 12px;
+}
+
+.reports-cell-description-cell {
+    min-width: 16rem;
+    max-width: 24rem;
+    white-space: normal;
+}
+
+.reports-cell-description {
+    color: var(--ui-text);
+    font-weight: 600;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+}
+
+.reports-cell-meta {
+    color: var(--ui-text-muted);
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.reports-cell-amount {
+    white-space: nowrap;
+}
+
+.reports-cell-total .reports-cell-value {
+    font-weight: 700;
+}
+
+.reports-table-empty {
+    padding: 26px 12px;
+}
+
+/* DRE horizontal scroll — visible affordance on narrow screens */
+.reports-dre-scroll {
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: var(--ui-border-strong) transparent;
+    scroll-padding-right: 0.5rem;
+}
+.reports-dre-scroll::-webkit-scrollbar {
+    height: 6px;
+}
+.reports-dre-scroll::-webkit-scrollbar-track {
+    background: transparent;
+}
+.reports-dre-scroll::-webkit-scrollbar-thumb {
+    background: var(--ui-border-strong);
+    border-radius: 9999px;
+}
+.reports-dre-scroll:focus-visible {
+    outline: 2px solid var(--ui-focus);
+    outline-offset: 2px;
+    border-radius: 0.5rem;
+}
+
+/* Shared report tables */
+.reports-table-scroll {
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: var(--ui-border-strong) transparent;
+    scroll-padding-right: 0.5rem;
+}
+
+.reports-table-scroll::-webkit-scrollbar {
+    height: 6px;
+}
+
+.reports-table-scroll::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.reports-table-scroll::-webkit-scrollbar-thumb {
+    background: var(--ui-border-strong);
+    border-radius: 9999px;
+}
+
+.reports-table-scroll:focus-visible {
+    outline: 2px solid var(--ui-focus);
+    outline-offset: 2px;
+    border-radius: 0.5rem;
+}
+
+.reports-export-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+/* Agrupamento de exportação: botões + orientação discreta sobre o conteúdo. */
+.reports-export-cluster {
+    display: flex;
+    flex: 0 0 auto;
+    min-width: 0;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+}
+
+.reports-export-hint {
+    margin: 0;
+    color: var(--ui-text-subtle);
+    font-size: 11px;
+    line-height: 1.35;
+    text-align: right;
+}
+
+@media (max-width: 639px) {
+    .reports-export-cluster {
+        align-items: flex-start;
+    }
+
+    .reports-export-hint {
+        text-align: left;
+    }
+}
+
+/* Antecipação local do alvo de toque R7 apenas nos controles de exportação;
+   tabs, tabelas e navegação permanecem como aprovadas. */
+@media (max-width: 1023px) {
+    .reports-export-cluster .ui-btn {
+        min-height: 44px;
+    }
+}
+
+.reports-export-toggle {
+    min-width: 6.5rem;
+    justify-content: space-between;
+}
+
+.reports-export-menu {
+    min-width: 11rem;
+    max-width: min(16rem, calc(100vw - 2rem));
+}
+
+.reports-export-menu .cb-meta-menu-item:focus-visible {
+    outline: 2px solid var(--ui-focus);
+    outline-offset: -2px;
+}
+
+/* Keep export dropdowns inside the viewport on small screens.
+   Toolbars sit on the left edge on mobile, so anchor the panel to the
+   left of its trigger (open rightwards) to avoid horizontal overflow. */
+@media (max-width: 639px) {
+    .reports-export-menu {
+        left: 0;
+        right: auto;
+    }
+}
+
+/* Extrato: um único painel; as views ocupam a mesma superfície, sem painel
+   aninhado e sem cabeçalho repetido. */
+.reports-extrato-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.reports-extrato-panel {
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    padding: 0;
+}
+
+.reports-extrato-note {
+    margin: 14px 0 0;
+    color: var(--ui-text-subtle);
+    font-size: var(--ui-fs-sm);
+    line-height: 1.45;
+}
+
+.reports-cell-date,
+.reports-cell-value {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum" 1;
+}
+
+.reports-cell-date {
+    font-weight: 600;
+    color: var(--ui-text);
+}
+
+.reports-cell-value {
+    font-weight: 600;
+}
+
+.reports-cell-stack {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+/* Categories list */
+.reports-cat-group {
+    border-radius: 0.75rem;
+    border: 1px solid var(--cb-border-subtle);
+    background: var(--cb-surface-2);
+    padding: 0.75rem;
+}
+
+.reports-cat-child {
+    padding-left: 1.25rem;
+    border-left: 2px solid var(--cb-border-subtle);
+    margin-left: 0.5rem;
+}
+
+.reports-cat-icon {
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    background: color-mix(in srgb, currentColor 10%, transparent);
+}
+
+/* Relatórios na casca V2: a paleta e a ponte --cb-* vêm de ui-tokens.css
+   (fonte canônica). Esta página não redefine tokens. */
+
+.cb-v2-relatorios-content {
+    width: min(100%, 1180px);
+    margin: 0 auto;
+    padding: 30px 0 28px;
+}
+
+/* Composição e tipografia do cabeçalho vêm de .ui-page-header/.ui-eyebrow/
+   .ui-page-title/.ui-page-description (premium.css); aqui fica só o que é
+   específico da composição desta página. */
+.cb-v2-relatorios-header {
+    min-width: 0;
+}
+
+/* Seleção de modo (Realizado/Previsão): mesma linguagem das tabs de Metas
+   (.cb-tabs/.cb-tab). Geometria, superfície e estado ativo vêm de
+   design-system.css e dos tokens canônicos; aqui ficam apenas a largura e a
+   cor dos links. O shell define `.cb-v2 a { color: inherit }`, que venceria
+   .cb-tab por especificidade; estas duas declarações restauram o contrato
+   visual das tabs para âncoras, sem tocar nas tabs de Metas (buttons). */
+.cb-v2-relatorios-modes {
+    width: 100%;
+}
+
+.cb-v2-relatorios-modes .cb-tab,
+.reports-view-tabs .cb-tab {
+    color: var(--ui-text-muted);
+    white-space: nowrap;
+}
+
+.cb-v2-relatorios-modes .cb-tab.cb-tab-active,
+.reports-view-tabs .cb-tab.cb-tab-active {
+    color: var(--ui-tab-active-fg);
+}
+
+/* Navegação principal (Fluxo/Extrato/Competência/Contábil): tab bar de página,
+   mais alta e ancorada na borda inferior. Compartilha os mesmos tokens de
+   seleção das tabs internas, mas mantém a hierarquia de navegação principal. */
+.reports-main-tabs {
+    display: flex;
+    gap: 4px;
+    margin: 24px 0 20px;
+    border-bottom: 1px solid var(--ui-border);
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.reports-main-tabs::-webkit-scrollbar {
+    display: none;
+}
+
+.reports-main-tab {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    margin-bottom: -1px;
+    padding: 0 16px;
+    border: 1px solid transparent;
+    border-bottom: 0;
+    border-radius: var(--ui-radius-tab-item) var(--ui-radius-tab-item) 0 0;
+    font-size: 12.5px;
+    font-weight: 640;
+    line-height: 1;
+    white-space: nowrap;
+    text-decoration: none;
+    transition: background-color var(--ui-transition), border-color var(--ui-transition), color var(--ui-transition);
+}
+
+/* O shell define `.cb-v2 a { color: inherit }`; o prefixo garante a cor da
+   tab para âncoras sem alterar as tabs de outras páginas. */
+.reports-main-tabs .reports-main-tab {
+    color: var(--ui-text-muted);
+}
+
+.reports-main-tabs .reports-main-tab--active {
+    border-color: var(--ui-tab-active-border);
+    border-bottom: 1px solid var(--ui-tab-active-bg);
+    background: var(--ui-tab-active-bg);
+    color: var(--ui-tab-active-fg);
+}
+
+.reports-main-tabs .reports-main-tab--inactive:hover {
+    background: var(--ui-surface-hover);
+    color: var(--ui-text);
+}
+
+.reports-main-tab:focus-visible {
+    outline: 2px solid var(--ui-focus);
+    outline-offset: 2px;
+}
+
+/* Visualizações do Extrato: controle segmentado compacto, menor que o seletor
+   de modo e sem largura fixa. Rótulos nunca quebram dentro do botão. */
+.reports-view-tabs {
+    width: fit-content;
+    max-width: 100%;
+}
+
+/* Extrato no mobile: visualizações e exportações na mesma linha.
+   O template troca "Resumo diário" por "Diário" abaixo de 640px, o que
+   mantém [ Movimentos ] [ Diário ] [ PDF ] [ CSV ] visíveis de 320px em
+   diante sem rolagem horizontal. */
+@media (max-width: 639px) {
+    .reports-extrato-toolbar {
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 6px;
+    }
+
+    .reports-extrato-toolbar .reports-view-tabs {
+        flex: 1 1 auto;
+        width: auto;
+        max-width: none;
+        min-width: 0;
+    }
+
+    .reports-extrato-toolbar .reports-view-tabs .cb-tab {
+        gap: 4px;
+        padding-inline: 8px;
+        font-size: 11px;
+    }
+
+    .reports-extrato-toolbar .reports-export-cluster {
+        flex: 0 0 auto;
+        gap: 0;
+    }
+
+    .reports-extrato-toolbar .reports-export-buttons {
+        flex-wrap: nowrap;
+        gap: 4px;
+    }
+
+    .reports-extrato-toolbar .reports-export-toggle {
+        min-width: 0;
+        gap: 4px;
+        padding-inline: 8px;
+    }
+
+    .reports-extrato-toolbar .reports-export-toggle svg {
+        width: 14px;
+        height: 14px;
+    }
+
+    /* O aviso "Inclui os valores completos." continua no DOM para leitores
+       de tela, mas não ocupa uma linha extra no mobile. */
+    .reports-extrato-toolbar .reports-export-hint {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        border: 0;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        white-space: nowrap;
+    }
+
+    /* Menus de exportação: com os quatro controles na mesma linha, ambos os
+       menus abrem para a esquerda do próprio gatilho. Assim o PDF (no meio da
+       linha) e o CSV (no fim) permanecem dentro da viewport. */
+    .reports-extrato-toolbar .reports-export-menu {
+        right: 0;
+        left: auto;
+    }
+}
+
+/* 320px: aperto mínimo e justificado para os quatro controles caberem
+   na mesma linha, preservando ícones, chevrons e alvos de toque. */
+@media (max-width: 359px) {
+    .reports-extrato-toolbar {
+        gap: 4px;
+    }
+
+    .reports-extrato-toolbar .reports-view-tabs {
+        padding: 2px;
+        gap: 2px;
+    }
+
+    .reports-extrato-toolbar .reports-view-tabs .cb-tab {
+        padding-inline: 4px;
+        font-size: 10px;
+    }
+
+    .reports-extrato-toolbar .reports-export-buttons {
+        gap: 2px;
+    }
+
+    .reports-extrato-toolbar .reports-export-toggle {
+        gap: 2px;
+        padding-inline: 4px;
+    }
+
+    .reports-extrato-toolbar .reports-export-toggle svg {
+        width: 13px;
+        height: 13px;
+    }
+}
+
+/* --- R7 — alvos de toque e affordance de rolagem -----------------------
+   Escopo local: somente Relatórios; desktop mantém a densidade aprovada. */
+@media (max-width: 1023px) {
+    .reports-main-tab {
+        min-height: 44px;
+    }
+
+    .cb-v2-relatorios-modes .cb-tab,
+    .reports-view-tabs .cb-tab {
+        min-height: 44px;
+    }
+
+    .cb-v2-relatorios-main [data-month-selector] .month-btn {
+        min-height: 44px;
+    }
+
+    .cb-v2-relatorios-main [data-month-selector] .month-control {
+        width: 44px;
+        height: 44px;
+        min-width: 44px;
+    }
+
+    .reports-export-menu .cb-meta-menu-item {
+        min-height: 44px;
+    }
+}
+
+.cb-v2-relatorios-main [data-month-selector] :is(.month-btn, .month-control):focus-visible {
+    outline: 2px solid var(--ui-focus);
+    outline-offset: 2px;
+}
+
+.reports-scroll-hint {
+    margin: 0 0 8px;
+    color: var(--ui-text-subtle);
+    font-size: var(--ui-fs-sm);
+    line-height: 1.35;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reports-main-tab,
+    .cb-v2-relatorios-modes .cb-tab,
+    .reports-view-tabs .cb-tab,
+    .reports-export-cluster .ui-btn,
+    .reports-export-menu .cb-meta-menu-item,
+    .cb-v2-relatorios-main [data-dropdown-chevron],
+    .cb-v2-relatorios-main [data-month-selector] :is(.month-btn, .month-control) {
+        transition: none;
+    }
+
+    .cb-v2-relatorios-main [data-month-rail-viewport] {
+        scroll-behavior: auto;
+    }
+}
+
+/* Indicadores: composição sobre .ui-kpi-grid/.ui-kpi. Apenas a distribuição
+   de colunas é específica desta página. */
+.cb-v2-relatorios-kpis {
+    grid-template-columns: minmax(0, 1fr);
+}
+
+@media (min-width: 390px) {
+    .cb-v2-relatorios-kpis {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 768px) {
+    .cb-v2-relatorios-kpis--3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1280px) {
+    .cb-v2-relatorios-kpis--4 {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+/* O grid do shell mobile faz o último KPI ocupar a linha inteira; nos grupos
+   de Relatórios cada indicador mantém a própria célula. */
+.cb-v2-relatorios-kpis > .ui-kpi:last-child {
+    grid-column: auto;
+}
+
+.cb-v2-relatorios-kpis .ui-kpi__value--empty {
+    color: var(--ui-text-subtle);
+}
+
+.cb-v2-relatorios-kpis .ui-kpi--info .ui-kpi__icon {
+    background: color-mix(in srgb, var(--ui-info) 13%, transparent);
+    color: var(--ui-info);
+}
+
+.cb-v2-relatorios-kpis .ui-kpi--info .ui-kpi__value {
+    color: var(--ui-info);
+}
+
+.cb-v2-relatorios-panels .cb-card-dense,
+.cb-v2-relatorios-panels .reports-extrato-panel,
+.cb-v2-relatorios-panels .reports-cat-group {
+    border-color: var(--v2-border);
+    background: var(--v2-surface);
+}
+
+@media (max-width: 1023px) {
+    /* O controle de privacidade é uma ação de toque no shell mobile/tablet;
+       a geometria desktop de 34px permanece a aprovada. */
+    .cb-v2-relatorios-header [data-privacy-toggle] {
+        width: 2.75rem;
+        height: 2.75rem;
+        min-height: 2.75rem;
+        padding: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .cb-v2-relatorios-content {
+        padding-top: 20px;
+        padding-bottom: 22px;
+    }
+
+    .cb-v2-relatorios-header {
+        align-items: flex-start;
+    }
+}
+
+/* === PRIVACIDADE ===
+   Reusa o estado global (sessionStorage contabasePrivacy + body
+   .privacy-enabled gerido por privacy.js), no mesmo padrão de Faturas,
+   Lançamentos e Metas: o valor original mantém a caixa, então a geometria das
+   tabelas, dos cards e dos gráficos não muda. O escopo cobre a página inteira
+   (.cb-v2-relatorios-main), incluindo todo o conteúdo trocado por HTMX em
+   #relatorios-body — não há segundo estado nem segundo listener. */
+.privacy-enabled .cb-v2-relatorios-main [data-sensitive] {
+    visibility: hidden;
+    user-select: none;
+}
+
+.privacy-enabled .cb-v2-relatorios-main :is(span, strong, p, small, div, dd, b, td, th, li)[data-sensitive] {
+    position: relative;
+}
+
+.privacy-enabled .cb-v2-relatorios-main :is(span, strong, p, small, div, dd, b, td, th, li)[data-sensitive]::after {
+    content: "••••";
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    visibility: visible;
+    color: var(--ui-text-muted);
+    font-variant-numeric: normal;
+    letter-spacing: .12em;
+    pointer-events: none;
+}
+
+/* Células monetárias são alinhadas à direita; a máscara acompanha o
+   alinhamento do valor original. */
+.privacy-enabled .cb-v2-relatorios-main :is(td, th)[data-sensitive]::after {
+    justify-content: flex-end;
+}

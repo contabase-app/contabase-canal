@@ -1,0 +1,159 @@
+/* Contas — página piloto do Premium Fintech.
+   A fundação (tokens, painéis, KPIs, campos, tabs e linhas) vive em
+   premium.css. Este arquivo contém apenas layout e tons específicos desta
+   página. Nenhum hook de HTMX, swipe ou pagamento é definido aqui. */
+
+.cb-v2-contas-content {
+    width: min(100%, 1180px);
+    margin: 0 auto;
+    padding: 30px 0 12px;
+}
+
+/* Ações superiores: o controle de privacidade compartilha o eixo do cabeçalho
+   sem alterar o alinhamento existente. */
+.cb-v2-contas-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 0 0 auto;
+}
+
+.cb-v2-contas-panels {
+    min-width: 0;
+}
+
+.cb-v2-contas-section-heading {
+    margin-top: 20px;
+}
+
+.cb-v2-contas-panels .ui-list-panel {
+    margin-top: 2px;
+}
+
+.cb-v2-contas-panels .ui-toolbar {
+    margin-bottom: 14px;
+}
+
+/* Busca em 100% da largura útil: alinhada às tabs e à lista. Se houver
+   controles auxiliares no futuro, o campo continua flexível (flex: 1). */
+.cb-v2-contas-panels .ui-search {
+    width: 100%;
+    max-width: none;
+}
+
+/* Cada obrigação é um cartão individual. O painel continua agrupando o
+   conjunto e o cabeçalho; o gap de 7px separa os registros sem tocar em
+   status, vencimentos, swipe ou nos contratos HTMX. */
+.cb-v2-contas-panels .ui-list-panel > .ui-list {
+    gap: 7px;
+    padding: 10px 10px 12px;
+}
+
+.cb-v2-contas-panels .ui-list-panel > .ui-list > .ui-row,
+.cb-v2-contas-panels .ui-list-panel > .ui-list > .ui-swipe {
+    overflow: hidden;
+    border: 1px solid var(--ui-border);
+    border-radius: var(--ui-radius-card);
+    background: var(--ui-surface-raised);
+}
+
+.cb-v2-contas-panels .ui-list-panel > .ui-list > .ui-row:hover,
+.cb-v2-contas-panels .ui-list-panel > .ui-list > .ui-swipe > .ui-row:hover {
+    background: var(--ui-surface-hover);
+}
+
+.cb-v2-contas-panels .ui-list-panel > .ui-list > .ui-swipe > .ui-row {
+    border-bottom: 0;
+    background: var(--ui-surface-raised);
+}
+
+.cb-v2-contas-panels .ui-list-panel > .ui-list > .ui-row.is-overdue,
+.cb-v2-contas-panels .ui-list-panel > .ui-list > .ui-swipe > .ui-row.is-overdue {
+    background: color-mix(in srgb, var(--ui-danger) 4%, var(--ui-surface-raised));
+}
+
+.cb-v2-contas-panels .ui-list-panel > .ui-list > .ui-row.is-overdue:hover,
+.cb-v2-contas-panels .ui-list-panel > .ui-list > .ui-swipe > .ui-row.is-overdue:hover {
+    background: color-mix(in srgb, var(--ui-danger) 7%, var(--ui-surface-raised));
+}
+
+/* Tons dos botões de status financeiro. O botão continua sendo o mesmo
+   controle de pagamento; só o tratamento visual muda. */
+.cb-v2-contas-panels .tx-status-warning {
+    background: color-mix(in srgb, var(--ui-warning) 14%, transparent);
+    color: var(--ui-warning);
+}
+
+.cb-v2-contas-panels .tx-status-danger {
+    background: color-mix(in srgb, var(--ui-danger) 14%, transparent);
+    color: var(--ui-danger);
+}
+
+.cb-v2-contas-panels .tx-status-scheduled {
+    background: color-mix(in srgb, var(--ui-accent) 15%, transparent);
+    color: var(--ui-accent-strong);
+}
+
+.cb-v2-contas-panels .tx-status-success {
+    background: color-mix(in srgb, var(--ui-success) 14%, transparent);
+    color: var(--ui-success);
+}
+
+/* A seta de navegação da fatura não é um botão. */
+.cb-v2-contas-panels .ui-row__chevron {
+    margin-right: -4px;
+}
+
+@media (max-width: 767px) {
+    .cb-v2-contas-content {
+        padding-top: 20px;
+        padding-bottom: 8px;
+    }
+
+    .cb-v2-contas-section-heading {
+        margin-top: 16px;
+    }
+}
+
+@media (max-width: 1023px) {
+    .cb-v2-contas-header [data-privacy-toggle] {
+        width: 44px;
+        height: 44px;
+        min-height: 44px;
+        padding: 0;
+    }
+}
+
+/* === Privacidade ===
+   Reusa o estado global (sessionStorage contabasePrivacy + body
+   .privacy-enabled gerido por privacy.js), no mesmo padrão de Faturas,
+   Lançamentos e Metas: o valor mantém a caixa, então o layout não pula.
+   O escopo cobre a página inteira (.cb-v2-contas-main), inclusive os
+   fragmentos trocados por HTMX dentro dela. Inputs editáveis não são
+   mascarados. */
+.privacy-enabled .cb-v2-contas-main [data-sensitive]:not(input):not(textarea):not(select) {
+    visibility: hidden;
+    user-select: none;
+}
+
+.privacy-enabled .cb-v2-contas-main :is(strong, span, p, small, div, dd, b)[data-sensitive] {
+    position: relative;
+}
+
+.privacy-enabled .cb-v2-contas-main :is(strong, span, p, small, div, dd, b)[data-sensitive]::after {
+    content: "••••";
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    visibility: visible;
+    color: var(--ui-text-muted);
+    font-variant-numeric: normal;
+    letter-spacing: .12em;
+}
+
+/* Valores que fecham a linha à direita mascaram alinhados à direita. */
+.privacy-enabled .cb-v2-contas-main .ui-row__amount[data-sensitive]::after {
+    justify-content: flex-end;
+}

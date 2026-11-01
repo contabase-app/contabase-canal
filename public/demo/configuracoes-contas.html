@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark" data-theme="dark" data-input-modality="pointer"><head>
+    <meta charset="UTF-8"><meta name="robots" content="noindex,nofollow"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self' data:; script-src 'self'; connect-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <meta name="theme-color" content="#161a20">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>Configurações | ContaBase</title>
+    <meta name="description" content="Sua base financeira privada, self-hosted e sem telemetria.">
+
+
+
+
+
+
+
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+
+
+    <link rel="stylesheet" href="assets/css/style.css?v=f7d6c798">
+    <link rel="stylesheet" href="assets/css/geist-sans.css?v=297de94b">
+    <link rel="stylesheet" href="assets/css/design-system.css?v=7969c799">
+    <link rel="stylesheet" href="assets/workspace-colors.css" data-workspace-colors="">
+    <link rel="stylesheet" href="assets/css/app-shell.css?v=90f31c0f">
+    <link rel="stylesheet" href="assets/css/ui-tokens.css?v=319da424">
+
+
+
+
+
+<link rel="stylesheet" href="assets/css/premium.css?v=e4028637">
+<link rel="stylesheet" href="assets/css/configuracoes.css?v=93a31322">
+
+<link rel="stylesheet" href="demo.css"><link rel="stylesheet" href="assets/css/sheet-form.css"><script src="demo.js" defer></script></head>
+<body class="cb-v2-body workspace-theme-active" data-workspace-theme="violeta" data-demo-page="configuracoes-contas" data-demo-parent="contas">
+
+
+    <div class="cb-v2" data-app-shell="">
+
+<aside class="cb-v2-sidebar" data-v2-sidebar="" aria-label="Navegação principal" data-v2-sidebar-ready="true">
+    <div class="cb-v2-sidebar-header">
+        <a class="cb-v2-brand" href="painel.html" aria-label="ContaBase" data-demo-nav="">
+
+<img class="cb-v2-brand-lockup cb-v2-brand-lockup-dark" src="assets/branding/logo-dark.png?v=204131ee" alt="" aria-hidden="true">
+<img class="cb-v2-brand-lockup cb-v2-brand-lockup-light" src="assets/branding/logo-light.png?v=4d71de41" alt="" aria-hidden="true">
+<img class="cb-v2-brand-mark" src="assets/branding/logo-mark.png?v=fcda81fd" alt="" aria-hidden="true">
+</a>
+        <button type="button" class="cb-v2-icon-button cb-v2-sidebar-toggle" data-v2-sidebar-toggle="" aria-expanded="true" aria-label="Recolher menu lateral" title="Recolher menu lateral"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="panel-left-close" aria-hidden="true" class="lucide lucide-panel-left-close cb-v2-sidebar-toggle-close"><rect width="18" height="18" x="3" y="3" rx="2"></rect><path d="M9 3v18"></path><path d="m16 15-3-3 3-3"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="panel-left-open" aria-hidden="true" class="lucide lucide-panel-left-open cb-v2-sidebar-toggle-open"><rect width="18" height="18" x="3" y="3" rx="2"></rect><path d="M9 3v18"></path><path d="m14 9 3 3-3 3"></path></svg></button>
+    </div>
+    <div class="cb-v2-sidebar-body">
+        <nav class="cb-v2-nav-list">
+
+<a class="cb-v2-nav-link " data-v2-nav-section="dashboard" href="painel.html" data-demo-nav=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="layout-dashboard" aria-hidden="true" class="lucide lucide-layout-dashboard"><rect width="7" height="9" x="3" y="3" rx="1"></rect><rect width="7" height="5" x="14" y="3" rx="1"></rect><rect width="7" height="9" x="14" y="12" rx="1"></rect><rect width="7" height="5" x="3" y="16" rx="1"></rect></svg><span>Painel</span></a>
+<a class="cb-v2-nav-link " data-v2-nav-section="transactions" href="lancamentos.html" data-demo-nav=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="list" aria-hidden="true" class="lucide lucide-list"><path d="M3 5h.01"></path><path d="M3 12h.01"></path><path d="M3 19h.01"></path><path d="M8 5h13"></path><path d="M8 12h13"></path><path d="M8 19h13"></path></svg><span>Lançamentos</span></a>
+<a class="cb-v2-nav-link " data-v2-nav-section="goals" href="metas.html" data-demo-nav=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="target" aria-hidden="true" class="lucide lucide-target"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg><span>Metas</span></a>
+
+<a class="cb-v2-nav-link " data-v2-nav-section="accounts" href="contas.html" data-demo-nav=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="receipt-text" aria-hidden="true" class="lucide lucide-receipt-text"><path d="M13 16H8"></path><path d="M14 8H8"></path><path d="M16 12H8"></path><path d="M4 3a1 1 0 0 1 1-1 1.3 1.3 0 0 1 .7.2l.933.6a1.3 1.3 0 0 0 1.4 0l.934-.6a1.3 1.3 0 0 1 1.4 0l.933.6a1.3 1.3 0 0 0 1.4 0l.933-.6a1.3 1.3 0 0 1 1.4 0l.934.6a1.3 1.3 0 0 0 1.4 0l.933-.6A1.3 1.3 0 0 1 19 2a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1 1.3 1.3 0 0 1-.7-.2l-.933-.6a1.3 1.3 0 0 0-1.4 0l-.934.6a1.3 1.3 0 0 1-1.4 0l-.933-.6a1.3 1.3 0 0 0-1.4 0l-.933.6a1.3 1.3 0 0 1-1.4 0l-.934-.6a1.3 1.3 0 0 0-1.4 0l-.933.6a1.3 1.3 0 0 1-.7.2 1 1 0 0 1-1-1z"></path></svg><span>Contas</span></a>
+<a class="cb-v2-nav-link " data-v2-nav-section="invoices" href="faturas.html" data-demo-nav=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="credit-card" aria-hidden="true" class="lucide lucide-credit-card"><rect width="20" height="14" x="2" y="5" rx="2"></rect><line x1="2" x2="22" y1="10" y2="10"></line></svg><span>Faturas</span></a>
+<a class="cb-v2-nav-link " data-v2-nav-section="reports" href="relatorios.html" data-demo-nav=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chart-no-axes-combined" aria-hidden="true" class="lucide lucide-chart-no-axes-combined"><path d="M12 16v5"></path><path d="M16 14.639V21"></path><path d="M20 10.656V21"></path><path d="m22 3-8.646 8.646a.5.5 0 0 1-.708 0L9.354 8.354a.5.5 0 0 0-.707 0L2 15"></path><path d="M4 18.463V21"></path><path d="M8 14.656V21"></path></svg><span>Relatórios</span></a>
+
+
+        </nav>
+
+<section class="cb-v2-quick-actions" aria-label="Acesso rápido">
+    <p>Acesso rápido</p>
+    <button type="button" class="cb-v2-quick-action" data-demo-new-transaction="despesa"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-down" aria-hidden="true" class="lucide lucide-arrow-down"><path d="M12 5v14"></path><path d="m19 12-7 7-7-7"></path></svg><span>Nova Despesa</span></button>
+    <button type="button" class="cb-v2-quick-action"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up" aria-hidden="true" class="lucide lucide-arrow-up"><path d="m5 12 7-7 7 7"></path><path d="M12 19V5"></path></svg><span>Nova Receita</span></button>
+    <button type="button" class="cb-v2-quick-action"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-left-right" aria-hidden="true" class="lucide lucide-arrow-left-right"><path d="M8 3 4 7l4 4"></path><path d="M4 7h16"></path><path d="m16 21 4-4-4-4"></path><path d="M20 17H4"></path></svg><span>Nova Transferência</span></button>
+</section>
+
+
+<section class="cb-v2-settings-nav" aria-label="Configurações">
+<div class="cb-v2-nav-separator" aria-hidden="true"></div>
+<div class="cb-v2-nav-group is-open" data-v2-nav-group="" data-v2-nav-group-key="settings" data-v2-nav-group-default="open" data-v2-nav-group-ready="true">
+    <button type="button" class="cb-v2-nav-group-toggle" data-v2-nav-group-toggle="" aria-expanded="true">
+        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="settings-2" aria-hidden="true" class="lucide lucide-settings-2"><path d="M14 17H5"></path><path d="M19 7h-9"></path><circle cx="17" cy="17" r="3"></circle><circle cx="7" cy="7" r="3"></circle></svg><span>Configurações</span></span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-down" aria-hidden="true" class="lucide lucide-chevron-down"><path d="m6 9 6 6 6-6"></path></svg>
+    </button>
+    <div class="cb-v2-nav-sub-list" data-v2-nav-group-panel="">
+        <a class="cb-v2-nav-sub-link " href="#" data-demo-disabled="" aria-disabled="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg><span>Meu Perfil</span></a>
+
+
+        <a class="cb-v2-nav-sub-link " href="#" data-demo-disabled="" aria-disabled="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="tags" aria-hidden="true" class="lucide lucide-tags"><path d="M13.172 2a2 2 0 0 1 1.414.586l6.71 6.71a2.4 2.4 0 0 1 0 3.408l-4.592 4.592a2.4 2.4 0 0 1-3.408 0l-6.71-6.71A2 2 0 0 1 6 9.172V3a1 1 0 0 1 1-1z"></path><path d="M2 7v6.172a2 2 0 0 0 .586 1.414l6.71 6.71a2.4 2.4 0 0 0 3.191.193"></path><circle cx="10.5" cy="6.5" r=".5" fill="currentColor"></circle></svg><span>Categorias</span></a>
+        <a class="cb-v2-nav-sub-link is-active" href="configuracoes-contas.html" data-demo-nav=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="wallet" aria-hidden="true" class="lucide lucide-wallet"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"></path><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"></path></svg><span>Contas</span></a>
+        <a class="cb-v2-nav-sub-link " href="cartoes.html" data-demo-nav=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="credit-card" aria-hidden="true" class="lucide lucide-credit-card"><rect width="20" height="14" x="2" y="5" rx="2"></rect><line x1="2" x2="22" y1="10" y2="10"></line></svg><span>Cartões</span></a>
+
+    </div>
+</div>
+
+<div class="cb-v2-nav-separator" aria-hidden="true"></div>
+<div class="cb-v2-nav-group is-open" data-v2-nav-group="" data-v2-nav-group-key="administration" data-v2-nav-group-default="closed" data-v2-nav-group-ready="true">
+    <button type="button" class="cb-v2-nav-group-toggle" data-v2-nav-group-toggle="" aria-expanded="true">
+        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="shield-check" aria-hidden="true" class="lucide lucide-shield-check"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg><span>Administração</span></span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-down" aria-hidden="true" class="lucide lucide-chevron-down"><path d="m6 9 6 6 6-6"></path></svg>
+    </button>
+    <div class="cb-v2-nav-sub-list" data-v2-nav-group-panel="">
+        <a class="cb-v2-nav-sub-link " href="usuarios.html" data-demo-nav=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="users" aria-hidden="true" class="lucide lucide-users"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><path d="M16 3.128a4 4 0 0 1 0 7.744"></path><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><circle cx="9" cy="7" r="4"></circle></svg><span>Usuários</span></a>
+        <a class="cb-v2-nav-sub-link " href="#" data-demo-disabled="" aria-disabled="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="layers-3" aria-hidden="true" class="lucide lucide-layers-3"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"></path><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"></path><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"></path></svg><span>Workspaces</span></a>
+        <a class="cb-v2-nav-sub-link " href="#" data-demo-disabled="" aria-disabled="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="database-backup" aria-hidden="true" class="lucide lucide-database-backup"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M3 12a9 3 0 0 0 5 2.69"></path><path d="M21 9.3V5"></path><path d="M3 5v14a9 3 0 0 0 6.47 2.88"></path><path d="M12 12v4h4"></path><path d="M13 20a5 5 0 0 0 9-3 4.5 4.5 0 0 0-4.5-4.5c-1.33 0-2.54.54-3.41 1.41L12 16"></path></svg><span>Backups</span></a>
+        <a class="cb-v2-nav-sub-link " href="#" data-demo-disabled="" aria-disabled="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="scan-eye" aria-hidden="true" class="lucide lucide-scan-eye"><path d="M3 7V5a2 2 0 0 1 2-2h2"></path><path d="M17 3h2a2 2 0 0 1 2 2v2"></path><path d="M21 17v2a2 2 0 0 1-2 2h-2"></path><path d="M7 21H5a2 2 0 0 1-2-2v-2"></path><circle cx="12" cy="12" r="1"></circle><path d="M18.944 12.33a1 1 0 0 0 0-.66 7.5 7.5 0 0 0-13.888 0 1 1 0 0 0 0 .66 7.5 7.5 0 0 0 13.888 0"></path></svg><span>Auditoria</span></a>
+    </div>
+</div>
+
+ </section>
+
+    </div>
+    <div class="cb-v2-sidebar-footer">
+        <div class="cb-v2-sidebar-footer-context">
+            <button type="button" class="cb-v2-workspace" data-v2-workspace-trigger="" aria-haspopup="dialog" aria-controls="workspaceDrawer"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="house" aria-hidden="true" class="lucide lucide-house"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg><span>Horizonte Digital</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-up" aria-hidden="true" class="lucide lucide-chevron-up"><path d="m18 15-6-6-6 6"></path></svg></button>
+
+<div class="cb-v2-sidebar-controls" aria-label="Controles do aplicativo">
+    <button type="button" class="cb-v2-icon-button" data-theme-toggle="" data-v2-theme-toggle="" aria-label="Alternar para tema claro" title="Alternar para tema claro" data-v2-theme-ready="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="sun" class="lucide lucide-sun cb-v2-theme-icon-dark" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="moon" class="lucide lucide-moon cb-v2-theme-icon-light" aria-hidden="true"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"></path></svg></button>
+    <a class="cb-v2-icon-button cb-v2-notification-button" href="#" aria-label="Notificações" title="Notificações" data-demo-disabled="" aria-disabled="true">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="bell" aria-hidden="true" class="lucide lucide-bell"><path d="M10.268 21a2 2 0 0 0 3.464 0"></path><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"></path></svg><span id="notification-badge" aria-label="15 notificações não lidas"></span>
+    </a>
+</div>
+
+        </div>
+    </div>
+</aside>
+
+
+<main id="main-content" class="cb-v2-main cb-v2-configuracoes-main" data-page-section="settings" data-page-title="Configurações" data-ui="premium">
+
+<header class="cb-v2-appbar">
+    <div class="cb-v2-appbar-start">
+        <button type="button" class="cb-v2-icon-button cb-v2-menu-button" data-v2-menu-trigger="" aria-label="Abrir navegação"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="menu" aria-hidden="true" class="lucide lucide-menu"><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"></path></svg></button>
+        <a class="cb-v2-appbar-brand" href="painel.html" aria-label="ContaBase" data-demo-nav="">
+
+<img class="cb-v2-brand-lockup cb-v2-brand-lockup-dark" src="assets/branding/logo-dark.png?v=204131ee" alt="" aria-hidden="true">
+<img class="cb-v2-brand-lockup cb-v2-brand-lockup-light" src="assets/branding/logo-light.png?v=4d71de41" alt="" aria-hidden="true">
+<img class="cb-v2-brand-mark" src="assets/branding/logo-mark.png?v=fcda81fd" alt="" aria-hidden="true">
+</a>
+    </div>
+    <div class="cb-v2-appbar-actions">
+        <button type="button" class="cb-v2-icon-button" data-theme-toggle="" data-v2-theme-toggle="" aria-label="Alternar para tema claro" title="Alternar para tema claro" data-v2-theme-ready="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="sun" class="lucide lucide-sun cb-v2-theme-icon-dark" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="moon" class="lucide lucide-moon cb-v2-theme-icon-light" aria-hidden="true"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"></path></svg></button>
+        <a class="cb-v2-icon-button cb-v2-notification-button" href="#" aria-label="Notificações" title="Notificações" data-demo-disabled="" aria-disabled="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="bell" aria-hidden="true" class="lucide lucide-bell"><path d="M10.268 21a2 2 0 0 0 3.464 0"></path><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"></path></svg><span data-notification-badge="" aria-label="15 notificações não lidas" class=""></span>
+        </a>
+    </div>
+</header>
+
+
+
+
+    <div class="cb-v2-content cb-v2-configuracoes-content cb-v2-configuracoes-section">
+
+
+<div id="settings-dynamic-payload" class="w-full">
+    <div class="cb-v2-configuracoes-body">
+
+
+
+
+        <header class="cb-v2-configuracoes-head ui-page-header">
+            <div class="min-w-0">
+                <p class="ui-eyebrow">Configurações</p>
+                <h1 class="ui-page-title">Contas</h1>
+                <p class="ui-page-description">Gerencie suas contas bancárias e de investimento.</p>
+            </div>
+            <div class="flex items-center gap-2 shrink-0">
+                <button type="button" class="ui-btn ui-btn--ghost ui-btn--sm cb-v2-configuracoes-privacy" data-privacy-toggle="" aria-pressed="false" aria-label="Ocultar valores financeiros" data-tooltip-hover="" data-tooltip-text="Ocultar valores financeiros" data-privacy-init="true" data-tooltip-hover-init="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="eye" data-privacy-icon="" aria-hidden="true" class="lucide lucide-eye"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"></path><circle cx="12" cy="12" r="3"></circle></svg></button>
+            </div>
+        </header>
+
+        <div class="ui-panel p-4 md:p-6">
+            <form class="cb-v2-config-form" data-provider-select="" action="#" method="get" data-demo-form="">
+                <div>
+                    <h2 class="cb-v2-section-title">Nova conta</h2>
+                    <p class="cb-v2-section-desc">Cadastre uma conta bancária, carteira ou investimento.</p>
+                </div>
+
+<fieldset class="cb-provider-picker" data-provider-picker="">
+    <legend class="cb-label">Instituição</legend>
+    <select name="provider_slug" data-provider-value="" class="sr-only" aria-label="Instituição" data-select-initialized="">
+        <option value="" selected="">Escolha a instituição</option>
+        <option value="custom">Outra / Personalizada</option>
+
+        <option value="nubank">Nubank</option>
+
+        <option value="itau">Itaú</option>
+
+        <option value="inter">Inter</option>
+
+        <option value="bb">Banco do Brasil</option>
+
+        <option value="caixa">Caixa Econômica</option>
+
+        <option value="picpay">PicPay</option>
+
+        <option value="mercadopago">Mercado Pago</option>
+
+        <option value="bradesco">Bradesco</option>
+
+        <option value="santander">Santander</option>
+
+        <option value="c6">C6 Bank</option>
+
+        <option value="xp">XP Investimentos</option>
+
+        <option value="pagbank">PagBank</option>
+
+        <option value="stripe">Stripe</option>
+
+    </select>
+    <button type="button" class="cb-provider-trigger" data-provider-open="" aria-haspopup="dialog" aria-expanded="false">
+        <span class="cb-provider-trigger-logo" data-provider-trigger-logo="">
+            <img alt="" class="hidden institution-logo" data-provider-trigger-image="" data-avatar-fallback="">
+            <span class="hidden emblem-text" data-provider-trigger-fallback="" data-avatar-text=""></span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="landmark" data-provider-trigger-placeholder="" aria-hidden="true" class="lucide lucide-landmark"><path d="M10 18v-7"></path><path d="M11.119 2.205a2 2 0 0 1 1.762 0l7.84 3.846A.5.5 0 0 1 20.5 7h-17a.5.5 0 0 1-.22-.949z"></path><path d="M14 18v-7"></path><path d="M18 18v-7"></path><path d="M3 22h18"></path><path d="M6 18v-7"></path></svg>
+        </span>
+        <span class="cb-provider-trigger-copy">
+            <strong data-provider-trigger-name="">Escolha a instituição</strong>
+            <small data-provider-trigger-hint="">Toque para ver as opções disponíveis</small>
+        </span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-down" class="lucide lucide-chevron-down cb-provider-trigger-chevron" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+    </button>
+
+
+</fieldset>
+
+                <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
+                    <div>
+                        <label class="ui-label" for="createAccountType">Tipo</label>
+                        <select id="createAccountType" name="type" class="ui-select">
+                            <option value="CHECKING">Conta Corrente</option>
+                            <option value="SAVINGS">Poupança</option>
+                            <option value="INVESTMENT">Investimento</option>
+                            <option value="WALLET">Carteira / Dinheiro</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="ui-label" for="createAccountIcon">Ícone</label>
+                        <select id="createAccountIcon" name="icon" class="ui-select">
+                            <option value="">Padrão</option>
+                            <option value="landmark">Banco (landmark)</option>
+                            <option value="building-2">Prédio (building)</option>
+                            <option value="wallet">Carteira (wallet)</option>
+                            <option value="credit-card">Cartão (credit-card)</option>
+                            <option value="piggy-bank">Cofrinho (piggy-bank)</option>
+                            <option value="briefcase">Maleta (briefcase)</option>
+                            <option value="circle-dollar-sign">Dinheiro (dollar)</option>
+                            <option value="receipt">Recibo (receipt)</option>
+                            <option value="banknote">Cédula (banknote)</option>
+                            <option value="coins">Moedas (coins)</option>
+                            <option value="hand-coins">Mão com Moedas</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="ui-label" for="createAccountBalance">Saldo inicial</label>
+                        <input id="createAccountBalance" type="text" name="initial_balance" placeholder="0,00" inputmode="decimal" class="ui-input">
+                        <p class="cb-v2-help">Use vírgula para centavos e sinal - para saldo negativo.</p>
+                    </div>
+                </div>
+                <div data-provider-custom="" class="hidden grid grid-cols-1 gap-4 md:grid-cols-3">
+                    <div class="md:col-span-2">
+                        <label class="ui-label" for="createAccountProvider">Nome da instituição</label>
+                        <input id="createAccountProvider" type="text" name="provider_custom_name" placeholder="Ex: Cooperativa Local" data-provider-custom-input="" disabled="" class="ui-input">
+                    </div>
+                    <div>
+                        <label class="ui-label" for="createAccountColor">Cor</label>
+                        <input id="createAccountColor" type="color" name="color" value="#6B7280" data-provider-custom-input="" disabled="" class="cb-v2-color-input">
+                    </div>
+                </div>
+                <div class="cb-v2-form-actions">
+                    <button type="button" class="ui-btn ui-btn--primary" data-demo-submit="">Criar conta</button>
+                </div>
+            </form>
+            <div class="cb-v2-list-head">
+                <h2 class="cb-v2-section-title">Contas ativas</h2>
+                <span class="ui-badge ui-badge--neutral">3</span>
+            </div>
+            <div class="cb-v2-config-list">
+
+<article class="cb-v2-config-row">
+    <span class="cb-v2-config-icon emblem-wrap-solid" data-cb-color="#820AD1">
+
+
+<img src="assets/institutions/nubank.png?v=95199971" alt="" class="institution-logo" data-avatar-fallback="">
+<span class="hidden font-bold uppercase tracking-wider select-none emblem-text emblem-len-2" data-avatar-text="">Nu</span>
+
+
+    </span>
+    <div class="cb-v2-config-main">
+        <p class="cb-v2-config-title">Conta Nubank</p>
+        <div class="cb-v2-config-meta">
+            <span>Conta Corrente</span>
+        </div>
+    </div>
+    <div class="cb-v2-config-value">
+        <span class="cb-v2-config-value-label">Saldo</span>
+        <strong class="cb-v2-config-amount" data-sensitive="">R$ 48.539,65</strong>
+    </div>
+
+    <div class="cb-v2-config-actions">
+        <button type="button" class="ui-btn ui-btn--secondary ui-btn--sm" aria-label="Conciliar saldo de Conta Nubank">Conciliar</button>
+        <div class="cb-v2-config-actions-group">
+            <button type="button" class="cb-v2-icon-action" aria-label="Mover Conta Nubank para cima">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-up" aria-hidden="true" class="lucide lucide-chevron-up"><path d="m18 15-6-6-6 6"></path></svg>
+            </button>
+            <button type="button" class="cb-v2-icon-action" aria-label="Mover Conta Nubank para baixo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-down" aria-hidden="true" class="lucide lucide-chevron-down"><path d="m6 9 6 6 6-6"></path></svg>
+            </button>
+            <button type="button" class="cb-v2-icon-action" aria-label="Editar Conta Nubank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="pencil" aria-hidden="true" class="lucide lucide-pencil"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"></path><path d="m15 5 4 4"></path></svg>
+            </button>
+            <button type="button" class="cb-v2-icon-action cb-v2-icon-action--warning" aria-label="Arquivar Conta Nubank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="archive" aria-hidden="true" class="lucide lucide-archive"><rect width="20" height="5" x="2" y="3" rx="1"></rect><path d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8"></path><path d="M10 12h4"></path></svg>
+            </button>
+        </div>
+    </div>
+</article>
+
+<article class="cb-v2-config-row">
+    <span class="cb-v2-config-icon emblem-wrap-solid" data-cb-color="#EC7000">
+
+
+<img src="assets/institutions/itau.png?v=cb213ccc" alt="" class="institution-logo" data-avatar-fallback="">
+<span class="hidden font-bold uppercase tracking-wider select-none emblem-text emblem-len-5" data-avatar-text="">Itaú</span>
+
+
+    </span>
+    <div class="cb-v2-config-main">
+        <p class="cb-v2-config-title">Poupança Itaú</p>
+        <div class="cb-v2-config-meta">
+            <span>Poupança</span>
+        </div>
+    </div>
+    <div class="cb-v2-config-value">
+        <span class="cb-v2-config-value-label">Saldo</span>
+        <strong class="cb-v2-config-amount" data-sensitive="">R$ 51.000,00</strong>
+    </div>
+
+    <div class="cb-v2-config-actions">
+        <button type="button" class="ui-btn ui-btn--secondary ui-btn--sm" aria-label="Conciliar saldo de Poupança Itaú">Conciliar</button>
+        <div class="cb-v2-config-actions-group">
+            <button type="button" class="cb-v2-icon-action" aria-label="Mover Poupança Itaú para cima">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-up" aria-hidden="true" class="lucide lucide-chevron-up"><path d="m18 15-6-6-6 6"></path></svg>
+            </button>
+            <button type="button" class="cb-v2-icon-action" aria-label="Mover Poupança Itaú para baixo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-down" aria-hidden="true" class="lucide lucide-chevron-down"><path d="m6 9 6 6 6-6"></path></svg>
+            </button>
+            <button type="button" class="cb-v2-icon-action" aria-label="Editar Poupança Itaú">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="pencil" aria-hidden="true" class="lucide lucide-pencil"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"></path><path d="m15 5 4 4"></path></svg>
+            </button>
+            <button type="button" class="cb-v2-icon-action cb-v2-icon-action--warning" aria-label="Arquivar Poupança Itaú">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="archive" aria-hidden="true" class="lucide lucide-archive"><rect width="20" height="5" x="2" y="3" rx="1"></rect><path d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8"></path><path d="M10 12h4"></path></svg>
+            </button>
+        </div>
+    </div>
+</article>
+
+<article class="cb-v2-config-row">
+    <span class="cb-v2-config-icon emblem-wrap-solid" data-cb-color="#EC7000">
+
+
+<img src="assets/institutions/itau.png?v=cb213ccc" alt="" class="institution-logo" data-avatar-fallback="">
+<span class="hidden font-bold uppercase tracking-wider select-none emblem-text emblem-len-5" data-avatar-text="">Itaú</span>
+
+
+    </span>
+    <div class="cb-v2-config-main">
+        <p class="cb-v2-config-title">Investimentos Itaú</p>
+        <div class="cb-v2-config-meta">
+            <span>Investimento</span>
+        </div>
+    </div>
+    <div class="cb-v2-config-value">
+        <span class="cb-v2-config-value-label">Saldo</span>
+        <strong class="cb-v2-config-amount" data-sensitive="">R$ 101.390,00</strong>
+    </div>
+
+    <div class="cb-v2-config-actions">
+        <button type="button" class="ui-btn ui-btn--secondary ui-btn--sm" aria-label="Conciliar saldo de Investimentos Itaú">Conciliar</button>
+        <div class="cb-v2-config-actions-group">
+            <button type="button" class="cb-v2-icon-action" aria-label="Mover Investimentos Itaú para cima">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-up" aria-hidden="true" class="lucide lucide-chevron-up"><path d="m18 15-6-6-6 6"></path></svg>
+            </button>
+            <button type="button" class="cb-v2-icon-action" aria-label="Mover Investimentos Itaú para baixo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-down" aria-hidden="true" class="lucide lucide-chevron-down"><path d="m6 9 6 6 6-6"></path></svg>
+            </button>
+            <button type="button" class="cb-v2-icon-action" aria-label="Editar Investimentos Itaú">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="pencil" aria-hidden="true" class="lucide lucide-pencil"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"></path><path d="m15 5 4 4"></path></svg>
+            </button>
+            <button type="button" class="cb-v2-icon-action cb-v2-icon-action--warning" aria-label="Arquivar Investimentos Itaú">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="archive" aria-hidden="true" class="lucide lucide-archive"><rect width="20" height="5" x="2" y="3" rx="1"></rect><path d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8"></path><path d="M10 12h4"></path></svg>
+            </button>
+        </div>
+    </div>
+</article>
+
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+
+    </div>
+</main>
+
+
+<button type="button" class="cb-v2-fab" aria-label="Adicionar lançamento" data-demo-new-transaction="despesa"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="plus" aria-hidden="true" class="lucide lucide-plus"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg></button>
+
+
+<div data-v2-global-navigation="">
+
+<dialog class="cb-v2-drawer" data-v2-menu-dialog="" aria-label="Navegação" data-v2-drawer-ready="true">
+    <div class="cb-v2-drawer-content">
+        <div class="cb-v2-drawer-header"><a class="cb-v2-brand" href="painel.html" aria-label="ContaBase" data-demo-nav="">
+
+<img class="cb-v2-brand-lockup cb-v2-brand-lockup-dark" src="assets/branding/logo-dark.png?v=204131ee" alt="" aria-hidden="true">
+<img class="cb-v2-brand-lockup cb-v2-brand-lockup-light" src="assets/branding/logo-light.png?v=4d71de41" alt="" aria-hidden="true">
+<img class="cb-v2-brand-mark" src="assets/branding/logo-mark.png?v=fcda81fd" alt="" aria-hidden="true">
+</a><button type="button" class="cb-v2-icon-button" data-v2-menu-close="" aria-label="Fechar navegação"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="x" aria-hidden="true" class="lucide lucide-x"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg></button></div>
+        <nav class="cb-v2-nav-list">
+
+<a class="cb-v2-nav-link " data-v2-nav-section="dashboard" href="painel.html" data-demo-nav=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="layout-dashboard" aria-hidden="true" class="lucide lucide-layout-dashboard"><rect width="7" height="9" x="3" y="3" rx="1"></rect><rect width="7" height="5" x="14" y="3" rx="1"></rect><rect width="7" height="9" x="14" y="12" rx="1"></rect><rect width="7" height="5" x="3" y="16" rx="1"></rect></svg><span>Painel</span></a>
+<a class="cb-v2-nav-link " data-v2-nav-section="transactions" href="lancamentos.html" data-demo-nav=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="list" aria-hidden="true" class="lucide lucide-list"><path d="M3 5h.01"></path><path d="M3 12h.01"></path><path d="M3 19h.01"></path><path d="M8 5h13"></path><path d="M8 12h13"></path><path d="M8 19h13"></path></svg><span>Lançamentos</span></a>
+<a class="cb-v2-nav-link " data-v2-nav-section="goals" href="metas.html" data-demo-nav=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="target" aria-hidden="true" class="lucide lucide-target"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg><span>Metas</span></a>
+
+<a class="cb-v2-nav-link " data-v2-nav-section="accounts" href="contas.html" data-demo-nav=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="receipt-text" aria-hidden="true" class="lucide lucide-receipt-text"><path d="M13 16H8"></path><path d="M14 8H8"></path><path d="M16 12H8"></path><path d="M4 3a1 1 0 0 1 1-1 1.3 1.3 0 0 1 .7.2l.933.6a1.3 1.3 0 0 0 1.4 0l.934-.6a1.3 1.3 0 0 1 1.4 0l.933.6a1.3 1.3 0 0 0 1.4 0l.933-.6a1.3 1.3 0 0 1 1.4 0l.934.6a1.3 1.3 0 0 0 1.4 0l.933-.6A1.3 1.3 0 0 1 19 2a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1 1.3 1.3 0 0 1-.7-.2l-.933-.6a1.3 1.3 0 0 0-1.4 0l-.934.6a1.3 1.3 0 0 1-1.4 0l-.933-.6a1.3 1.3 0 0 0-1.4 0l-.933.6a1.3 1.3 0 0 1-1.4 0l-.934-.6a1.3 1.3 0 0 0-1.4 0l-.933.6a1.3 1.3 0 0 1-.7.2 1 1 0 0 1-1-1z"></path></svg><span>Contas</span></a>
+<a class="cb-v2-nav-link " data-v2-nav-section="invoices" href="faturas.html" data-demo-nav=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="credit-card" aria-hidden="true" class="lucide lucide-credit-card"><rect width="20" height="14" x="2" y="5" rx="2"></rect><line x1="2" x2="22" y1="10" y2="10"></line></svg><span>Faturas</span></a>
+<a class="cb-v2-nav-link " data-v2-nav-section="reports" href="relatorios.html" data-demo-nav=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chart-no-axes-combined" aria-hidden="true" class="lucide lucide-chart-no-axes-combined"><path d="M12 16v5"></path><path d="M16 14.639V21"></path><path d="M20 10.656V21"></path><path d="m22 3-8.646 8.646a.5.5 0 0 1-.708 0L9.354 8.354a.5.5 0 0 0-.707 0L2 15"></path><path d="M4 18.463V21"></path><path d="M8 14.656V21"></path></svg><span>Relatórios</span></a>
+
+
+        </nav>
+
+<section class="cb-v2-quick-actions" aria-label="Acesso rápido">
+    <p>Acesso rápido</p>
+    <button type="button" class="cb-v2-quick-action" data-demo-new-transaction="despesa"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-down" aria-hidden="true" class="lucide lucide-arrow-down"><path d="M12 5v14"></path><path d="m19 12-7 7-7-7"></path></svg><span>Nova Despesa</span></button>
+    <button type="button" class="cb-v2-quick-action"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up" aria-hidden="true" class="lucide lucide-arrow-up"><path d="m5 12 7-7 7 7"></path><path d="M12 19V5"></path></svg><span>Nova Receita</span></button>
+    <button type="button" class="cb-v2-quick-action"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-left-right" aria-hidden="true" class="lucide lucide-arrow-left-right"><path d="M8 3 4 7l4 4"></path><path d="M4 7h16"></path><path d="m16 21 4-4-4-4"></path><path d="M20 17H4"></path></svg><span>Nova Transferência</span></button>
+</section>
+
+
+<section class="cb-v2-settings-nav" aria-label="Configurações">
+<div class="cb-v2-nav-separator" aria-hidden="true"></div>
+<div class="cb-v2-nav-group is-open" data-v2-nav-group="" data-v2-nav-group-key="settings" data-v2-nav-group-default="open" data-v2-nav-group-ready="true">
+    <button type="button" class="cb-v2-nav-group-toggle" data-v2-nav-group-toggle="" aria-expanded="true">
+        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="settings-2" aria-hidden="true" class="lucide lucide-settings-2"><path d="M14 17H5"></path><path d="M19 7h-9"></path><circle cx="17" cy="17" r="3"></circle><circle cx="7" cy="7" r="3"></circle></svg><span>Configurações</span></span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-down" aria-hidden="true" class="lucide lucide-chevron-down"><path d="m6 9 6 6 6-6"></path></svg>
+    </button>
+    <div class="cb-v2-nav-sub-list" data-v2-nav-group-panel="">
+        <a class="cb-v2-nav-sub-link " href="#" data-demo-disabled="" aria-disabled="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg><span>Meu Perfil</span></a>
+
+
+        <a class="cb-v2-nav-sub-link " href="#" data-demo-disabled="" aria-disabled="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="tags" aria-hidden="true" class="lucide lucide-tags"><path d="M13.172 2a2 2 0 0 1 1.414.586l6.71 6.71a2.4 2.4 0 0 1 0 3.408l-4.592 4.592a2.4 2.4 0 0 1-3.408 0l-6.71-6.71A2 2 0 0 1 6 9.172V3a1 1 0 0 1 1-1z"></path><path d="M2 7v6.172a2 2 0 0 0 .586 1.414l6.71 6.71a2.4 2.4 0 0 0 3.191.193"></path><circle cx="10.5" cy="6.5" r=".5" fill="currentColor"></circle></svg><span>Categorias</span></a>
+        <a class="cb-v2-nav-sub-link is-active" href="configuracoes-contas.html" data-demo-nav=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="wallet" aria-hidden="true" class="lucide lucide-wallet"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"></path><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"></path></svg><span>Contas</span></a>
+        <a class="cb-v2-nav-sub-link " href="cartoes.html" data-demo-nav=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="credit-card" aria-hidden="true" class="lucide lucide-credit-card"><rect width="20" height="14" x="2" y="5" rx="2"></rect><line x1="2" x2="22" y1="10" y2="10"></line></svg><span>Cartões</span></a>
+
+    </div>
+</div>
+
+<div class="cb-v2-nav-separator" aria-hidden="true"></div>
+<div class="cb-v2-nav-group is-open" data-v2-nav-group="" data-v2-nav-group-key="administration" data-v2-nav-group-default="closed" data-v2-nav-group-ready="true">
+    <button type="button" class="cb-v2-nav-group-toggle" data-v2-nav-group-toggle="" aria-expanded="true">
+        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="shield-check" aria-hidden="true" class="lucide lucide-shield-check"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg><span>Administração</span></span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-down" aria-hidden="true" class="lucide lucide-chevron-down"><path d="m6 9 6 6 6-6"></path></svg>
+    </button>
+    <div class="cb-v2-nav-sub-list" data-v2-nav-group-panel="">
+        <a class="cb-v2-nav-sub-link " href="usuarios.html" data-demo-nav=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="users" aria-hidden="true" class="lucide lucide-users"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><path d="M16 3.128a4 4 0 0 1 0 7.744"></path><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><circle cx="9" cy="7" r="4"></circle></svg><span>Usuários</span></a>
+        <a class="cb-v2-nav-sub-link " href="#" data-demo-disabled="" aria-disabled="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="layers-3" aria-hidden="true" class="lucide lucide-layers-3"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"></path><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"></path><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"></path></svg><span>Workspaces</span></a>
+        <a class="cb-v2-nav-sub-link " href="#" data-demo-disabled="" aria-disabled="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="database-backup" aria-hidden="true" class="lucide lucide-database-backup"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M3 12a9 3 0 0 0 5 2.69"></path><path d="M21 9.3V5"></path><path d="M3 5v14a9 3 0 0 0 6.47 2.88"></path><path d="M12 12v4h4"></path><path d="M13 20a5 5 0 0 0 9-3 4.5 4.5 0 0 0-4.5-4.5c-1.33 0-2.54.54-3.41 1.41L12 16"></path></svg><span>Backups</span></a>
+        <a class="cb-v2-nav-sub-link " href="#" data-demo-disabled="" aria-disabled="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="scan-eye" aria-hidden="true" class="lucide lucide-scan-eye"><path d="M3 7V5a2 2 0 0 1 2-2h2"></path><path d="M17 3h2a2 2 0 0 1 2 2v2"></path><path d="M21 17v2a2 2 0 0 1-2 2h-2"></path><path d="M7 21H5a2 2 0 0 1-2-2v-2"></path><circle cx="12" cy="12" r="1"></circle><path d="M18.944 12.33a1 1 0 0 0 0-.66 7.5 7.5 0 0 0-13.888 0 1 1 0 0 0 0 .66 7.5 7.5 0 0 0 13.888 0"></path></svg><span>Auditoria</span></a>
+    </div>
+</div>
+
+ </section>
+
+        <div class="cb-v2-drawer-footer">
+            <div class="cb-v2-drawer-context">
+                <button type="button" class="cb-v2-workspace cb-v2-drawer-workspace" data-v2-workspace-trigger="" aria-haspopup="dialog" aria-controls="workspaceDrawer"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="house" aria-hidden="true" class="lucide lucide-house"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg><span>Horizonte Digital</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-up" aria-hidden="true" class="lucide lucide-chevron-up"><path d="m18 15-6-6-6 6"></path></svg></button>
+
+<div class="cb-v2-sidebar-controls" aria-label="Controles do aplicativo">
+    <button type="button" class="cb-v2-icon-button" data-theme-toggle="" data-v2-theme-toggle="" aria-label="Alternar para tema claro" title="Alternar para tema claro" data-v2-theme-ready="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="sun" class="lucide lucide-sun cb-v2-theme-icon-dark" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="moon" class="lucide lucide-moon cb-v2-theme-icon-light" aria-hidden="true"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"></path></svg></button>
+    <a class="cb-v2-icon-button cb-v2-notification-button" href="#" aria-label="Notificações" title="Notificações" data-demo-disabled="" aria-disabled="true">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="bell" aria-hidden="true" class="lucide lucide-bell"><path d="M10.268 21a2 2 0 0 0 3.464 0"></path><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"></path></svg><span id="notification-badge" aria-label="15 notificações não lidas"></span>
+    </a>
+</div>
+
+            </div>
+        </div>
+    </div>
+</dialog>
+
+<nav class="cb-v2-bottom-nav" aria-label="Navegação principal">
+    <a class="" data-v2-nav-section="dashboard" href="painel.html" aria-label="Início" data-demo-nav=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="layout-dashboard" aria-hidden="true" class="lucide lucide-layout-dashboard"><rect width="7" height="9" x="3" y="3" rx="1"></rect><rect width="7" height="5" x="14" y="3" rx="1"></rect><rect width="7" height="9" x="14" y="12" rx="1"></rect><rect width="7" height="5" x="3" y="16" rx="1"></rect></svg><span class="cb-v2-bottom-nav-label">Início</span></a>
+    <a class="" data-v2-nav-section="transactions" href="lancamentos.html" aria-label="Transações" data-demo-nav=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="list" aria-hidden="true" class="lucide lucide-list"><path d="M3 5h.01"></path><path d="M3 12h.01"></path><path d="M3 19h.01"></path><path d="M8 5h13"></path><path d="M8 12h13"></path><path d="M8 19h13"></path></svg><span class="cb-v2-bottom-nav-label">Transações</span></a>
+    <a class="" data-v2-nav-section="goals" href="metas.html" aria-label="Metas" data-demo-nav=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="target" aria-hidden="true" class="lucide lucide-target"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg><span class="cb-v2-bottom-nav-label">Metas</span></a>
+    <a class="" data-v2-nav-section="accounts" href="contas.html" aria-label="Contas" data-demo-nav=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="receipt-text" aria-hidden="true" class="lucide lucide-receipt-text"><path d="M13 16H8"></path><path d="M14 8H8"></path><path d="M16 12H8"></path><path d="M4 3a1 1 0 0 1 1-1 1.3 1.3 0 0 1 .7.2l.933.6a1.3 1.3 0 0 0 1.4 0l.934-.6a1.3 1.3 0 0 1 1.4 0l.933.6a1.3 1.3 0 0 0 1.4 0l.933-.6a1.3 1.3 0 0 1 1.4 0l.934.6a1.3 1.3 0 0 0 1.4 0l.933-.6A1.3 1.3 0 0 1 19 2a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1 1.3 1.3 0 0 1-.7-.2l-.933-.6a1.3 1.3 0 0 0-1.4 0l-.934.6a1.3 1.3 0 0 1-1.4 0l-.933-.6a1.3 1.3 0 0 0-1.4 0l-.933.6a1.3 1.3 0 0 1-1.4 0l-.934-.6a1.3 1.3 0 0 0-1.4 0l-.933.6a1.3 1.3 0 0 1-.7.2 1 1 0 0 1-1-1z"></path></svg><span class="cb-v2-bottom-nav-label">Contas</span></a>
+</nav>
+
+
+
+
+
+</div>
+
+
+
+
+<footer class="cb-v2-footer">
+    <p>© <span id="current-year">2026</span> ContaBase — AGPL-3.0 — <a href="#" rel="noopener noreferrer" data-demo-disabled="" aria-disabled="true">GitHub</a></p>
+    <p title="Data e hora reconhecidas pelo ContaBase na timezone configurada.">Sistema: 01/11/2026 09:00 · America/Sao_Paulo</p>
+    <p>Versão dev</p>
+</footer>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="demo-lancamento-container" hidden>
+
+
+<div class="fixed inset-0 z-[100] sheet-lancamento-scope" data-demo-lancamento-sheet="despesa">
+    <div class="absolute inset-0 bg-black/70 backdrop-blur-sm" role="presentation" data-demo-lancamento-backdrop=""></div>
+    <div class="sheet-lancamento-layer absolute inset-x-0 bottom-0 flex justify-center overflow-hidden md:inset-0 md:items-center md:px-4 md:py-6">
+        <section class="sheet-in sheet-shell sheet-lancamento-dialog relative flex h-auto max-h-[92vh] w-full max-w-md flex-col overflow-hidden rounded-t-xl border md:h-auto md:max-h-[calc(100vh-4rem)] md:rounded-xl" role="dialog" aria-modal="true" aria-labelledby="lancamento-sheet-title" aria-describedby="lancamento-sheet-context">
+        <div class="sheet-drag flex-none mx-auto mt-4 h-1 w-10 rounded-full md:hidden" aria-hidden="true"></div>
+        <header class="sheet-topbar sheet-lancamento-header flex-none">
+            <div class="min-w-0 flex-1">
+                <p class="sheet-eyebrow">Lançamentos</p>
+                <h2 id="lancamento-sheet-title" class="sheet-title" data-sheet-title-mode="create">Nova despesa</h2>
+                <p id="lancamento-sheet-context" class="sheet-subtitle">Preencha os campos e confirme.</p>
+            </div>
+            <button type="button" class="sheet-close-btn sheet-lancamento-close flex h-11 w-11 shrink-0 items-center justify-center rounded-full border transition-all active:scale-95" data-onclick="closeBottomSheet" aria-label="Fechar formulário">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="x" class="lucide lucide-x h-5 w-5" aria-hidden="true"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+            </button>
+        </header>
+        <div class="sheet-tabs-wrap flex-none">
+            <div class="sheet-tabs grid min-w-0 grid-cols-3 gap-1 rounded-xl border p-1" role="group" aria-label="Tipo de movimentação">
+                <button type="button" data-type="despesa" aria-pressed="true" class="tab-button h-11 rounded-lg px-1 is-active-despesa">
+                    <span class="flex items-center justify-center gap-1.5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="minus-circle" class="lucide lucide-minus-circle h-3.5 w-3.5" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M8 12h8"></path></svg>Despesa</span>
+                </button>
+                <button type="button" data-type="receita" aria-pressed="false" class="tab-button h-11 rounded-lg px-1 ">
+                    <span class="flex items-center justify-center gap-1.5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="plus-circle" class="lucide lucide-plus-circle h-3.5 w-3.5" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M8 12h8"></path><path d="M12 8v8"></path></svg>Receita</span>
+                </button>
+                <button type="button" data-type="transferencia" aria-pressed="false" class="tab-button h-11 rounded-lg px-1 ">
+                    <span class="flex items-center justify-center gap-1 sm:gap-1.5">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-left-right" class="lucide lucide-arrow-left-right hidden h-3.5 w-3.5 sm:block" aria-hidden="true"><path d="M8 3 4 7l4 4"></path><path d="M4 7h16"></path><path d="m16 21 4-4-4-4"></path><path d="M20 17H4"></path></svg>
+                        <span>Transferir</span>
+                    </span>
+                </button>
+            </div>
+        </div>
+        <div class="sheet-lancamento-body flex-1 min-h-0 overflow-y-auto scrollbar-hide" data-form-scroll="">
+        <div id="lancamento-form-error-region" class="sheet-error-region" aria-live="assertive" aria-atomic="true">
+            <div id="lancamento-form-error" class="hidden"></div>
+        </div>
+        <form id="lancamento-form" class="sheet-form sheet-lancamento-form" data-series-edit="false" data-is-edit="false" data-initial-type="despesa" data-initial-origin-id="f28b4eab-96b9-4da4-9e81-7a3eab78de8a" data-initial-date="" data-initial-status="paid" action="#" method="get" data-demo-form="">
+            <input id="tipoLancamento" type="hidden" name="tipo" value="despesa">
+
+            <input id="origemContaId" type="hidden" name="origem_conta_id" value="f28b4eab-96b9-4da4-9e81-7a3eab78de8a">
+            <input id="origemTipo" type="hidden" name="origem_tipo" value="conta">
+            <input id="destinoContaId" type="hidden" name="destino_conta_id" value="f8fb94a5-b3f8-4dc1-9498-329f08c5243b">
+            <input id="escopoEdicao" type="hidden" name="escopo_edicao" value="single">
+			<input id="invoiceAssignmentMode" type="hidden" name="invoice_assignment_mode" value="auto">
+            <input id="permitirExcedenteCaixinha" type="hidden" name="permitir_excedente_caixinha" value="0">
+
+
+            <div class="sheet-amount-panel sheet-amount-panel--premium relative">
+                <div class="sheet-amount-controls">
+                    <div class="sheet-amount-main">
+                        <label for="valor" class="sheet-amount-label">Valor</label>
+                        <div id="valor-input" class="sheet-amount-input-shell">
+                            <input id="valor" name="valor" type="text" inputmode="numeric" autocomplete="off" placeholder="R$ 0,00" data-money-mask="" autofocus="" aria-describedby="valor-error" class="sheet-amount-input" value="">
+                        </div>
+                    </div>
+                    <div id="statusPagamentoField" class="sheet-status-field" role="group" aria-labelledby="statusPagamentoCaption">
+                        <span id="statusPagamentoCaption" class="sheet-status-caption">Situação</span>
+                        <button type="button" id="statusPagamentoBtn" class="sheet-status-btn is-paid" title="Pago — toque para marcar como pendente" aria-label="Pago — toque para marcar como pendente" aria-pressed="true">
+                            <span id="statusPagamentoPaidIcon" class="flex items-center justify-center" aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check-circle-2" aria-hidden="true" class="lucide lucide-check-circle-2 sheet-status-icon"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
+                            </span>
+                            <span id="statusPagamentoPendingIcon" class="flex items-center justify-center hidden" aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="clock-3" aria-hidden="true" class="lucide lucide-clock-3 sheet-status-icon"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6h4"></path></svg>
+                            </span>
+                            <span id="statusPagamentoLabel" class="sheet-status-label">Pago</span>
+                        </button>
+                    </div>
+                </div>
+                <input id="statusPagamentoHidden" type="hidden" name="status_pagamento" value="paid">
+                <div id="valor-error" class="sheet-field-error mt-1 hidden" role="alert"></div>
+            </div>
+
+            <div class="sheet-field-group">
+                <div class="sheet-field">
+                    <div class="sheet-field-head">
+                        <label for="descricaoLancamento" class="sheet-field-label">Descrição</label>
+                        <span id="descricaoLancamento-error" class="sheet-field-error hidden" role="alert"></span>
+                    </div>
+                    <div class="relative">
+                        <input id="descricaoLancamento" type="text" name="descricao" placeholder="Mercado do mês" aria-describedby="descricaoLancamento-error" class="sheet-control sheet-control--icon-right" value="">
+                        <span class="sheet-control-icon pointer-events-none absolute inset-y-0 right-4 flex items-center" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="notepad-text" aria-hidden="true" class="lucide lucide-notepad-text h-4 w-4"><path d="M8 2v4"></path><path d="M12 2v4"></path><path d="M16 2v4"></path><rect width="16" height="18" x="4" y="4" rx="2"></rect><path d="M8 10h6"></path><path d="M8 14h8"></path><path d="M8 18h5"></path></svg>
+                        </span>
+                        <div id="sugestoes-container" class="absolute left-0 right-0 top-[calc(100%+0.5rem)] z-[130]"></div>
+                    </div>
+                </div>
+                <div class="sheet-field">
+                    <label for="dataLancamento" class="sheet-field-label">Data de competência</label>
+                    <div class="relative">
+                        <span class="sheet-control-icon pointer-events-none absolute inset-y-0 left-4 flex items-center" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="calendar" aria-hidden="true" class="lucide lucide-calendar h-4 w-4"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path></svg>
+                        </span>
+                        <input id="dataLancamento" type="date" name="data" value="2026-11-01" data-auto-payment-default="true" data-today-civil="2026-11-01" data-onclick-el="showPicker" class="sheet-control sheet-control--icon-both">
+                        <span class="sheet-control-icon pointer-events-none absolute inset-y-0 right-4 flex items-center" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-down" aria-hidden="true" class="lucide lucide-chevron-down h-4 w-4"><path d="m6 9 6 6 6-6"></path></svg>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="paymentScheduleNotice" class="sheet-notice sheet-notice--accent hidden items-start gap-3 text-left" role="status" aria-live="polite">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="calendar-clock" class="lucide lucide-calendar-clock mt-0.5 h-4 w-4 shrink-0" aria-hidden="true"><path d="M16 14v2.2l1.6 1"></path><path d="M16 2v4"></path><path d="M21 7.5V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h3.5"></path><path d="M3 10h5"></path><path d="M8 2v4"></path><circle cx="16" cy="16" r="6"></circle></svg>
+                <p class="leading-relaxed">
+                    <span class="block font-semibold">Confirmação agendada</span>
+                    <span id="paymentScheduleNoticeText">Como a data é futura, este lançamento continuará pendente e será confirmado automaticamente na data escolhida.</span>
+                </p>
+            </div>
+
+
+
+            <button id="origemPicker" type="button" aria-haspopup="dialog" class="sheet-picker sheet-account-picker flex w-full items-center justify-between gap-3 rounded-xl border text-left">
+                <span class="flex min-w-0 items-center gap-3">
+                    <span id="origemIconWrap" class="sheet-picker-icon flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl border emblem-wrap-solid select-none" data-cb-color="#820AD1">
+
+                        <img id="origemIconImage" src="assets/institutions/nubank.png?v=95199971" alt="" class="institution-logo" data-avatar-fallback="">
+                        <span id="origemIconText" class="hidden font-bold uppercase tracking-wider select-none emblem-text emblem-len-2" data-avatar-text="">Nu</span>
+                        <i id="origemIcon" class="hidden h-4 w-4 icon-colored" data-cb-color="#820AD1"></i>
+
+                    </span>
+                    <span class="min-w-0">
+                        <span id="origemLabel" class="sheet-picker__label block">Conta de origem</span>
+                        <span id="origemNome" class="sheet-picker__value block truncate">Conta Nubank</span>
+                    </span>
+                </span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-down" class="lucide lucide-chevron-down sheet-picker__chevron h-4 w-4 flex-shrink-0" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+            </button>
+
+            <p id="faturaAviso" class="sheet-notice sheet-notice--info hidden"></p>
+
+            <div id="faturaSelector" class="sheet-subsection hidden">
+                <div class="space-y-2">
+                    <div class="flex items-center justify-between">
+                        <span class="sheet-field-label block">Fatura</span>
+                        <button type="button" id="faturaResetAuto" class="sheet-inline-action hidden">
+                            Voltar para automático
+                        </button>
+                    </div>
+                    <div id="faturaQuickState" class="sheet-quick-state rounded-xl border px-3 py-2.5 text-xs">
+                        <div class="flex items-center justify-between">
+                            <span class="text-[var(--cb-text-muted)]">Automático</span>
+                            <span class="font-medium text-[var(--cb-text-main)]">fatura do ciclo</span>
+                        </div>
+                    </div>
+                    <div id="faturaQuickActions" class="flex items-center justify-between">
+                        <button type="button" id="faturaPrevBtn" class="sheet-inline-action hidden">
+                            <span class="mr-1" aria-hidden="true">←</span><span id="faturaPrevLabel">Mover</span>
+                        </button>
+                        <button type="button" id="faturaNextBtn" class="sheet-inline-action hidden">
+                            <span id="faturaNextLabel">Mover</span><span class="ml-1" aria-hidden="true">→</span>
+                        </button>
+                    </div>
+                    <div class="text-center">
+                        <button type="button" id="faturaToggleAdvanced" class="sheet-inline-action sheet-inline-action--subtle">
+                            Escolher outra fatura
+                        </button>
+                    </div>
+                    <div id="faturaAdvancedBox" class="hidden space-y-2">
+                        <select id="faturaSelect" name="invoice_id" aria-label="Fatura do lançamento" class="sheet-select">
+                            <option value="">Automático (fatura do ciclo)</option>
+
+                        </select>
+                    </div>
+                    <input type="hidden" id="faturaOffset" name="fatura_offset" value="auto">
+                    <p id="faturaSensitiveAviso" class="sheet-notice sheet-notice--warning hidden">
+						Esta fatura está fechada. O lançamento será tratado como correção manual e o saldo pendente será recalculado.
+                    </p>
+					<p id="faturaPaidAviso" class="sheet-notice sheet-notice--danger hidden">
+						Movimentação bloqueada: esta fatura está integralmente paga.
+					</p>
+                </div>
+            </div>
+
+            <div id="transferDirectionHint" class="sheet-transfer-hint hidden" aria-hidden="true">
+                <span class="sheet-transfer-hint__line"></span>
+                <span class="sheet-transfer-hint__icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-down" aria-hidden="true" class="lucide lucide-arrow-down h-4 w-4"><path d="M12 5v14"></path><path d="m19 12-7 7-7-7"></path></svg></span>
+                <span class="sheet-transfer-hint__line"></span>
+            </div>
+
+            <button id="destinoPicker" type="button" aria-haspopup="dialog" class="sheet-picker sheet-account-picker hidden w-full items-center justify-between gap-3 rounded-xl border text-left">
+                <span class="flex min-w-0 items-center gap-3">
+                    <span id="destinoIconWrap" class="sheet-picker-icon flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl border emblem-wrap-solid select-none" data-cb-color="#EC7000">
+
+                        <img id="destinoIconImage" src="assets/institutions/itau.png?v=cb213ccc" alt="" class="institution-logo" data-avatar-fallback="">
+                        <span id="destinoIconText" class="hidden font-bold uppercase tracking-wider select-none emblem-text emblem-len-5" data-avatar-text="">Itaú</span>
+                        <i id="destinoIcon" class="hidden h-4 w-4 icon-colored" data-cb-color="#EC7000"></i>
+
+                    </span>
+                    <span class="min-w-0">
+                        <span class="sheet-picker__label block">Conta de destino</span>
+                        <span id="destinoNome" class="sheet-picker__value block truncate">Investimentos Itaú</span>
+                    </span>
+                </span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-down" class="lucide lucide-chevron-down sheet-picker__chevron h-4 w-4 flex-shrink-0" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+            </button>
+
+            <div id="categoriaPicker" class="sheet-field relative">
+                <div class="sheet-field-head">
+                    <span class="sheet-field-label">Categoria</span>
+                    <span id="categoria-error" class="sheet-field-error hidden" role="alert"></span>
+                </div>
+                <button type="button" aria-haspopup="dialog" class="sheet-picker flex w-full items-center justify-between gap-3 rounded-xl border text-left">
+                    <span class="flex min-w-0 items-center gap-3">
+                        <span id="categoriaIconWrap" class="sheet-picker-icon flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl border ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="tag" aria-hidden="true" id="categoriaIcon" class="lucide lucide-tag h-4 w-4 text-[var(--cb-text-muted)]"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"></path><circle cx="7.5" cy="7.5" r=".5" fill="currentColor"></circle></svg>
+                        </span>
+                        <span class="min-w-0">
+                            <span id="categoriaNome" class="sheet-picker__value block truncate">Selecione uma categoria</span>
+                        </span>
+                    </span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-down" class="lucide lucide-chevron-down sheet-picker__chevron h-4 w-4 flex-shrink-0" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+                </button>
+                <input id="categoriaId" type="hidden" name="categoria_id" value="">
+                <input id="categoriaType" type="hidden" name="categoria_type" value="">
+
+            </div>
+
+            <div id="categoryLimitInfo" class="sheet-info hidden">
+                <p class="sheet-info__text">
+                    <span class="sheet-info__label">Limite:</span>
+                    <span id="limitInfoText" data-sensitive=""></span>
+                </p>
+                <p id="limitOverdraftWarn" class="sheet-info__warn hidden">
+                    Atenção: este lançamento pode ultrapassar o limite da categoria.
+                </p>
+            </div>
+            <div id="categoryReserveInfo" class="sheet-info hidden">
+                <p class="sheet-info__text">
+                    <span class="sheet-info__label">Reserva:</span>
+                    <span id="reserveInfoText" data-sensitive=""></span>
+                </p>
+                <p class="sheet-info__note">Esta despesa consumirá automaticamente essa reserva.</p>
+            </div>
+
+            <section id="boxOverdraftWarning" class="sheet-notice sheet-notice--warning hidden p-4">
+                <label class="flex items-start gap-3">
+                    <input id="allowBoxOverdraftCheckbox" type="checkbox" class="sheet-checkbox mt-0.5">
+                    <span class="text-xs leading-relaxed">
+                        Esta despesa ultrapassa o Saldo da sua Reserva. Ao confirmar, a despesa será mantida no seu histórico e a reserva ficara com saldo negativo (excedente) até que você faça um novo aporte.
+                    </span>
+                </label>
+            </section>
+
+            <section class="sheet-card sheet-options" aria-label="Parcelamento e recorrência">
+                <div class="sheet-option">
+                    <input id="parcelada" name="parcelada" type="checkbox" class="toggle-input sr-only">
+                    <label for="parcelada" class="toggle-label sheet-option__row">
+                        <span class="sheet-option__icon" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="receipt-text" aria-hidden="true" class="lucide lucide-receipt-text h-4 w-4"><path d="M13 16H8"></path><path d="M14 8H8"></path><path d="M16 12H8"></path><path d="M4 3a1 1 0 0 1 1-1 1.3 1.3 0 0 1 .7.2l.933.6a1.3 1.3 0 0 0 1.4 0l.934-.6a1.3 1.3 0 0 1 1.4 0l.933.6a1.3 1.3 0 0 0 1.4 0l.933-.6a1.3 1.3 0 0 1 1.4 0l.934.6a1.3 1.3 0 0 0 1.4 0l.933-.6A1.3 1.3 0 0 1 19 2a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1 1.3 1.3 0 0 1-.7-.2l-.933-.6a1.3 1.3 0 0 0-1.4 0l-.934.6a1.3 1.3 0 0 1-1.4 0l-.933-.6a1.3 1.3 0 0 0-1.4 0l-.933.6a1.3 1.3 0 0 1-1.4 0l-.934-.6a1.3 1.3 0 0 0-1.4 0l-.933.6a1.3 1.3 0 0 1-.7.2 1 1 0 0 1-1-1z"></path></svg>
+                        </span>
+                        <span class="min-w-0 flex-1">
+                            <span id="parcelamentoTitulo" class="sheet-option__title">Esta despesa é parcelada?</span>
+                            <span id="parcelasResumo" class="sheet-option__hint">Ative para escolher de 2x até 12x</span>
+                        </span>
+                        <span class="toggle-track relative h-6 w-11 flex-shrink-0 rounded-full border transition-colors">
+                            <span class="toggle-knob absolute left-0.5 top-0.5 h-5 w-5 rounded-full transition-transform"></span>
+                        </span>
+                    </label>
+                    <div id="parcelasBox" class="sheet-option__panel hidden">
+                        <label for="parcelas" class="sheet-field-label">Quantidade de parcelas</label>
+                        <select id="parcelas" name="parcelas" class="sheet-select">
+
+                            <option value="2">2x</option>
+
+                            <option value="3">3x</option>
+
+                            <option value="4">4x</option>
+
+                            <option value="5">5x</option>
+
+                            <option value="6">6x</option>
+
+                            <option value="7">7x</option>
+
+                            <option value="8">8x</option>
+
+                            <option value="9">9x</option>
+
+                            <option value="10">10x</option>
+
+                            <option value="11">11x</option>
+
+                            <option value="12">12x</option>
+
+                        </select>
+                    </div>
+                </div>
+
+                <div class="sheet-option__divider" role="presentation"></div>
+
+                <div class="sheet-option">
+                    <input id="lancamentoFixo" name="lancamento_fixo" type="checkbox" class="toggle-input sr-only">
+                    <label for="lancamentoFixo" class="toggle-label sheet-option__row">
+                        <span class="sheet-option__icon" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="repeat-2" aria-hidden="true" class="lucide lucide-repeat-2 h-4 w-4"><path d="m2 9 3-3 3 3"></path><path d="M13 18H7a2 2 0 0 1-2-2V6"></path><path d="m22 15-3 3-3-3"></path><path d="M11 6h6a2 2 0 0 1 2 2v10"></path></svg>
+                        </span>
+                        <span class="min-w-0 flex-1">
+                            <span id="fixoTitulo" class="sheet-option__title">Lançamento fixo</span>
+                            <span class="sheet-option__hint">Repete sem quantidade final definida</span>
+                        </span>
+                        <span class="toggle-track relative h-6 w-11 flex-shrink-0 rounded-full border transition-colors">
+                            <span class="toggle-knob absolute left-0.5 top-0.5 h-5 w-5 rounded-full transition-transform"></span>
+                        </span>
+                    </label>
+                    <div id="recorrenciaBox" class="sheet-option__panel hidden">
+                        <label for="recorrencia" class="sheet-field-label">Frequência</label>
+                        <select id="recorrencia" name="recorrencia" class="sheet-select">
+                            <option value="DAILY">Diário</option>
+                            <option value="WEEKLY">Semanal</option>
+                            <option value="BIWEEKLY">Quinzenal</option>
+                            <option value="MONTHLY" selected="">Mensal</option>
+                            <option value="BIMONTHLY">Bimestral</option>
+                            <option value="QUARTERLY">Trimestral</option>
+                            <option value="SEMIANNUAL">Semestral</option>
+                            <option value="ANNUAL">Anual</option>
+                        </select>
+                    </div>
+                    <div id="totalOccurrencesBox" class="sheet-option__panel hidden">
+                        <label for="totalOccurrences" class="sheet-field-label">Total de repetições</label>
+                        <input id="totalOccurrences" name="total_occurrences" type="number" min="2" max="360" placeholder="Deixe vazio para infinito" class="sheet-control">
+                        <p class="sheet-option__hint mt-1">Deixe vazio para repetir sem limite de quantidade</p>
+                    </div>
+                </div>
+            </section>
+
+
+
+            <section class="sheet-card sheet-details">
+                <button type="button" id="detalhesAdicionaisToggle" aria-expanded="false" aria-controls="detalhesAdicionaisBody" class="sheet-details-toggle flex w-full items-center justify-between text-left">
+                    <span class="flex items-center gap-3">
+                        <span class="sheet-details__icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="list-todo" aria-hidden="true" class="lucide lucide-list-todo h-4 w-4"><path d="M13 5h8"></path><path d="M13 12h8"></path><path d="M13 19h8"></path><path d="m3 17 2 2 4-4"></path><rect x="3" y="4" width="6" height="6" rx="1"></rect></svg></span>
+                        <span>
+                            <span class="sheet-details__title">Detalhes adicionais</span>
+                            <span class="sheet-details__hint">Anotações e comprovante</span>
+                        </span>
+                    </span>
+                    <span id="detalhesAdicionaisIcon" class="flex h-4 w-4 items-center justify-center transition-transform" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-down" aria-hidden="true" class="lucide lucide-chevron-down h-4 w-4"><path d="m6 9 6 6 6-6"></path></svg>
+                    </span>
+                </button>
+                <div id="detalhesAdicionaisBody" class="sheet-details__body hidden">
+                    <div class="sheet-field">
+                        <label for="anotacoesLancamento" class="sheet-field-label">Anotações</label>
+                        <textarea id="anotacoesLancamento" name="anotacoes" rows="4" placeholder="Observações, contexto, comprovante..." class="sheet-control sheet-textarea"></textarea>
+                    </div>
+                    <div class="sheet-field">
+                        <label for="anexoLancamento" class="sheet-field-label">Anexar arquivo</label>
+                        <input id="anexoLancamento" type="file" name="anexo" class="sheet-file-input block w-full rounded-xl border border-dashed px-3 py-2.5 text-xs file:mr-3 file:rounded-lg file:border-0 file:px-3 file:py-1.5 file:text-xs file:font-semibold">
+                    </div>
+
+                </div>
+            </section>
+
+
+
+        </form>
+        </div>
+        <div data-form-footer="" class="sheet-form-footer flex-none">
+            <button type="button" class="ui-btn ui-btn--ghost sheet-footer-btn" data-onclick="closeBottomSheet">
+                Cancelar
+            </button>
+            <button type="button" id="lancamentoSubmit" form="lancamento-form" class="ui-btn ui-btn--primary sheet-footer-btn sheet-footer-btn--primary" aria-label="Salvar lançamento" data-demo-submit="">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" class="lucide lucide-check h-4 w-4" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>
+                <span>Salvar</span>
+            </button>
+        </div>
+        </section>
+    </div>
+</div>
+
+<div id="formModalBackdrop" data-contabase-overlay="" data-overlay-priority="110" data-overlay-close="closeLancamentoFormModal" data-overlay-close-method="hidden" class="sheet-lancamento-scope fixed inset-0 z-[110] hidden bg-black/80 md:px-4 md:py-6">
+    <section id="origemModal" class="hidden mx-auto flex h-full max-w-md items-end md:max-w-xl md:items-start">
+        <div class="sheet-origin-modal w-full rounded-t-xl border p-5 md:mx-auto md:my-12 md:rounded-xl" role="dialog" aria-modal="true" aria-labelledby="origemModalTitle" aria-describedby="origemModalSubtitle">
+            <div class="mb-5 flex items-center justify-between gap-4">
+                <div>
+                    <p id="origemModalTitle" class="sheet-origin-modal__title">Conta de origem</p>
+                    <p id="origemModalSubtitle" class="sheet-origin-modal__subtitle">Escolha uma conta ou cartão</p>
+                </div>
+                <button type="button" data-close-modal="" class="sheet-close-btn sheet-origin-modal__close flex items-center justify-center rounded-full border" aria-label="Fechar seletor de conta">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="x" class="lucide lucide-x h-4 w-4" aria-hidden="true"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+                </button>
+            </div>
+            <div class="sheet-origin-modal__list overflow-y-auto space-y-4">
+                <div class="space-y-1.5">
+                    <p class="sheet-origin-modal__group">Contas</p>
+
+                    <button type="button" data-origin-kind="conta" data-origin-id="f28b4eab-96b9-4da4-9e81-7a3eab78de8a" data-origin-name="Conta Nubank" data-origin-icon="landmark" data-origin-color="#820AD1" data-origin-provider="nubank" data-origin-provider-mark="Nu" data-origin-provider-logo="/assets/institutions/nubank.png?v=95199971" class="origin-option sheet-origin-option flex w-full items-center gap-3 rounded-xl border text-left">
+                        <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg emblem-wrap-solid select-none" data-cb-color="#820AD1">
+
+
+<img src="assets/institutions/nubank.png?v=95199971" alt="" class="institution-logo" data-avatar-fallback="">
+<span class="hidden font-bold uppercase tracking-wider select-none emblem-text emblem-len-2" data-avatar-text="">Nu</span>
+
+
+                        </span>
+                        <span class="min-w-0">
+                            <span class="sheet-origin-option__name block truncate">Conta Nubank</span>
+                            <span class="sheet-origin-option__meta mt-0.5 block truncate">Saldo R$ 48.539,65</span>
+                        </span>
+                    </button>
+
+                    <button type="button" data-origin-kind="conta" data-origin-id="f8fb94a5-b3f8-4dc1-9498-329f08c5243b" data-origin-name="Investimentos Itaú" data-origin-icon="building-2" data-origin-color="#EC7000" data-origin-provider="itau" data-origin-provider-mark="Itaú" data-origin-provider-logo="/assets/institutions/itau.png?v=cb213ccc" class="origin-option sheet-origin-option flex w-full items-center gap-3 rounded-xl border text-left">
+                        <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg emblem-wrap-solid select-none" data-cb-color="#EC7000">
+
+
+<img src="assets/institutions/itau.png?v=cb213ccc" alt="" class="institution-logo" data-avatar-fallback="">
+<span class="hidden font-bold uppercase tracking-wider select-none emblem-text emblem-len-5" data-avatar-text="">Itaú</span>
+
+
+                        </span>
+                        <span class="min-w-0">
+                            <span class="sheet-origin-option__name block truncate">Investimentos Itaú</span>
+                            <span class="sheet-origin-option__meta mt-0.5 block truncate">Saldo R$ 101.390,00</span>
+                        </span>
+                    </button>
+
+                    <button type="button" data-origin-kind="conta" data-origin-id="114cfcef-9dae-4817-bbec-90bbfa1081cd" data-origin-name="Poupança Itaú" data-origin-icon="building-2" data-origin-color="#EC7000" data-origin-provider="itau" data-origin-provider-mark="Itaú" data-origin-provider-logo="/assets/institutions/itau.png?v=cb213ccc" class="origin-option sheet-origin-option flex w-full items-center gap-3 rounded-xl border text-left">
+                        <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg emblem-wrap-solid select-none" data-cb-color="#EC7000">
+
+
+<img src="assets/institutions/itau.png?v=cb213ccc" alt="" class="institution-logo" data-avatar-fallback="">
+<span class="hidden font-bold uppercase tracking-wider select-none emblem-text emblem-len-5" data-avatar-text="">Itaú</span>
+
+
+                        </span>
+                        <span class="min-w-0">
+                            <span class="sheet-origin-option__name block truncate">Poupança Itaú</span>
+                            <span class="sheet-origin-option__meta mt-0.5 block truncate">Saldo R$ 51.000,00</span>
+                        </span>
+                    </button>
+
+                </div>
+                <div id="cartoesModalGroup" class="space-y-1.5">
+                    <p class="sheet-origin-modal__group">Cartões</p>
+
+                    <button type="button" data-origin-kind="cartao" data-origin-id="fb4d9aba-e688-4139-9edb-5ba5660d0322" data-origin-name="Cartão Itaú" data-origin-icon="credit-card" data-origin-color="#EC7000" data-origin-provider="itau" data-closing-day="25" data-due-day="5" data-origin-provider-mark="Itaú" data-origin-provider-logo="/assets/institutions/itau.png?v=cb213ccc" class="origin-option sheet-origin-option flex w-full items-center gap-3 rounded-xl border text-left">
+                        <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg emblem-wrap-solid select-none" data-cb-color="#EC7000">
+
+
+<img src="assets/institutions/itau.png?v=cb213ccc" alt="" class="institution-logo" data-avatar-fallback="">
+<span class="hidden font-bold uppercase tracking-wider select-none emblem-text emblem-len-5" data-avatar-text="">Itaú</span>
+
+
+                        </span>
+                        <span class="min-w-0">
+                            <span class="sheet-origin-option__name block truncate">Cartão Itaú</span>
+                            <span class="sheet-origin-option__meta mt-0.5 block truncate">Limite R$ 13.030,00 • vence 05/Dez</span>
+                        </span>
+                    </button>
+
+                    <button type="button" data-origin-kind="cartao" data-origin-id="52002bc4-48ef-47e8-a58b-c345c3434f9f" data-origin-name="Cartão Nubank" data-origin-icon="credit-card" data-origin-color="#820AD1" data-origin-provider="nubank" data-closing-day="20" data-due-day="27" data-origin-provider-mark="Nu" data-origin-provider-logo="/assets/institutions/nubank.png?v=95199971" class="origin-option sheet-origin-option flex w-full items-center gap-3 rounded-xl border text-left">
+                        <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg emblem-wrap-solid select-none" data-cb-color="#820AD1">
+
+
+<img src="assets/institutions/nubank.png?v=95199971" alt="" class="institution-logo" data-avatar-fallback="">
+<span class="hidden font-bold uppercase tracking-wider select-none emblem-text emblem-len-2" data-avatar-text="">Nu</span>
+
+
+                        </span>
+                        <span class="min-w-0">
+                            <span class="sheet-origin-option__name block truncate">Cartão Nubank</span>
+                            <span class="sheet-origin-option__meta mt-0.5 block truncate">Limite R$ 5.860,00 • vence 27/Nov</span>
+                        </span>
+                    </button>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="categoriaModal" class="hidden">
+
+        <span class="category-option" data-category-id="d5fa7704-8545-4e7f-97dc-7a924b536c12" data-category-name="Outras Receitas" data-category-icon="banknote-arrow-up" data-category-color="slate" data-category-type="INCOME"></span>
+
+        <span class="category-option" data-category-id="5e42685e-ef16-4ed0-bb63-8fffa189e46e" data-category-name="Presente recebido" data-category-icon="gift" data-category-color="slate" data-category-type="INCOME" data-category-parent-id="d5fa7704-8545-4e7f-97dc-7a924b536c12" data-category-parent-name="Outras Receitas"></span>
+
+        <span class="category-option" data-category-id="1a9dccd3-a082-4a3e-b051-9796645fbc81" data-category-name="Venda de item usado" data-category-icon="trending-up" data-category-color="slate" data-category-type="INCOME" data-category-parent-id="d5fa7704-8545-4e7f-97dc-7a924b536c12" data-category-parent-name="Outras Receitas"></span>
+
+        <span class="category-option" data-category-id="6d00d294-67d9-4cbb-9101-7f7e27b59117" data-category-name="Rendimentos" data-category-icon="trending-up" data-category-color="slate" data-category-type="INCOME"></span>
+
+        <span class="category-option" data-category-id="9c637443-591a-4f23-a8aa-559223a1bd98" data-category-name="Aluguel recebido" data-category-icon="house" data-category-color="slate" data-category-type="INCOME" data-category-parent-id="6d00d294-67d9-4cbb-9101-7f7e27b59117" data-category-parent-name="Rendimentos"></span>
+
+        <span class="category-option" data-category-id="03f5d78b-1543-445c-83b8-8eb6e97f1e9a" data-category-name="Cashback" data-category-icon="coins" data-category-color="slate" data-category-type="INCOME" data-category-parent-id="6d00d294-67d9-4cbb-9101-7f7e27b59117" data-category-parent-name="Rendimentos"></span>
+
+        <span class="category-option" data-category-id="60ff93b1-d912-4f46-ac30-2214da4786d4" data-category-name="Dividendos" data-category-icon="hand-coins" data-category-color="slate" data-category-type="INCOME" data-category-parent-id="6d00d294-67d9-4cbb-9101-7f7e27b59117" data-category-parent-name="Rendimentos"></span>
+
+        <span class="category-option" data-category-id="b052f19c-8d0a-4e6f-b2a8-0e0c55165feb" data-category-name="Juros" data-category-icon="percent" data-category-color="slate" data-category-type="INCOME" data-category-parent-id="6d00d294-67d9-4cbb-9101-7f7e27b59117" data-category-parent-name="Rendimentos"></span>
+
+        <span class="category-option" data-category-id="6b7e5999-6932-4d30-b5f8-786406c5869f" data-category-name="Rendimentos de investimentos" data-category-icon="chart-line" data-category-color="slate" data-category-type="INCOME" data-category-parent-id="6d00d294-67d9-4cbb-9101-7f7e27b59117" data-category-parent-name="Rendimentos"></span>
+
+        <span class="category-option" data-category-id="a83be31e-f58e-468d-913f-6471a8aef562" data-category-name="Trabalho e Renda" data-category-icon="briefcase" data-category-color="slate" data-category-type="INCOME"></span>
+
+        <span class="category-option" data-category-id="3e1e20b6-b8da-46d5-a8af-b954bd6aeaa2" data-category-name="13º salário" data-category-icon="circle-dollar-sign" data-category-color="slate" data-category-type="INCOME" data-category-parent-id="a83be31e-f58e-468d-913f-6471a8aef562" data-category-parent-name="Trabalho e Renda"></span>
+
+        <span class="category-option" data-category-id="1e1351c9-fcc1-41f6-88c2-72dec392d055" data-category-name="Bônus" data-category-icon="hand-coins" data-category-color="slate" data-category-type="INCOME" data-category-parent-id="a83be31e-f58e-468d-913f-6471a8aef562" data-category-parent-name="Trabalho e Renda"></span>
+
+        <span class="category-option" data-category-id="397664ef-b97c-4e32-b57c-c2860d02b388" data-category-name="Comissão" data-category-icon="trending-up" data-category-color="slate" data-category-type="INCOME" data-category-parent-id="a83be31e-f58e-468d-913f-6471a8aef562" data-category-parent-name="Trabalho e Renda"></span>
+
+        <span class="category-option" data-category-id="aae451d6-18ac-4403-81ba-e6cd140736dd" data-category-name="Freelance" data-category-icon="users" data-category-color="slate" data-category-type="INCOME" data-category-parent-id="a83be31e-f58e-468d-913f-6471a8aef562" data-category-parent-name="Trabalho e Renda"></span>
+
+        <span class="category-option" data-category-id="88ec9ac1-97ef-48be-ab1a-fc544f488fd0" data-category-name="Pró-labore" data-category-icon="wallet" data-category-color="slate" data-category-type="INCOME" data-category-parent-id="a83be31e-f58e-468d-913f-6471a8aef562" data-category-parent-name="Trabalho e Renda"></span>
+
+        <span class="category-option" data-category-id="c7788843-7737-4145-a136-8d20fd0c67a4" data-category-name="Reembolso recebido" data-category-icon="repeat" data-category-color="slate" data-category-type="INCOME" data-category-parent-id="a83be31e-f58e-468d-913f-6471a8aef562" data-category-parent-name="Trabalho e Renda"></span>
+
+        <span class="category-option" data-category-id="e6d15926-4ed4-44b7-844e-b3cf4ddd4a30" data-category-name="Salário" data-category-icon="circle-dollar-sign" data-category-color="slate" data-category-type="INCOME" data-category-parent-id="a83be31e-f58e-468d-913f-6471a8aef562" data-category-parent-name="Trabalho e Renda"></span>
+
+        <span class="category-option" data-category-id="7b5ced78-7b26-4285-b782-3a2000c8af1b" data-category-name="Alimentação" data-category-icon="utensils" data-category-color="slate" data-category-type="EXPENSE" data-limit-max="280000" data-limit-spent="106500"></span>
+
+        <span class="category-option" data-category-id="7c5f8c85-71cc-41a0-a0e8-99d4a998256b" data-category-name="Açougue" data-category-icon="salad" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="7b5ced78-7b26-4285-b782-3a2000c8af1b" data-category-parent-name="Alimentação"></span>
+
+        <span class="category-option" data-category-id="c2bc4aa8-5e07-4c91-95e2-02631ffabfad" data-category-name="Feira" data-category-icon="tag" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="7b5ced78-7b26-4285-b782-3a2000c8af1b" data-category-parent-name="Alimentação"></span>
+
+        <span class="category-option" data-category-id="ca8b5b67-2f97-4c11-8966-0e95a020f61c" data-category-name="Hortifruti" data-category-icon="salad" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="7b5ced78-7b26-4285-b782-3a2000c8af1b" data-category-parent-name="Alimentação"></span>
+
+        <span class="category-option" data-category-id="470d8297-5dca-47a7-9578-1ae445995f58" data-category-name="Itens de cozinha" data-category-icon="tag" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="7b5ced78-7b26-4285-b782-3a2000c8af1b" data-category-parent-name="Alimentação"></span>
+
+        <span class="category-option" data-category-id="6759bb92-1b85-4d13-8228-781cb5cf73e0" data-category-name="Padaria básica" data-category-icon="coffee" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="7b5ced78-7b26-4285-b782-3a2000c8af1b" data-category-parent-name="Alimentação"></span>
+
+        <span class="category-option" data-category-id="9a727bc0-604a-4bcc-bf78-d3b9d33176a4" data-category-name="Supermercado" data-category-icon="shopping-cart" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="7b5ced78-7b26-4285-b782-3a2000c8af1b" data-category-parent-name="Alimentação"></span>
+
+        <span class="category-option" data-category-id="bd1467e1-1dbb-4a4b-815d-e6598cf4f7a1" data-category-name="Casa e Decoração" data-category-icon="house" data-category-color="slate" data-category-type="EXPENSE" data-limit-max="100000" data-limit-spent="50000"></span>
+
+        <span class="category-option" data-category-id="304a039d-e85b-457c-9e37-bcd7732a593d" data-category-name="Automação residencial" data-category-icon="house" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="bd1467e1-1dbb-4a4b-815d-e6598cf4f7a1" data-category-parent-name="Casa e Decoração"></span>
+
+        <span class="category-option" data-category-id="a2343d0f-7a50-4761-86ae-5dc431fff473" data-category-name="Decoração" data-category-icon="house" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="bd1467e1-1dbb-4a4b-815d-e6598cf4f7a1" data-category-parent-name="Casa e Decoração"></span>
+
+        <span class="category-option" data-category-id="9ac6ca4f-b0a2-4ce2-9aee-f3c0c6cdcedd" data-category-name="Jardinagem" data-category-icon="leaf" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="bd1467e1-1dbb-4a4b-815d-e6598cf4f7a1" data-category-parent-name="Casa e Decoração"></span>
+
+        <span class="category-option" data-category-id="a11e737d-83d9-4c47-8f06-5d74de3e7ae0" data-category-name="Móveis" data-category-icon="house" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="bd1467e1-1dbb-4a4b-815d-e6598cf4f7a1" data-category-parent-name="Casa e Decoração"></span>
+
+        <span class="category-option" data-category-id="758c5d84-9dad-47e1-bc1e-b4888b5140fa" data-category-name="Organização" data-category-icon="shapes" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="bd1467e1-1dbb-4a4b-815d-e6598cf4f7a1" data-category-parent-name="Casa e Decoração"></span>
+
+        <span class="category-option" data-category-id="2a775cd8-da13-46a1-861d-6a6feaa18be9" data-category-name="Utensílios não essenciais" data-category-icon="utensils" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="bd1467e1-1dbb-4a4b-815d-e6598cf4f7a1" data-category-parent-name="Casa e Decoração"></span>
+
+        <span class="category-option" data-category-id="d1833255-50da-4005-a2c9-fbdfed83bace" data-category-name="Compras Pessoais" data-category-icon="shopping-cart" data-category-color="slate" data-category-type="EXPENSE" data-limit-max="120000" data-limit-spent="80500"></span>
+
+        <span class="category-option" data-category-id="ca4e063a-30b3-4f94-9ea1-0603346a828b" data-category-name="Acessórios" data-category-icon="shopping-bag" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="d1833255-50da-4005-a2c9-fbdfed83bace" data-category-parent-name="Compras Pessoais"></span>
+
+        <span class="category-option" data-category-id="31c27250-b121-4b29-b71f-5b258ca1f732" data-category-name="Calçados" data-category-icon="footprints" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="d1833255-50da-4005-a2c9-fbdfed83bace" data-category-parent-name="Compras Pessoais"></span>
+
+        <span class="category-option" data-category-id="35ec8efd-fafd-41ea-ae4a-b8aca6143e96" data-category-name="Cuidados pessoais" data-category-icon="hand-heart" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="d1833255-50da-4005-a2c9-fbdfed83bace" data-category-parent-name="Compras Pessoais"></span>
+
+        <span class="category-option" data-category-id="3a971e21-fbe6-4d9a-a137-637acd26c9b0" data-category-name="Eletrônicos" data-category-icon="laptop" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="d1833255-50da-4005-a2c9-fbdfed83bace" data-category-parent-name="Compras Pessoais"></span>
+
+        <span class="category-option" data-category-id="7cbd45e1-9763-4b28-a196-95796a123ddd" data-category-name="Perfumes/Cosméticos" data-category-icon="scissors" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="d1833255-50da-4005-a2c9-fbdfed83bace" data-category-parent-name="Compras Pessoais"></span>
+
+        <span class="category-option" data-category-id="90d38e5d-5ea4-4163-9c47-309dbfc16b77" data-category-name="Presentes" data-category-icon="gift" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="d1833255-50da-4005-a2c9-fbdfed83bace" data-category-parent-name="Compras Pessoais"></span>
+
+        <span class="category-option" data-category-id="e5a1b83e-c9e6-4c52-b25d-30b33fe185f9" data-category-name="Roupas" data-category-icon="shirt" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="d1833255-50da-4005-a2c9-fbdfed83bace" data-category-parent-name="Compras Pessoais"></span>
+
+        <span class="category-option" data-category-id="57965606-093d-49f4-8af3-1894b816c2e6" data-category-name="Doações e Apoio" data-category-icon="hand-heart" data-category-color="slate" data-category-type="EXPENSE"></span>
+
+        <span class="category-option" data-category-id="51289b45-2141-4ff1-b048-9bd5d071d00b" data-category-name="Apoio familiar" data-category-icon="hand-heart" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="57965606-093d-49f4-8af3-1894b816c2e6" data-category-parent-name="Doações e Apoio"></span>
+
+        <span class="category-option" data-category-id="babe4b20-396a-4c20-bf6c-b42a877c340a" data-category-name="Caridade" data-category-icon="hand-heart" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="57965606-093d-49f4-8af3-1894b816c2e6" data-category-parent-name="Doações e Apoio"></span>
+
+        <span class="category-option" data-category-id="366eeb7c-7561-4a8f-a441-cc44fdd0d5a0" data-category-name="Igreja" data-category-icon="hand-heart" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="57965606-093d-49f4-8af3-1894b816c2e6" data-category-parent-name="Doações e Apoio"></span>
+
+        <span class="category-option" data-category-id="c2caef60-adf5-4133-9e84-fef2fb8d11ae" data-category-name="Presentes especiais" data-category-icon="gift" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="57965606-093d-49f4-8af3-1894b816c2e6" data-category-parent-name="Doações e Apoio"></span>
+
+        <span class="category-option" data-category-id="73e1cb91-650a-48bd-9320-67465ec30756" data-category-name="Educação e Trabalho" data-category-icon="graduation-cap" data-category-color="slate" data-category-type="EXPENSE" data-limit-max="120000" data-limit-spent="48000"></span>
+
+        <span class="category-option" data-category-id="3a3aed9d-7a30-43fc-a8dc-673a1338de2b" data-category-name="Certificações" data-category-icon="graduation-cap" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="73e1cb91-650a-48bd-9320-67465ec30756" data-category-parent-name="Educação e Trabalho"></span>
+
+        <span class="category-option" data-category-id="778aa18e-a3d6-475e-85b0-cd2284d7b605" data-category-name="Cursos profissionais" data-category-icon="graduation-cap" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="73e1cb91-650a-48bd-9320-67465ec30756" data-category-parent-name="Educação e Trabalho"></span>
+
+        <span class="category-option" data-category-id="6d432fc7-9a46-4bb2-96bd-965f02a80228" data-category-name="Escola/Faculdade" data-category-icon="graduation-cap" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="73e1cb91-650a-48bd-9320-67465ec30756" data-category-parent-name="Educação e Trabalho"></span>
+
+        <span class="category-option" data-category-id="acd9f3d1-f3bc-4058-8528-baa051a52311" data-category-name="Ferramentas de trabalho" data-category-icon="briefcase" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="73e1cb91-650a-48bd-9320-67465ec30756" data-category-parent-name="Educação e Trabalho"></span>
+
+        <span class="category-option" data-category-id="2e113eb0-86ef-4d4c-bbd5-128b66696923" data-category-name="Livros técnicos" data-category-icon="book-open" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="73e1cb91-650a-48bd-9320-67465ec30756" data-category-parent-name="Educação e Trabalho"></span>
+
+        <span class="category-option" data-category-id="d79598aa-9d3e-49c7-8767-4528b98982b8" data-category-name="Material de estudo" data-category-icon="book-open" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="73e1cb91-650a-48bd-9320-67465ec30756" data-category-parent-name="Educação e Trabalho"></span>
+
+        <span class="category-option" data-category-id="9a4358d4-744f-4213-b292-bf41870bdc6f" data-category-name="Esporte e Bem-estar" data-category-icon="trophy" data-category-color="slate" data-category-type="EXPENSE" data-limit-max="70000" data-limit-spent="14900"></span>
+
+        <span class="category-option" data-category-id="881101c4-a595-4c7d-8cf0-a9b7a8116872" data-category-name="Academia" data-category-icon="dumbbell" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="9a4358d4-744f-4213-b292-bf41870bdc6f" data-category-parent-name="Esporte e Bem-estar"></span>
+
+        <span class="category-option" data-category-id="589ad05a-9132-4130-a836-ab8dc6b6d3c3" data-category-name="Esportes" data-category-icon="trophy" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="9a4358d4-744f-4213-b292-bf41870bdc6f" data-category-parent-name="Esporte e Bem-estar"></span>
+
+        <span class="category-option" data-category-id="d4b888e0-ad44-4a22-907e-631a79ad3148" data-category-name="Massagem/Estética" data-category-icon="hand-heart" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="9a4358d4-744f-4213-b292-bf41870bdc6f" data-category-parent-name="Esporte e Bem-estar"></span>
+
+        <span class="category-option" data-category-id="c33b8bd3-698e-44c2-9f40-1b59ae946ab8" data-category-name="Personal trainer" data-category-icon="dumbbell" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="9a4358d4-744f-4213-b292-bf41870bdc6f" data-category-parent-name="Esporte e Bem-estar"></span>
+
+        <span class="category-option" data-category-id="9e9eca79-9657-45f1-a00b-a5b77e24f76c" data-category-name="Suplementos" data-category-icon="dumbbell" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="9a4358d4-744f-4213-b292-bf41870bdc6f" data-category-parent-name="Esporte e Bem-estar"></span>
+
+        <span class="category-option" data-category-id="50f96c34-855c-4f26-b5a8-d0fdd10f81f0" data-category-name="Financeiro" data-category-icon="chart-column" data-category-color="slate" data-category-type="EXPENSE"></span>
+
+        <span class="category-option" data-category-id="6fe92024-cbce-4085-861b-f87eef6399f4" data-category-name="Anuidade de cartão" data-category-icon="credit-card" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="50f96c34-855c-4f26-b5a8-d0fdd10f81f0" data-category-parent-name="Financeiro"></span>
+
+        <span class="category-option" data-category-id="841f460e-3729-44f9-87c9-2500514843d5" data-category-name="Empréstimos" data-category-icon="banknote" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="50f96c34-855c-4f26-b5a8-d0fdd10f81f0" data-category-parent-name="Financeiro"></span>
+
+        <span class="category-option" data-category-id="3b029334-d53d-4774-8036-a9186c77767d" data-category-name="Financiamentos" data-category-icon="banknote" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="50f96c34-855c-4f26-b5a8-d0fdd10f81f0" data-category-parent-name="Financeiro"></span>
+
+        <span class="category-option" data-category-id="7c80f8a8-0661-40e2-a1c3-fc753c950821" data-category-name="IOF" data-category-icon="receipt" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="50f96c34-855c-4f26-b5a8-d0fdd10f81f0" data-category-parent-name="Financeiro"></span>
+
+        <span class="category-option" data-category-id="ff06fbe5-50b5-46b5-a82d-2914264b0e07" data-category-name="Juros" data-category-icon="percent" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="50f96c34-855c-4f26-b5a8-d0fdd10f81f0" data-category-parent-name="Financeiro"></span>
+
+        <span class="category-option" data-category-id="1ae4aec3-3eb6-43a9-a4c6-34af100cdb5f" data-category-name="Multas" data-category-icon="receipt" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="50f96c34-855c-4f26-b5a8-d0fdd10f81f0" data-category-parent-name="Financeiro"></span>
+
+        <span class="category-option" data-category-id="0f323fff-eb4c-46f6-9991-9dcb1945aa94" data-category-name="Tarifas bancárias" data-category-icon="receipt" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="50f96c34-855c-4f26-b5a8-d0fdd10f81f0" data-category-parent-name="Financeiro"></span>
+
+        <span class="category-option" data-category-id="d96544e3-12a5-4bc4-9254-629cd7473748" data-category-name="Lazer" data-category-icon="popcorn" data-category-color="slate" data-category-type="EXPENSE" data-limit-max="150000" data-limit-spent="117990"></span>
+
+        <span class="category-option" data-category-id="7a6d6d77-f823-4cc4-8445-91ba39256bbf" data-category-name="Cinema/Eventos" data-category-icon="film" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="d96544e3-12a5-4bc4-9254-629cd7473748" data-category-parent-name="Lazer"></span>
+
+        <span class="category-option" data-category-id="0c53f14e-6065-4bd5-aae1-27ade93308f9" data-category-name="Clubes/Assinaturas" data-category-icon="popcorn" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="d96544e3-12a5-4bc4-9254-629cd7473748" data-category-parent-name="Lazer"></span>
+
+        <span class="category-option" data-category-id="bed635f2-1927-4470-84d5-ec5ce937d4b2" data-category-name="Hobbies" data-category-icon="palette" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="d96544e3-12a5-4bc4-9254-629cd7473748" data-category-parent-name="Lazer"></span>
+
+        <span class="category-option" data-category-id="2184604b-1286-4c32-ab9b-ba2172a7112e" data-category-name="Jogos" data-category-icon="gamepad" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="d96544e3-12a5-4bc4-9254-629cd7473748" data-category-parent-name="Lazer"></span>
+
+        <span class="category-option" data-category-id="4b9328b8-9421-4fb2-9bd2-13652fbdca6e" data-category-name="Passeios" data-category-icon="footprints" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="d96544e3-12a5-4bc4-9254-629cd7473748" data-category-parent-name="Lazer"></span>
+
+        <span class="category-option" data-category-id="9b7e0532-e711-44b0-9a64-310056325a98" data-category-name="Streaming" data-category-icon="film" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="d96544e3-12a5-4bc4-9254-629cd7473748" data-category-parent-name="Lazer"></span>
+
+        <span class="category-option" data-category-id="27a00e87-4aea-4782-bf49-bb9c7ab9da4c" data-category-name="Viagens" data-category-icon="plane" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="d96544e3-12a5-4bc4-9254-629cd7473748" data-category-parent-name="Lazer"></span>
+
+        <span class="category-option" data-category-id="3f4f7ae3-7760-4ee3-9ece-adb2ca58788d" data-category-name="Lazer Familiar" data-category-icon="popcorn" data-category-color="slate" data-category-type="EXPENSE"></span>
+
+        <span class="category-option" data-category-id="35543a08-fcc4-4fc7-bf4c-568166e858a5" data-category-name="Acessórios pet" data-category-icon="bone" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="3f4f7ae3-7760-4ee3-9ece-adb2ca58788d" data-category-parent-name="Lazer Familiar"></span>
+
+        <span class="category-option" data-category-id="c839fe71-20e2-4d18-bb69-5e87a8f4a028" data-category-name="Banho e tosa pet" data-category-icon="scissors" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="3f4f7ae3-7760-4ee3-9ece-adb2ca58788d" data-category-parent-name="Lazer Familiar"></span>
+
+        <span class="category-option" data-category-id="1c22198a-6a9b-43aa-96a7-5384e3e2166e" data-category-name="Brinquedos" data-category-icon="gamepad" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="3f4f7ae3-7760-4ee3-9ece-adb2ca58788d" data-category-parent-name="Lazer Familiar"></span>
+
+        <span class="category-option" data-category-id="a2dd8cd2-66da-47c5-9509-cb49bb260a3e" data-category-name="Brinquedos pet" data-category-icon="bone" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="3f4f7ae3-7760-4ee3-9ece-adb2ca58788d" data-category-parent-name="Lazer Familiar"></span>
+
+        <span class="category-option" data-category-id="4f605e11-878a-49f8-a875-ccaa5704c04d" data-category-name="Hotel/Creche pet" data-category-icon="paw-print" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="3f4f7ae3-7760-4ee3-9ece-adb2ca58788d" data-category-parent-name="Lazer Familiar"></span>
+
+        <span class="category-option" data-category-id="b08a92db-d3ae-4f2c-86d3-17f95a976f35" data-category-name="Passeios em família" data-category-icon="footprints" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="3f4f7ae3-7760-4ee3-9ece-adb2ca58788d" data-category-parent-name="Lazer Familiar"></span>
+
+        <span class="category-option" data-category-id="9a2f5fcc-e424-4cb1-a27b-e12e0e00ad7f" data-category-name="Petiscos pet" data-category-icon="bone" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="3f4f7ae3-7760-4ee3-9ece-adb2ca58788d" data-category-parent-name="Lazer Familiar"></span>
+
+        <span class="category-option" data-category-id="6c6006e5-2694-403e-9de5-e72344f2f933" data-category-name="Presentes para família" data-category-icon="gift" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="3f4f7ae3-7760-4ee3-9ece-adb2ca58788d" data-category-parent-name="Lazer Familiar"></span>
+
+        <span class="category-option" data-category-id="f969b69d-3a34-491d-a4ee-4da74c2d7f2a" data-category-name="Moradia" data-category-icon="house" data-category-color="slate" data-category-type="EXPENSE" data-limit-max="480000" data-limit-spent="471780"></span>
+
+        <span class="category-option" data-category-id="0642bbf7-0931-40ed-b54b-ddd565ed6bda" data-category-name="Aluguel" data-category-icon="house" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="f969b69d-3a34-491d-a4ee-4da74c2d7f2a" data-category-parent-name="Moradia"></span>
+
+        <span class="category-option" data-category-id="2d879f54-4897-4b5a-80f6-37ea93c6dfcd" data-category-name="Condomínio" data-category-icon="house" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="f969b69d-3a34-491d-a4ee-4da74c2d7f2a" data-category-parent-name="Moradia"></span>
+
+        <span class="category-option" data-category-id="45405c00-e8b1-4327-9da7-2423646dd3f2" data-category-name="Energia elétrica" data-category-icon="zap" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="f969b69d-3a34-491d-a4ee-4da74c2d7f2a" data-category-parent-name="Moradia"></span>
+
+        <span class="category-option" data-category-id="51262441-e517-45f6-9819-e49699f9cb03" data-category-name="Gás" data-category-icon="flame" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="f969b69d-3a34-491d-a4ee-4da74c2d7f2a" data-category-parent-name="Moradia"></span>
+
+        <span class="category-option" data-category-id="5532f762-6f70-455f-acdb-d773c2bdbcfb" data-category-name="Internet residencial" data-category-icon="wifi" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="f969b69d-3a34-491d-a4ee-4da74c2d7f2a" data-category-parent-name="Moradia"></span>
+
+        <span class="category-option" data-category-id="4373e182-9f8f-4472-b6a5-20f4ce84fc0a" data-category-name="IPTU" data-category-icon="receipt" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="f969b69d-3a34-491d-a4ee-4da74c2d7f2a" data-category-parent-name="Moradia"></span>
+
+        <span class="category-option" data-category-id="d8e14bb3-e982-4563-bd09-de447c596ffd" data-category-name="Manutenção da casa" data-category-icon="wrench" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="f969b69d-3a34-491d-a4ee-4da74c2d7f2a" data-category-parent-name="Moradia"></span>
+
+        <span class="category-option" data-category-id="0f5b45e4-21ba-4976-99db-b788013e3d34" data-category-name="Seguro residencial" data-category-icon="house" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="f969b69d-3a34-491d-a4ee-4da74c2d7f2a" data-category-parent-name="Moradia"></span>
+
+        <span class="category-option" data-category-id="bbbced57-ae59-4ffb-8c2f-d56a036ecc33" data-category-name="Água" data-category-icon="droplets" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="f969b69d-3a34-491d-a4ee-4da74c2d7f2a" data-category-parent-name="Moradia"></span>
+
+        <span class="category-option" data-category-id="fc8602a6-ead9-460b-9bdf-bfac633ee73b" data-category-name="Obrigações e Documentos" data-category-icon="briefcase" data-category-color="slate" data-category-type="EXPENSE"></span>
+
+        <span class="category-option" data-category-id="45c0e7b0-59bf-4e8a-a1fd-a2b0e0f0f9a1" data-category-name="Cartório" data-category-icon="briefcase" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="fc8602a6-ead9-460b-9bdf-bfac633ee73b" data-category-parent-name="Obrigações e Documentos"></span>
+
+        <span class="category-option" data-category-id="30ae52df-dc7b-499d-b5c7-2223ea096c40" data-category-name="Documentos" data-category-icon="briefcase" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="fc8602a6-ead9-460b-9bdf-bfac633ee73b" data-category-parent-name="Obrigações e Documentos"></span>
+
+        <span class="category-option" data-category-id="f1c2a446-75c7-4454-98a9-50104ac6edcc" data-category-name="Imposto de renda" data-category-icon="receipt" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="fc8602a6-ead9-460b-9bdf-bfac633ee73b" data-category-parent-name="Obrigações e Documentos"></span>
+
+        <span class="category-option" data-category-id="ef3c00e0-3562-4513-ac79-9f53330eaac4" data-category-name="Seguro obrigatório" data-category-icon="car" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="fc8602a6-ead9-460b-9bdf-bfac633ee73b" data-category-parent-name="Obrigações e Documentos"></span>
+
+        <span class="category-option" data-category-id="4c6f012c-ba0e-4d46-a678-adf62daf900e" data-category-name="Taxas públicas" data-category-icon="receipt" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="fc8602a6-ead9-460b-9bdf-bfac633ee73b" data-category-parent-name="Obrigações e Documentos"></span>
+
+        <span class="category-option" data-category-id="300948bc-d643-46d6-9070-9e3cef1af906" data-category-name="Pet" data-category-icon="paw-print" data-category-color="slate" data-category-type="EXPENSE"></span>
+
+        <span class="category-option" data-category-id="24514809-1694-492f-ab3c-9ede31ce24bc" data-category-name="Areia/Higiene" data-category-icon="brush" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="300948bc-d643-46d6-9070-9e3cef1af906" data-category-parent-name="Pet"></span>
+
+        <span class="category-option" data-category-id="c22c2e91-ac44-4f3b-85b0-c2808d1e52bb" data-category-name="Medicamentos" data-category-icon="pill" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="300948bc-d643-46d6-9070-9e3cef1af906" data-category-parent-name="Pet"></span>
+
+        <span class="category-option" data-category-id="7aec6d8f-b3be-407f-9f74-58be9f177227" data-category-name="Plano de saúde pet" data-category-icon="heart-pulse" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="300948bc-d643-46d6-9070-9e3cef1af906" data-category-parent-name="Pet"></span>
+
+        <span class="category-option" data-category-id="75acac82-4c93-4b7c-acfe-fe25bd969be9" data-category-name="Ração" data-category-icon="bone" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="300948bc-d643-46d6-9070-9e3cef1af906" data-category-parent-name="Pet"></span>
+
+        <span class="category-option" data-category-id="e82c5e15-f163-43d5-8b55-89e461360594" data-category-name="Vacinas" data-category-icon="syringe" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="300948bc-d643-46d6-9070-9e3cef1af906" data-category-parent-name="Pet"></span>
+
+        <span class="category-option" data-category-id="9876772b-6965-4b07-8619-75b6db3d3f9c" data-category-name="Veterinário" data-category-icon="stethoscope" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="300948bc-d643-46d6-9070-9e3cef1af906" data-category-parent-name="Pet"></span>
+
+        <span class="category-option" data-category-id="259666d9-7ea5-44e0-929a-2b6dd0c19892" data-category-name="Refeições" data-category-icon="utensils" data-category-color="slate" data-category-type="EXPENSE"></span>
+
+        <span class="category-option" data-category-id="71b57986-a1ad-4b21-9111-615f3745a31a" data-category-name="Bar" data-category-icon="beer" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="259666d9-7ea5-44e0-929a-2b6dd0c19892" data-category-parent-name="Refeições"></span>
+
+        <span class="category-option" data-category-id="14db0e76-643d-48f3-b928-420e5937a0b5" data-category-name="Café" data-category-icon="coffee" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="259666d9-7ea5-44e0-929a-2b6dd0c19892" data-category-parent-name="Refeições"></span>
+
+        <span class="category-option" data-category-id="d416ea41-a169-4369-86e1-f864efbd166d" data-category-name="Delivery" data-category-icon="bike" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="259666d9-7ea5-44e0-929a-2b6dd0c19892" data-category-parent-name="Refeições"></span>
+
+        <span class="category-option" data-category-id="b5064d64-b12f-4ad3-aa02-ea404d065e89" data-category-name="Doces/Sobremesas" data-category-icon="cake" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="259666d9-7ea5-44e0-929a-2b6dd0c19892" data-category-parent-name="Refeições"></span>
+
+        <span class="category-option" data-category-id="7e5ec540-5181-492a-8888-96ff4086a73a" data-category-name="Lanches" data-category-icon="coffee" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="259666d9-7ea5-44e0-929a-2b6dd0c19892" data-category-parent-name="Refeições"></span>
+
+        <span class="category-option" data-category-id="c0b46376-e2c9-4a9c-ac82-5b08fb7f0642" data-category-name="Marmitas" data-category-icon="utensils" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="259666d9-7ea5-44e0-929a-2b6dd0c19892" data-category-parent-name="Refeições"></span>
+
+        <span class="category-option" data-category-id="71767f31-754e-4af0-834c-1e008a33d853" data-category-name="Restaurante" data-category-icon="utensils" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="259666d9-7ea5-44e0-929a-2b6dd0c19892" data-category-parent-name="Refeições"></span>
+
+        <span class="category-option" data-category-id="cc2add8b-ff48-428b-b083-b930ed07f472" data-category-name="Saúde" data-category-icon="heart-pulse" data-category-color="slate" data-category-type="EXPENSE" data-limit-max="90000" data-limit-spent="83500"></span>
+
+        <span class="category-option" data-category-id="dcc81b2d-58d6-4490-b40b-b9b89b761fbb" data-category-name="Consulta médica" data-category-icon="stethoscope" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="cc2add8b-ff48-428b-b083-b930ed07f472" data-category-parent-name="Saúde"></span>
+
+        <span class="category-option" data-category-id="2a47c5a4-12b7-4c08-8ba2-b30578b3e0a7" data-category-name="Dentista" data-category-icon="stethoscope" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="cc2add8b-ff48-428b-b083-b930ed07f472" data-category-parent-name="Saúde"></span>
+
+        <span class="category-option" data-category-id="a92cdc40-9bbe-4c64-9d7b-602c4961f3a2" data-category-name="Exames" data-category-icon="syringe" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="cc2add8b-ff48-428b-b083-b930ed07f472" data-category-parent-name="Saúde"></span>
+
+        <span class="category-option" data-category-id="0a4b19d4-45e1-4966-96a9-31e4e41bae9f" data-category-name="Farmácia" data-category-icon="pill" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="cc2add8b-ff48-428b-b083-b930ed07f472" data-category-parent-name="Saúde"></span>
+
+        <span class="category-option" data-category-id="b609d756-abfc-4743-9aca-9614dbd62d2c" data-category-name="Plano de saúde" data-category-icon="heart-pulse" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="cc2add8b-ff48-428b-b083-b930ed07f472" data-category-parent-name="Saúde"></span>
+
+        <span class="category-option" data-category-id="3744aaf1-2461-448c-94da-811c905dfaed" data-category-name="Terapia" data-category-icon="hand-heart" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="cc2add8b-ff48-428b-b083-b930ed07f472" data-category-parent-name="Saúde"></span>
+
+        <span class="category-option" data-category-id="d64982d8-434b-4c4a-b482-002b902acb61" data-category-name="Óculos/Lentes" data-category-icon="shopping-bag" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="cc2add8b-ff48-428b-b083-b930ed07f472" data-category-parent-name="Saúde"></span>
+
+        <span class="category-option" data-category-id="9fb3c43e-2c24-4cd2-ac01-4bb993ca10e1" data-category-name="Transporte" data-category-icon="bus" data-category-color="slate" data-category-type="EXPENSE" data-limit-max="120000" data-limit-spent="43000"></span>
+
+        <span class="category-option" data-category-id="2969ec9f-ddbb-4521-8eb5-4bdcae2f8c15" data-category-name="Aplicativo/Taxi essencial" data-category-icon="car" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="9fb3c43e-2c24-4cd2-ac01-4bb993ca10e1" data-category-parent-name="Transporte"></span>
+
+        <span class="category-option" data-category-id="d64dba1a-399f-4fd4-a97b-cafd27b3698e" data-category-name="Combustível" data-category-icon="fuel" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="9fb3c43e-2c24-4cd2-ac01-4bb993ca10e1" data-category-parent-name="Transporte"></span>
+
+        <span class="category-option" data-category-id="d9b34071-66fb-49e9-82ea-df8ddd757905" data-category-name="Estacionamento" data-category-icon="car" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="9fb3c43e-2c24-4cd2-ac01-4bb993ca10e1" data-category-parent-name="Transporte"></span>
+
+        <span class="category-option" data-category-id="5e7cbab9-9b30-4f3d-83aa-51792d0cb4a7" data-category-name="IPVA/Licenciamento" data-category-icon="car" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="9fb3c43e-2c24-4cd2-ac01-4bb993ca10e1" data-category-parent-name="Transporte"></span>
+
+        <span class="category-option" data-category-id="e169ab52-7074-4558-93e3-3842ca38bdc2" data-category-name="Manutenção do veículo" data-category-icon="car" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="9fb3c43e-2c24-4cd2-ac01-4bb993ca10e1" data-category-parent-name="Transporte"></span>
+
+        <span class="category-option" data-category-id="283bf1f0-cb8a-49bd-b49d-eeb5b1689056" data-category-name="Pedágio" data-category-icon="car" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="9fb3c43e-2c24-4cd2-ac01-4bb993ca10e1" data-category-parent-name="Transporte"></span>
+
+        <span class="category-option" data-category-id="792b2f89-73c0-47f0-983b-22a9360952b4" data-category-name="Seguro do veículo" data-category-icon="car" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="9fb3c43e-2c24-4cd2-ac01-4bb993ca10e1" data-category-parent-name="Transporte"></span>
+
+        <span class="category-option" data-category-id="d03d8228-1363-4c09-acbf-2ef3deed21ea" data-category-name="Transporte público" data-category-icon="bus" data-category-color="slate" data-category-type="EXPENSE" data-category-parent-id="9fb3c43e-2c24-4cd2-ac01-4bb993ca10e1" data-category-parent-name="Transporte"></span>
+
+    </div>
+</div>
+
+</div>
+</body></html>

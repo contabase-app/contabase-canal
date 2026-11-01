@@ -1,0 +1,1256 @@
+/* ContaBase Lancamentos - Visual Redesign */
+
+/* Canonical Lançamentos page inside the global app shell. */
+.cb-v2-lancamentos-content {
+    width: min(100%, 1180px);
+    margin: 0 auto;
+    padding: 30px 0 12px;
+}
+
+/* Page header follows the Premium Fintech canonical composition
+   (ui-page-header/ui-eyebrow/ui-page-title/ui-page-description from
+   premium.css). This file only owns the page-specific action row. */
+.cb-v2-lancamentos-header {
+    flex-wrap: nowrap;
+}
+
+.lancamentos-header-copy {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.lancamentos-header-actions {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    gap: 8px;
+    margin-left: auto;
+}
+
+.lancamentos-icon-btn {
+    width: var(--ui-control-height);
+    min-width: var(--ui-control-height);
+    padding: 0;
+}
+
+.lancamentos-icon-btn svg {
+    width: 17px;
+    height: 17px;
+}
+
+.lancamentos-toolbar {
+    align-items: stretch;
+    margin: 2px 0 16px;
+}
+
+.lancamentos-toolbar .ui-search {
+    flex: 1 1 auto;
+    width: 100%;
+    max-width: none;
+}
+
+.lancamentos-filter-trigger {
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.lancamentos-filter-indicator {
+    display: none;
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    width: 6px;
+    height: 6px;
+    border-radius: 999px;
+    background: var(--ui-accent-strong);
+    box-shadow: 0 0 0 2px var(--ui-surface);
+}
+
+.lancamentos-filter-trigger.is-active .lancamentos-filter-indicator { display: block; }
+
+@media (max-width: 767px) {
+    .cb-v2-lancamentos-content { padding-top: 20px; }
+    .cb-v2-lancamentos-header { align-items: flex-start; gap: 14px; }
+    .lancamentos-header-actions { gap: 6px; }
+    .lancamentos-new { display: none; }
+    .lancamentos-toolbar { margin-bottom: 14px; }
+}
+
+/* 320px keeps the filter affordance as a 44px icon button so the search
+   placeholder remains readable without shrinking the 16px anti-zoom font. */
+@media (max-width: 359px) {
+    .lancamentos-filter-label { display: none; }
+    .lancamentos-filter-trigger {
+        width: var(--ui-control-height);
+        padding: 0;
+    }
+}
+
+/* === SCROLLBAR HIDE === */
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+
+/* === RESUMO DO FILTRO APLICADO ===
+   One Premium panel for the filtered summary. The panel is the only surface;
+   the five indicators are separated by hairlines instead of five nested cards.
+   Monetary values keep data-len (long-number safety) and data-sensitive
+   (global privacy state); no financial value is recalculated here. */
+.lancamentos-summary {
+    margin-bottom: 16px;
+    overflow: hidden;
+    container: lancamentos-summary / inline-size;
+}
+
+.lancamentos-summary__head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--ui-border);
+}
+
+.lancamentos-summary__identity {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.lancamentos-summary__copy { min-width: 0; }
+
+.lancamentos-summary__copy p { color: var(--ui-text-muted); }
+
+.lancamentos-summary__meta {
+    display: flex;
+    flex: 0 1 auto;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px 14px;
+    min-width: 0;
+}
+
+.lancamentos-summary__total {
+    color: var(--ui-text-muted);
+    font-size: var(--ui-fs-sm);
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+}
+
+.lancamentos-summary__net {
+    display: flex;
+    align-items: baseline;
+    gap: 7px;
+    min-width: 0;
+    padding-left: 14px;
+    border-left: 1px solid var(--ui-border);
+}
+
+.lancamentos-summary__net-label {
+    color: var(--ui-text-muted);
+    font-size: var(--ui-fs-sm);
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.lancamentos-summary__net-value {
+    color: var(--ui-success);
+    font-size: 18px;
+    font-weight: 680;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -.02em;
+    line-height: 1.15;
+    white-space: nowrap;
+}
+
+.lancamentos-summary__net.is-negative .lancamentos-summary__net-value { color: var(--ui-danger); }
+.lancamentos-summary__net-value[data-len="m"] { font-size: 17px; }
+.lancamentos-summary__net-value[data-len="l"] { font-size: 15.5px; }
+.lancamentos-summary__net-value[data-len="xl"] {
+    font-size: 13px;
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+
+.lancamentos-summary__metrics {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.lancamentos-summary__metric {
+    --summary-tone: var(--ui-text-muted);
+    --summary-value-size: 16.5px;
+    --summary-value-size-m: 15.5px;
+    --summary-value-size-l: 14px;
+    --summary-value-size-xl: 12px;
+    min-width: 0;
+    padding: 10px 14px;
+    border-top: 1px solid var(--ui-border);
+    border-left: 1px solid var(--ui-border);
+}
+
+.lancamentos-summary__metric.is-primary {
+    --summary-value-size: 18px;
+    --summary-value-size-m: 17px;
+    --summary-value-size-l: 15px;
+    --summary-value-size-xl: 12.5px;
+}
+
+.lancamentos-summary__metric.is-ok { --summary-tone: var(--ui-success); }
+.lancamentos-summary__metric.is-danger { --summary-tone: var(--ui-danger); }
+.lancamentos-summary__metric.is-attention { --summary-tone: var(--ui-warning); }
+.lancamentos-summary__metric.is-progress { --summary-tone: var(--ui-accent-strong); }
+.lancamentos-summary__metric.is-neutral { --summary-tone: var(--ui-text-muted); }
+
+/* A zero count has no direction or alert to communicate; keeping semantic
+   color would imply a state that the bucket does not have. */
+.lancamentos-summary__metric.is-empty { --summary-tone: var(--ui-text-muted); }
+
+.lancamentos-summary__metric:nth-child(1),
+.lancamentos-summary__metric:nth-child(2) { border-top: 0; }
+
+.lancamentos-summary__metric:nth-child(odd) { border-left: 0; }
+
+.lancamentos-summary__metric:last-child {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    padding-block: 10px;
+    border-left: 0;
+}
+
+.lancamentos-summary__metric:last-child .lancamentos-summary__metric-label { flex: 1 1 auto; }
+.lancamentos-summary__metric:last-child .lancamentos-summary__metric-value { margin-top: 0; }
+.lancamentos-summary__metric:last-child .lancamentos-summary__metric-count { margin-top: 0; margin-left: auto; }
+
+.lancamentos-summary__metric-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    min-width: 0;
+    color: var(--ui-text-muted);
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+.lancamentos-summary__metric-label svg {
+    width: 14px;
+    height: 14px;
+    flex: 0 0 auto;
+    color: var(--summary-tone);
+}
+
+.lancamentos-summary__label-short { display: none; }
+
+.lancamentos-summary__metric-value {
+    display: block;
+    min-width: 0;
+    margin-top: 3px;
+    color: var(--summary-tone);
+    font-size: var(--summary-value-size);
+    font-weight: 680;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -.02em;
+    line-height: 1.15;
+    white-space: nowrap;
+}
+
+.lancamentos-summary__metric-value[data-len="m"] { font-size: var(--summary-value-size-m); }
+.lancamentos-summary__metric-value[data-len="l"] { font-size: var(--summary-value-size-l); }
+.lancamentos-summary__metric-value[data-len="xl"] {
+    font-size: var(--summary-value-size-xl);
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+
+.lancamentos-summary__metric-count {
+    display: block;
+    margin-top: 2px;
+    color: var(--ui-text-muted);
+    font-size: 10.5px;
+    font-weight: 500;
+    font-variant-numeric: tabular-nums;
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+@container lancamentos-summary (max-width: 559px) {
+    .lancamentos-summary__head {
+        display: block;
+        padding: 12px 14px 10px;
+    }
+
+    .lancamentos-summary__identity { align-items: flex-start; }
+
+    .lancamentos-summary__meta {
+        justify-content: space-between;
+        gap: 8px 10px;
+        margin-top: 10px;
+        padding-top: 10px;
+        border-top: 1px solid var(--ui-border);
+    }
+
+    .lancamentos-summary__net {
+        margin-left: auto;
+        padding-left: 0;
+        border-left: 0;
+    }
+
+    .lancamentos-summary__metric-label.has-short-label .lancamentos-summary__label-full { display: none; }
+    .lancamentos-summary__metric-label.has-short-label .lancamentos-summary__label-short { display: inline; }
+}
+
+@container lancamentos-summary (max-width: 359px) {
+    .lancamentos-summary__head { padding: 10px 14px 8px; }
+    .lancamentos-summary__meta { margin-top: 8px; padding-top: 8px; }
+    .lancamentos-summary__metric { padding: 9px 12px; }
+    .lancamentos-summary__metric:last-child { padding-block: 9px; }
+    .lancamentos-summary__total { font-size: 10.5px; }
+    .lancamentos-summary__net { gap: 4px; }
+    .lancamentos-summary__net-label { font-size: 10.5px; }
+    .lancamentos-summary__net-value { font-size: 15px; }
+    .lancamentos-summary__net-value[data-len="m"] { font-size: 14px; }
+    .lancamentos-summary__net-value[data-len="l"] { font-size: 13px; }
+    .lancamentos-summary__net-value[data-len="xl"] { font-size: 12px; }
+}
+
+@container lancamentos-summary (min-width: 560px) {
+    .lancamentos-summary__metrics {
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+    }
+
+    .lancamentos-summary__metric {
+        --summary-value-size: 18px;
+        --summary-value-size-m: 17px;
+        --summary-value-size-l: 15px;
+        --summary-value-size-xl: 13px;
+        display: block;
+        grid-column: span 2;
+        padding: 12px 16px;
+        border-top: 1px solid var(--ui-border);
+        border-left: 1px solid var(--ui-border);
+    }
+
+    .lancamentos-summary__metric.is-primary {
+        --summary-value-size: 20px;
+        --summary-value-size-m: 19px;
+        --summary-value-size-l: 17px;
+        --summary-value-size-xl: 14px;
+        grid-column: span 3;
+    }
+
+    .lancamentos-summary__metric:nth-child(1) { border-top: 0; border-left: 0; }
+    .lancamentos-summary__metric:nth-child(2) { border-top: 0; border-left: 1px solid var(--ui-border); }
+    .lancamentos-summary__metric:nth-child(3) { border-left: 0; }
+    .lancamentos-summary__metric:nth-child(4),
+    .lancamentos-summary__metric:nth-child(5) { border-left: 1px solid var(--ui-border); }
+
+    .lancamentos-summary__metric:last-child {
+        grid-column: span 2;
+        display: block;
+        padding-block: 12px;
+    }
+
+    .lancamentos-summary__metric:last-child .lancamentos-summary__metric-label { flex: initial; }
+    .lancamentos-summary__metric:last-child .lancamentos-summary__metric-value { margin-top: 3px; }
+    .lancamentos-summary__metric:last-child .lancamentos-summary__metric-count { margin-top: 2px; margin-left: 0; }
+}
+
+@container lancamentos-summary (min-width: 940px) {
+    .lancamentos-summary__metrics {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+
+    .lancamentos-summary__metric,
+    .lancamentos-summary__metric.is-primary {
+        grid-column: auto;
+    }
+
+    .lancamentos-summary__metric {
+        padding: 14px 18px;
+        border-top: 0;
+        border-left: 1px solid var(--ui-border);
+    }
+
+    .lancamentos-summary__metric:first-child { border-left: 0; }
+    .lancamentos-summary__metric:nth-child(3) { border-left: 1px solid var(--ui-border); }
+    .lancamentos-summary__metric:last-child {
+        grid-column: auto;
+        display: block;
+        padding-block: 14px;
+        border-left: 1px solid var(--ui-border);
+    }
+}
+
+/* === TRANSACTION LIST / ROWS ===
+   One panel per filtered transaction set. Each date label is a quiet group
+   header; each transaction is a row with a status tile, editable main area,
+   right-aligned amount and desktop-only contextual actions. Swipe keeps its
+   original three-node contract (bg-left / content / bg-right). */
+.lancamentos-list-head {
+    flex-wrap: wrap;
+    gap: 8px 12px;
+}
+
+.lancamentos-list-head__label {
+    color: var(--ui-text-muted);
+    font-size: 11.5px;
+    font-weight: 600;
+}
+
+.lancamentos-list-head__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 6px 10px;
+    margin-left: auto;
+}
+
+.lancamentos-bulk-toggle {
+    min-height: 36px;
+    padding-inline: 10px;
+    font-size: 11.5px;
+}
+
+.lancamentos-bulk-count {
+    color: var(--ui-text-muted);
+    font-size: 11.5px;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+}
+
+.lancamentos-list-head .bulk-mode-label {
+    align-items: center;
+    gap: 8px;
+    color: var(--ui-text-muted);
+    font-size: 11.5px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.lancamentos-bulk-check {
+    width: 16px;
+    height: 16px;
+    flex: 0 0 auto;
+    accent-color: var(--ui-accent-strong);
+    cursor: pointer;
+}
+
+.bulk-mode .lancamentos-list-head {
+    border-bottom-color: color-mix(in srgb, var(--ui-accent) 30%, var(--ui-border));
+    background: color-mix(in srgb, var(--ui-accent) 5%, var(--ui-surface));
+}
+
+.bulk-mode .lancamentos-list-head__label { display: none; }
+
+.lancamentos-day {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 18px 6px;
+    color: var(--ui-text-muted);
+    font-size: 10.5px;
+    font-weight: 650;
+    letter-spacing: .06em;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.lancamentos-day__label {
+    margin: 0;
+    font: inherit;
+    line-height: inherit;
+    white-space: nowrap;
+}
+
+.lancamentos-day__line {
+    flex: 1 1 auto;
+    height: 1px;
+    background: linear-gradient(90deg, var(--ui-border) 0%, transparent 100%);
+}
+
+/* Individual records share the panel but read as separate cards. The date
+   headers stay in flow, so the grouping contract is untouched. */
+#lancamentos-table-body {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    padding: 10px 10px 12px;
+}
+
+/* The article owns the swipe geometry. Each transaction is a card with its
+   own surface and border; the list gap provides the vertical rhythm. */
+.tx-row {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--ui-border);
+    border-radius: var(--ui-radius-card);
+    background: var(--ui-surface-raised);
+}
+
+.ui-row--transaction {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+    padding: 12px 18px;
+    background: var(--ui-surface-raised);
+    color: var(--ui-text);
+    transition: background-color var(--ui-transition);
+}
+
+.ui-row--transaction:hover { background: var(--ui-surface-hover); }
+
+.tx-row.overdue .ui-row--transaction {
+    background: color-mix(in srgb, var(--ui-danger) 4%, var(--ui-surface-raised));
+}
+
+.tx-row.overdue .ui-row--transaction:hover {
+    background: color-mix(in srgb, var(--ui-danger) 7%, var(--ui-surface-raised));
+}
+
+.ui-row--transaction:has(.lancamentos-row-check:checked) {
+    background: color-mix(in srgb, var(--ui-accent) 7%, var(--ui-surface-raised));
+}
+
+.bulk-mode .ui-row--transaction { cursor: pointer; }
+
+[data-swipe-bg-left],
+[data-swipe-bg-right] {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    width: 7rem;
+    align-items: center;
+    padding: 0 1.5rem;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Legacy swipe default (invoice-row) stays exactly as shipped; the Premium
+   transaction background opts into the semantic token through is-delete. */
+[data-swipe-bg-left] { left: 0; transform-origin: left; justify-content: flex-start; background: #ef4444; }
+[data-swipe-bg-right] { right: 0; transform-origin: right; justify-content: flex-end; }
+
+.lancamentos-swipe-bg.is-delete,
+.lancamentos-swipe-bg.is-reverse { background: var(--ui-danger); }
+.lancamentos-swipe-bg.is-pay { background: var(--ui-success); }
+
+.swipe-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: var(--ui-action-fg);
+}
+
+.ui-row--transaction .lancamentos-row-check {
+    width: 16px;
+    height: 16px;
+    flex: 0 0 auto;
+    accent-color: var(--ui-accent-strong);
+    cursor: pointer;
+}
+
+.ui-row--transaction .lancamentos-row-check:focus-visible {
+    outline: 2px solid var(--ui-focus);
+    outline-offset: 2px;
+}
+
+.ui-row--transaction .ui-row__status { flex: 0 0 auto; }
+
+.tx-status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.tx-status-warning {
+    background: color-mix(in srgb, var(--ui-warning) 14%, transparent);
+    color: var(--ui-warning);
+}
+
+.tx-status-danger {
+    background: color-mix(in srgb, var(--ui-danger) 14%, transparent);
+    color: var(--ui-danger);
+}
+
+.tx-status-scheduled {
+    background: color-mix(in srgb, var(--ui-accent) 15%, transparent);
+    color: var(--ui-accent-strong);
+}
+
+.tx-status-success {
+    background: color-mix(in srgb, var(--ui-success) 14%, transparent);
+    color: var(--ui-success);
+}
+
+.tx-edit-trigger {
+    flex: 1 1 auto;
+    min-height: 44px;
+    border-radius: 6px;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.tx-edit-trigger:focus-visible {
+    outline: 2px solid var(--ui-focus);
+    outline-offset: 2px;
+}
+
+.tx-edit-trigger:active { background: var(--ui-surface-hover); }
+
+.ui-row--transaction .ui-row__title {
+    font-size: 13.5px;
+    font-weight: 600;
+}
+
+.ui-row--transaction .ui-row__meta { color: var(--ui-text-muted); }
+
+.lancamentos-row-transfer {
+    display: inline-flex;
+    max-width: 100%;
+    min-width: 0;
+    align-items: center;
+    gap: 4px;
+}
+
+.lancamentos-row-transfer__account {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.lancamentos-row-category {
+    display: inline-flex;
+    min-width: 0;
+    align-items: center;
+    gap: 4px;
+}
+
+.lancamentos-row-category svg {
+    width: 14px;
+    height: 14px;
+    flex: 0 0 auto;
+}
+
+.lancamentos-row-category > span {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.lancamentos-row-competence {
+    color: var(--ui-text-muted);
+    white-space: nowrap;
+}
+
+.ui-row--transaction .ui-row__note {
+    font-size: 11.5px;
+    font-weight: 550;
+}
+
+.ui-row--transaction .ui-row__note.is-paid { color: var(--ui-success); }
+.ui-row--transaction .ui-row__note.is-scheduled { color: var(--ui-accent-strong); }
+
+.lancamentos-row-badges {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px;
+    margin-top: 2px;
+}
+
+.lancamentos-row-amount {
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 3px;
+    min-width: 104px;
+}
+
+.lancamentos-row-amount .ui-row__amount { font-size: 14px; }
+.ui-row--transaction .ui-row__amount.is-transfer { color: var(--ui-info); }
+
+.lancamentos-row-date {
+    color: var(--ui-text-muted);
+    font-size: 11px;
+    font-variant-numeric: tabular-nums;
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+.tx-desktop-actions {
+    display: none;
+    flex: 0 0 auto;
+    align-items: center;
+    gap: 2px;
+}
+
+@media (min-width: 768px) {
+    .tx-desktop-actions { display: flex; }
+}
+
+.tx-desktop-actions .ui-row__action { color: var(--ui-text-muted); }
+
+.lancamentos-action-danger:hover {
+    color: var(--ui-danger);
+    background: color-mix(in srgb, var(--ui-danger) 12%, transparent);
+}
+
+@media (max-width: 767px) {
+    .lancamentos-list-head { padding-block: 10px; }
+    .lancamentos-bulk-toggle { min-height: 44px; }
+    .lancamentos-day { padding: 12px 14px 6px; }
+    .ui-row--transaction { gap: 10px; padding: 10px 14px; }
+    .ui-row--transaction .ui-row__title {
+        display: -webkit-box;
+        overflow: hidden;
+        white-space: normal;
+        text-overflow: clip;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+    }
+    .lancamentos-row-amount { min-width: 100px; }
+    .lancamentos-row-date { font-size: 10.5px; }
+
+    /* Two account identities plus two logos do not fit on one mobile line.
+       Stack origin and destination so both names stay readable. */
+    .lancamentos-row-transfer {
+        display: grid;
+        width: 100%;
+        grid-template-columns: auto minmax(0, 1fr);
+        grid-template-areas:
+            "origin origin"
+            "arrow destination";
+        align-items: center;
+        gap: 2px 6px;
+    }
+
+    .lancamentos-row-transfer > .ui-row__account:first-child { grid-area: origin; }
+    .lancamentos-row-transfer > .ui-row__account:last-child { grid-area: destination; }
+    .lancamentos-row-transfer > .shrink-0 { grid-area: arrow; justify-self: end; }
+
+    .bulk-action-bar button { min-height: 44px; }
+    .bulk-action-bar button[data-bulk-delete-btn] { min-width: 44px; }
+}
+
+@media (max-width: 389px) {
+    /* At 320–360 the amount column would squeeze the description into a
+       truncated column. Use a two-line row: status + editable copy first, then
+       the amount/date on their own right-aligned line. */
+    .ui-row--transaction {
+        flex-wrap: wrap;
+        gap: 8px;
+        row-gap: 6px;
+        padding: 10px 12px;
+    }
+
+    .ui-row--transaction .tx-edit-trigger {
+        width: auto;
+        flex: 1 1 0;
+        min-width: 0;
+    }
+
+    .lancamentos-row-amount {
+        flex: 1 1 100%;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: baseline;
+        gap: 8px;
+        min-width: 0;
+    }
+
+    .lancamentos-row-amount .ui-row__amount { order: 2; }
+    .lancamentos-row-date { order: 1; }
+}
+
+/* === CONSOLIDATED INVOICE SECTION ===
+   Invoices remain a distinct section above transactions. The panel and row
+   reuse the Premium row vocabulary, but keep the invoice-specific fields
+   (reference, due date, pending/total/paid and cycle status). */
+.lancamentos-invoices { margin-bottom: 16px; }
+
+.lancamentos-invoices-head { padding-block: 11px; }
+
+.lancamentos-invoices-title {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin: 0;
+    color: var(--ui-text);
+    font-size: 12.5px;
+    font-weight: 630;
+    letter-spacing: -.01em;
+    line-height: 1.25;
+}
+
+.lancamentos-invoices-title svg {
+    width: 15px;
+    height: 15px;
+    flex: 0 0 auto;
+    color: var(--ui-accent-strong);
+}
+
+.lancamentos-invoices-list {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    padding: 10px 10px 12px;
+}
+
+.invoice-row {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--ui-border);
+    border-radius: var(--ui-radius-card);
+    background: var(--ui-surface-raised);
+}
+
+.ui-row--invoice-summary {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+    padding: 12px 18px;
+    background: var(--ui-surface-raised);
+    color: var(--ui-text);
+    transition: background-color var(--ui-transition);
+}
+
+.ui-row--invoice-summary:hover { background: var(--ui-surface-hover); }
+
+.ui-row--invoice-summary .ui-avatar { flex: 0 0 auto; }
+
+.lancamentos-invoice-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 20px;
+    min-height: 17px;
+    padding: 1px 3px;
+    border-radius: 4px;
+    background: color-mix(in srgb, #000 55%, var(--ic, var(--ui-surface-raised)));
+    color: #fff;
+    font-size: 8px;
+    font-weight: 760;
+    letter-spacing: -.02em;
+    line-height: 1;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.lancamentos-invoice-mark.hidden { display: none; }
+
+.ui-row--invoice-summary .ui-row__main {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.ui-row--invoice-summary .ui-row__title {
+    display: -webkit-box;
+    overflow: hidden;
+    white-space: normal;
+    text-overflow: clip;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    font-size: 13.5px;
+    font-weight: 600;
+    line-height: 1.35;
+}
+
+.lancamentos-invoice-reference {
+    color: var(--ui-text-muted);
+    font-weight: 560;
+}
+
+.ui-row--invoice-summary .ui-row__meta { color: var(--ui-text-muted); }
+
+.lancamentos-invoice-detail {
+    color: var(--ui-text-muted);
+    font-size: 11px;
+    line-height: 1.3;
+}
+
+.lancamentos-invoice-summary {
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+    min-width: 112px;
+}
+
+.ui-row--invoice-summary .ui-row__amount {
+    font-size: 14px;
+    font-weight: 650;
+    font-variant-numeric: tabular-nums;
+}
+
+.ui-row--invoice-summary .ui-row__amount.is-overdue { color: var(--ui-danger); }
+
+.lancamentos-invoice-badges {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 4px;
+}
+
+@media (max-width: 359px) {
+    .lancamentos-invoices-head { padding-block: 10px; }
+
+    /* At 320 the amount column would leave very little room for the card name.
+       Put the summary on its own right-aligned line for every invoice. */
+    .ui-row--invoice-summary {
+        flex-wrap: wrap;
+        gap: 8px;
+        row-gap: 6px;
+        padding: 12px 14px;
+    }
+
+    .ui-row--invoice-summary .ui-row__main {
+        flex: 1 1 0;
+    }
+
+    .ui-row--invoice-summary.is-long-name .ui-row__title {
+        -webkit-line-clamp: 3;
+    }
+
+    .ui-row--invoice-summary .lancamentos-invoice-summary {
+        flex: 1 1 100%;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 8px;
+        min-width: 0;
+    }
+}
+
+@media (min-width: 360px) and (max-width: 430px) {
+    .lancamentos-invoices-head { padding-block: 10px; }
+
+    .ui-row--invoice-summary { padding: 12px 14px; }
+
+    /* Only a genuinely long card name gets the extra summary line; ordinary
+       invoices keep the amount and status beside the name. */
+    .ui-row--invoice-summary.is-long-name {
+        flex-wrap: wrap;
+        gap: 8px;
+        row-gap: 6px;
+    }
+
+    .ui-row--invoice-summary.is-long-name .ui-row__main {
+        flex: 1 1 0;
+    }
+
+    .ui-row--invoice-summary.is-long-name .lancamentos-invoice-summary {
+        flex: 1 1 100%;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 8px;
+        min-width: 0;
+    }
+}
+
+/* === EMPTY STATES ===
+   Reuse ui-empty; only reduce padding for the listing area so the empty
+   state does not become another large card. */
+.lancamentos-empty {
+    max-width: 100%;
+    padding: 28px 18px;
+}
+
+.lancamentos-empty--compact { padding: 22px 18px; }
+
+.lancamentos-empty--compact .ui-empty__icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 12px;
+}
+
+.lancamentos-empty__action { margin-top: 2px; }
+
+@media (max-width: 430px) {
+    .lancamentos-empty { padding: 24px 16px; }
+    .lancamentos-empty--compact { padding: 20px 16px; }
+}
+
+@media (max-width: 767px) {
+    .lancamentos-filter-trigger {
+        min-width: 44px;
+        min-height: 44px;
+    }
+
+    #lancamentosFilterPanel [data-filter-chip] {
+        min-height: 40px;
+        padding-block: .5rem;
+    }
+
+    #lancamentosFilterPanel summary,
+    #lancamentosFilterPanel .lancamentos-category-item,
+    #lancamentosFilterPanel .lancamentos-filter-reset,
+    #lancamentosFilterPanel .lancamentos-filter-apply,
+    #lancamentosFilterPanel .lancamentos-panel-close {
+        min-width: 44px;
+        min-height: 44px;
+    }
+
+    #clearFiltersBtn { min-height: 28px; }
+    .lancamentos-empty__action { min-height: 44px; }
+}
+
+/* === INVOICE ROW ===
+   Legacy pre-F5 invoice row styles (content/copy/summary family) were removed
+   with the ui-row--invoice-summary contract in F8. */
+
+/* === SEARCH / TOOLBAR ===
+   The field itself is the canonical ui-input/ui-input--search from premium.css
+   (42px desktop, 44px and 16px font on mobile). These rules only keep the
+   search flexible inside the page toolbar. */
+.lancamentos-toolbar .ui-input--search {
+    min-width: 0;
+}
+
+/* === FILTER PANEL ===
+   Structure and contracts stay in the template; this pass only aligns the
+   existing controls to the Premium tokens (radius, height, type, focus). */
+#lancamentosFilterPanel .filter-panel {
+    border-color: var(--ui-border);
+    border-radius: var(--ui-radius-panel);
+    background: var(--ui-surface);
+    box-shadow: var(--ui-shadow-panel);
+}
+
+#lancamentosFilterPanel .filter-panel > div:first-child {
+    border-bottom-color: var(--ui-border);
+    background: var(--ui-surface);
+}
+
+#lancamentosFilterPanel .filter-panel > div:last-child {
+    border-top-color: var(--ui-border);
+    background: var(--ui-surface);
+}
+
+.lancamentos-panel-close {
+    width: var(--ui-control-height);
+    min-width: var(--ui-control-height);
+    padding: 0;
+}
+
+#lancamentosFilterPanel details {
+    border: 1px solid var(--ui-border);
+    border-radius: var(--ui-radius-card);
+    background: var(--ui-surface);
+}
+
+#lancamentosFilterPanel summary {
+    color: var(--ui-text);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+#lancamentosFilterPanel [data-filter-chip] {
+    --chip-tone: var(--ui-accent);
+    display: inline-flex;
+    min-height: 36px;
+    align-items: center;
+    gap: 6px;
+    padding: 0 12px;
+    border: 1px solid var(--ui-border);
+    border-radius: var(--ui-radius-pill);
+    background: var(--ui-surface-raised);
+    color: var(--ui-text-muted);
+    font-size: 11.5px;
+    font-weight: 600;
+    line-height: 1;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: border-color var(--ui-transition), background-color var(--ui-transition), color var(--ui-transition);
+}
+
+#lancamentosFilterPanel [data-filter-chip]:hover {
+    border-color: var(--ui-border-strong);
+    color: var(--ui-text);
+}
+
+#lancamentosFilterPanel [data-filter-chip]:focus-within {
+    outline: 2px solid var(--ui-focus);
+    outline-offset: 2px;
+}
+
+#lancamentosFilterPanel [data-filter-chip]:has(input:checked) {
+    border-color: color-mix(in srgb, var(--chip-tone) 55%, transparent);
+    background: color-mix(in srgb, var(--chip-tone) 10%, var(--ui-surface));
+    color: var(--chip-tone);
+}
+
+#lancamentosFilterPanel [data-filter-chip]:has(input[name="situacao"][value="pendente"]:checked) { --chip-tone: var(--ui-warning); }
+#lancamentosFilterPanel [data-filter-chip]:has(input[name="situacao"][value="vencido"]:checked) { --chip-tone: var(--ui-danger); }
+#lancamentosFilterPanel [data-filter-chip]:has(input[name="situacao"][value="agendado"]:checked) { --chip-tone: var(--ui-accent-strong); }
+#lancamentosFilterPanel [data-filter-chip]:has(input[name="situacao"][value="pago"]:checked) { --chip-tone: var(--ui-success); }
+#lancamentosFilterPanel [data-filter-chip]:has(input[name="tipo"][value="receita"]:checked) { --chip-tone: var(--ui-success); }
+#lancamentosFilterPanel [data-filter-chip]:has(input[name="tipo"][value="despesa"]:checked) { --chip-tone: var(--ui-danger); }
+#lancamentosFilterPanel [data-filter-chip]:has(input[name="tipo"][value="transferencia"]:checked) { --chip-tone: var(--ui-info); }
+
+#lancamentosFilterPanel label:has(> input[name="ordem"]) {
+    min-height: 42px;
+    border: 1px solid var(--ui-border);
+    border-radius: var(--ui-radius-control);
+    background: var(--ui-surface-raised);
+    color: var(--ui-text-muted);
+    font-size: 11.5px;
+    font-weight: 600;
+}
+
+#lancamentosFilterPanel label:has(> input[name="ordem"]):hover {
+    border-color: var(--ui-border-strong);
+    color: var(--ui-text);
+}
+
+#lancamentosFilterPanel label:has(> input[name="ordem"]):focus-within {
+    outline: 2px solid var(--ui-focus);
+    outline-offset: 2px;
+}
+
+#lancamentosFilterPanel label:has(> input[name="ordem"]:checked) {
+    border-color: color-mix(in srgb, var(--ui-accent) 55%, transparent);
+    background: color-mix(in srgb, var(--ui-accent) 10%, var(--ui-surface));
+    color: var(--ui-accent-strong);
+}
+
+.lancamentos-filter-reset,
+.lancamentos-filter-apply {
+    width: 100%;
+}
+
+.lancamentos-filter-reset {
+    border-color: color-mix(in srgb, var(--ui-danger) 30%, var(--ui-border));
+    background: color-mix(in srgb, var(--ui-danger) 7%, var(--ui-surface));
+    color: var(--ui-danger);
+}
+
+.lancamentos-filter-reset:hover {
+    border-color: color-mix(in srgb, var(--ui-danger) 45%, var(--ui-border));
+    background: color-mix(in srgb, var(--ui-danger) 11%, var(--ui-surface));
+}
+
+@media (pointer: coarse) {
+    #lancamentosFilterPanel [data-filter-chip] { min-height: 42px; }
+    #lancamentosFilterPanel label:has(> input[name="ordem"]) { min-height: var(--ui-control-height); }
+}
+
+/* === PRIVACY ===
+   Reuses the global privacy state (sessionStorage contabasePrivacy + body
+   .privacy-enabled owned by privacy.js). Only Lançamentos is masked here;
+   the value keeps its box, so the layout does not jump. */
+.privacy-enabled .cb-v2-transactions-main [data-sensitive] {
+    visibility: hidden;
+    user-select: none;
+}
+
+.privacy-enabled .cb-v2-transactions-main :is(strong, span, p, small, div, dd)[data-sensitive] {
+    position: relative;
+}
+
+.privacy-enabled .cb-v2-transactions-main :is(strong, span, p, small, div, dd)[data-sensitive]::after {
+    content: "••••";
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    visibility: visible;
+    color: var(--ui-text-muted);
+    font-variant-numeric: normal;
+    letter-spacing: .12em;
+}
+
+.privacy-enabled .cb-v2-transactions-main .ui-row__amount[data-sensitive]::after {
+    justify-content: flex-end;
+}
+
+/* === OVERLAY PANEL === */
+.filter-panel {
+    width: 100%;
+    max-width: 480px;
+    max-height: calc(100vh - env(safe-area-inset-top, 0px) - 1rem);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    animation: panelScaleIn 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (min-width: 640px) {
+    .filter-panel {
+        max-height: 85vh;
+    }
+}
+
+@keyframes panelScaleIn {
+    from { transform: scale(0.95); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* === BULK ACTION BAR === */
+.bulk-action-bar {
+    position: fixed;
+    bottom: calc(5rem + env(safe-area-inset-bottom, 0px));
+    left: 16px;
+    right: 16px;
+    max-width: 500px;
+    margin: 0 auto;
+    border-radius: 16px;
+    padding: 12px 14px;
+    z-index: 50;
+    background: var(--cb-surface-overlay);
+    border: 1px solid var(--cb-border-subtle);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    animation: barSlideUp 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (min-width: 768px) {
+    .bulk-action-bar {
+        bottom: 24px;
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.16);
+    }
+}
+
+@keyframes barSlideUp {
+    from { transform: translateY(100%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* === RESPONSIVE === */
+/* The pre-F7 sheet animation override (sheetIn 320ms) was removed in F8:
+   every sheet consumer loads sheet-form.css, which owns the canonical
+   220ms sheetIn keyframes. */
+
+/* Keep the mobile filter chip target above the later F2 base rule. */
+@media (max-width: 767px) {
+    #lancamentosFilterPanel [data-filter-chip] {
+        min-height: 44px;
+        padding-block: .5rem;
+    }
+}
+
+/* === BULK SELECTION VISIBILITY (CSP-compliant, class-based) === */
+.bulk-checkbox { display: none; }
+.bulk-mode .bulk-checkbox { display: inline-flex; }
+.bulk-mode-label { display: none; }
+.bulk-mode .bulk-mode-label { display: inline-flex; }
