@@ -4,14 +4,16 @@ Canal público de instalação do [ContaBase](https://github.com/contabase-app/c
 
 ## Uso
 
+O canal Beta é o caminho público atual. A Stable ainda não foi publicada.
+
 ```bash
-curl -fsSLo /tmp/contabase-install.sh https://get-contabase.pages.dev/install.sh && bash /tmp/contabase-install.sh
+curl -fsSLo /tmp/contabase-install.sh https://get-contabase.pages.dev/beta/install.sh && bash /tmp/contabase-install.sh
 ```
 
 Ou com versão específica:
 
 ```bash
-curl -fsSLo /tmp/contabase-install.sh https://get-contabase.pages.dev/install.sh && CONTABASE_VERSION=vX.Y.Z bash /tmp/contabase-install.sh
+curl -fsSLo /tmp/contabase-install.sh https://get-contabase.pages.dev/beta/install.sh && CONTABASE_VERSION=vX.Y.Z bash /tmp/contabase-install.sh
 ```
 
 A versão exata servida por cada canal está definida no respectivo `install.sh`.
@@ -20,9 +22,8 @@ A versão exata servida por cada canal está definida no respectivo `install.sh`
 
 | Canal | URL |
 |-------|-----|
-| Recomendado | `/install.sh` |
-| Beta | `/beta/install.sh` |
-| Stable | `/stable/install.sh` _(futuro)_ |
+| Beta (atual) | `/beta/install.sh` |
+| Stable (futuro) | `/install.sh` |
 
 ## Como funciona
 

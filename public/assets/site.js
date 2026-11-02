@@ -31,11 +31,16 @@
   function setCopyFeedback(button, label, message) {
     var labelEl = button.querySelector("[data-copy-label]");
     var statusEl = button.querySelector("[data-copy-status]");
+    var box = button.closest(".code-block, .cmd");
     if (labelEl) labelEl.textContent = label;
     if (statusEl) statusEl.textContent = message;
+    button.classList.add("is-copied");
+    if (box) box.classList.add("is-copied");
     window.setTimeout(function () {
       if (labelEl) labelEl.textContent = "Copiar";
       if (statusEl) statusEl.textContent = "";
+      button.classList.remove("is-copied");
+      if (box) box.classList.remove("is-copied");
     }, 2200);
   }
 
@@ -92,6 +97,9 @@
   }
 
   var versionNodes = document.querySelectorAll("[data-beta-version]");
+  var tagNodes = document.querySelectorAll("[data-beta-tag]");
+  var dateNodes = document.querySelectorAll("[data-beta-date]");
+  var betaTabMetaNodes = document.querySelectorAll("[data-beta-tab-meta]");
   var statusNodes = document.querySelectorAll("[data-beta-status]");
   var statusTextNodes = document.querySelectorAll("[data-beta-status-text]");
   var pinnedBlock = document.querySelector("[data-beta-pinned]");
@@ -112,6 +120,18 @@
 
   function isBetaTag(value) {
     return typeof value === "string" && /^v\d+\.\d+\.\d+-beta\.\d+$/.test(value);
+  }
+
+  function formatReleaseDate(value) {
+    if (!value) return "sem data de publicação";
+    var date = new Date(value);
+    if (isNaN(date.getTime())) return "sem data de publicação";
+    return new Intl.DateTimeFormat("pt-BR", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+      timeZone: "UTC"
+    }).format(date);
   }
 
   function setTagLinks(version) {
@@ -147,8 +167,18 @@
       .then(function (manifest) {
         var version = manifest && manifest.version;
         if (!isBetaTag(version)) throw new Error("Versão beta inválida no manifest.");
+        var dateLabel = formatReleaseDate(manifest && manifest.published_at);
         versionNodes.forEach(function (node) {
           node.textContent = version;
+        });
+        tagNodes.forEach(function (node) {
+          node.textContent = version;
+        });
+        dateNodes.forEach(function (node) {
+          node.textContent = dateLabel;
+        });
+        betaTabMetaNodes.forEach(function (node) {
+          node.textContent = version + " · " + dateLabel;
         });
         setBetaState("Canal consultado agora.", "ready");
         if (pinnedBlock) pinnedBlock.hidden = false;
@@ -162,10 +192,100 @@
         versionNodes.forEach(function (node) {
           node.textContent = "indisponível";
         });
+        dateNodes.forEach(function (node) {
+          node.textContent = "data indisponível";
+        });
+        betaTabMetaNodes.forEach(function (node) {
+          node.textContent = "indisponível";
+        });
         setBetaState("Não foi possível consultar o canal Beta agora. Consulte as Releases para ver a versão publicada.", "error");
         if (pinnedBlock) pinnedBlock.hidden = true;
         if (pinnedCopy) pinnedCopy.disabled = true;
         resetTagLinks();
+      });
+  }
+
+  var stableVersionNodes = document.querySelectorAll("[data-stable-version]");
+  var stableDateNodes = document.querySelectorAll("[data-stable-date]");
+  var stableStatusNodes = document.querySelectorAll("[data-stable-status]");
+  var stableHeroStatusNodes = document.querySelectorAll("[data-stable-hero-status]");
+  var stableTabMetaNodes = document.querySelectorAll("[data-stable-tab-meta]");
+  var stableSoon = document.querySelector("[data-stable-soon]");
+  var stableReady = document.querySelector("[data-stable-ready]");
+  var stableCode = document.getElementById("cmd-stable");
+  var stableCopy = document.querySelector('[data-copy-target="cmd-stable"]');
+  var stableReleaseLinks = document.querySelectorAll("[data-stable-release]");
+
+  function isStableTag(value) {
+    return typeof value === "string" && /^v\d+\.\d+\.\d+$/.test(value);
+  }
+
+  if (stableVersionNodes.length || stableSoon || stableReady) {
+    fetch("/channels/stable.json", { cache: "no-store", credentials: "same-origin" })
+      .then(function (response) {
+        if (!response.ok) throw new Error("HTTP " + response.status);
+        return response.json();
+      })
+      .then(function (manifest) {
+        var version = manifest && manifest.version;
+        var dateLabel = formatReleaseDate(manifest && manifest.published_at);
+        if (isStableTag(version)) {
+          stableVersionNodes.forEach(function (node) {
+            node.textContent = version;
+          });
+          stableDateNodes.forEach(function (node) {
+            node.textContent = dateLabel;
+          });
+          stableTabMetaNodes.forEach(function (node) {
+            node.textContent = version + " · " + dateLabel;
+          });
+          stableStatusNodes.forEach(function (node) {
+            node.textContent = "Canal Stable publicado.";
+          });
+          stableHeroStatusNodes.forEach(function (node) {
+            node.textContent = "Stable publicada. Os canais Beta e Stable estão disponíveis.";
+          });
+          if (stableSoon) stableSoon.hidden = true;
+          if (stableReady) stableReady.hidden = false;
+          if (stableCode) {
+            stableCode.textContent = "curl -fsSLo /tmp/contabase-install.sh https://get-contabase.pages.dev/install.sh && CONTABASE_VERSION=" + version + " bash /tmp/contabase-install.sh";
+          }
+          if (stableCopy) stableCopy.disabled = false;
+          stableReleaseLinks.forEach(function (link) {
+            link.href = "https://github.com/contabase-app/contabase/releases/tag/" + version;
+          });
+          return;
+        }
+        stableVersionNodes.forEach(function (node) {
+          node.textContent = "em preparação";
+        });
+        stableDateNodes.forEach(function (node) {
+          node.textContent = "sem data de publicação";
+        });
+        stableTabMetaNodes.forEach(function (node) {
+          node.textContent = "Em preparação";
+        });
+        stableStatusNodes.forEach(function (node) {
+          node.textContent = "Canal Stable ainda não publicado.";
+        });
+        if (stableSoon) stableSoon.hidden = false;
+        if (stableReady) stableReady.hidden = true;
+      })
+      .catch(function () {
+        stableVersionNodes.forEach(function (node) {
+          node.textContent = "indisponível";
+        });
+        stableDateNodes.forEach(function (node) {
+          node.textContent = "não foi possível consultar";
+        });
+        stableTabMetaNodes.forEach(function (node) {
+          node.textContent = "indisponível";
+        });
+        stableStatusNodes.forEach(function (node) {
+          node.textContent = "Não foi possível consultar o canal Stable agora. Consulte as Releases.";
+        });
+        if (stableSoon) stableSoon.hidden = false;
+        if (stableReady) stableReady.hidden = true;
       });
   }
 

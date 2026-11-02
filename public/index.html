@@ -38,30 +38,68 @@
 
   <link rel="preload" href="/assets/fonts/geist-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/geist-sans-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <script defer src="https://wa.alpesdata.app/vitals.js" data-website-id="8e986ed6-2edc-4bf2-baf2-56fba22ac274"></script>
   <script src="/assets/theme-init.js"></script>
   <link rel="stylesheet" href="/assets/site.css">
+  <link rel="stylesheet" href="/assets/landing.css">
   <link rel="stylesheet" href="/assets/demo-preview.css">
   <script src="/assets/site.js" defer></script>
+  <script src="/assets/landing.js" defer></script>
 </head>
 
 <body>
   <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
 
-  <header class="site-header">
+  <svg class="icon-sprite" aria-hidden="true" focusable="false">
+    <symbol id="lp-github" viewBox="0 0 24 24"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.1 3.29 9.42 7.86 10.96.58.1.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.7 5.41-5.27 5.69.41.35.78 1.05.78 2.12 0 1.53-.01 2.76-.01 3.14 0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z"/></symbol>
+    <symbol id="lp-lock" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="10" rx="2.5"/><path d="M8 10V7.5a4 4 0 0 1 8 0V10"/></symbol>
+    <symbol id="lp-server" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></symbol>
+    <symbol id="lp-scale" viewBox="0 0 24 24"><path d="M12 4v16M7.5 20h9M4 8h16"/><path d="M8 8l-3 5.2a3 3 0 0 0 6 0L8 8zM16 8l-3 5.2a3 3 0 0 0 6 0L16 8z"/></symbol>
+    <symbol id="lp-cube" viewBox="0 0 24 24"><path d="M12 3l8.5 4.8v8.4L12 21l-8.5-4.8V7.8L12 3z"/><path d="M3.5 7.8L12 12.6l8.5-4.8M12 12.6V21"/></symbol>
+    <symbol id="lp-wallet" viewBox="0 0 24 24"><path d="M3 8.5A2.5 2.5 0 0 1 5.5 6H18a2 2 0 0 1 2 2v1"/><rect x="3" y="8.5" width="18" height="11" rx="2.5"/><circle cx="16.5" cy="14" r="1.1"/></symbol>
+    <symbol id="lp-chart" viewBox="0 0 24 24"><path d="M5 20v-7M12 20V5M19 20v-4"/><path d="M3 20h18"/></symbol>
+    <symbol id="lp-users" viewBox="0 0 24 24"><circle cx="9.5" cy="8" r="3.3"/><path d="M3.5 20a6 6 0 0 1 12 0"/><path d="M16.5 5.2a3.3 3.3 0 0 1 0 5.9M17.5 20a6 6 0 0 0-2.6-5"/></symbol>
+    <symbol id="lp-building" viewBox="0 0 24 24"><rect x="4" y="3.5" width="11" height="17" rx="1.5"/><path d="M15 9.5h4.5v11H15"/><path d="M7.5 7.5h.01M11 7.5h.01M7.5 11h.01M11 11h.01M7.5 14.5h.01M11 14.5h.01M2.5 20.5h19"/></symbol>
+    <symbol id="lp-export" viewBox="0 0 24 24"><path d="M12 3v12M7.5 10.5L12 15l4.5-4.5"/><path d="M4 19.5h16"/></symbol>
+    <symbol id="lp-book" viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H19v15H6.5A2.5 2.5 0 0 0 4 20.5V5.5z"/><path d="M19 18v3H6.5"/></symbol>
+    <symbol id="lp-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8.2-8 9-4.5-.8-8-4-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></symbol>
+    <symbol id="lp-alert" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5M12 16.5h.01"/></symbol>
+    <symbol id="lp-tag" viewBox="0 0 24 24"><path d="M3 12V4h8l10 10-8 8L3 12z"/><circle cx="7.5" cy="8.5" r="1.2"/></symbol>
+    <symbol id="lp-terminal" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M7.5 9.5l3 2.5-3 2.5M13 15h4"/></symbol>
+    <symbol id="lp-file" viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6V3z"/><path d="M14 3v5h4M9 13h6M9 17h6"/></symbol>
+    <symbol id="lp-image" viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="15" rx="2.5"/><circle cx="8.5" cy="10" r="1.6"/><path d="M21 16l-5-5-6.5 6.5"/></symbol>
+    <symbol id="lp-download" viewBox="0 0 24 24"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></symbol>
+    <symbol id="lp-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.6 9.4a2.5 2.5 0 1 1 3.4 2.3c-.7.3-1 .9-1 1.6v.4"/><path d="M12 17h.01"/></symbol>
+    <symbol id="lp-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="lp-check" viewBox="0 0 24 24"><path d="M4.5 12.5l5 5L20 6.5"/></symbol>
+    <symbol id="lp-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-8.5 8.5"/><path d="M18 14v4.5a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4.5"/></symbol>
+  </svg>
+
+  <header class="site-header lp-header">
     <div class="wrap header-inner">
-      <a class="brand" href="/" aria-label="ContaBase, início">
-        <img class="brand-logo brand-logo--light" src="/assets/branding/logo-light.png" width="260" height="80" alt="ContaBase">
-        <img class="brand-logo brand-logo--dark" src="/assets/branding/logo-dark.png" width="260" height="80" alt="ContaBase">
+      <a class="brand" href="#top" aria-label="ContaBase, início" data-track="Click Header - Logo">
+        <img class="brand-logo brand-logo--light" src="/assets/branding/logo-light.png" width="260" height="80" alt="ContaBase" fetchpriority="high" decoding="async">
+        <img class="brand-logo brand-logo--dark" src="/assets/branding/logo-dark.png" width="260" height="80" alt="ContaBase" decoding="async">
       </a>
 
       <div class="header-actions">
         <nav class="desktop-nav" aria-label="Principal">
-          <a href="#beneficios">Benefícios</a>
+          <a href="#recursos">Recursos</a>
           <a href="#telas">Telas</a>
           <a href="#instalacao">Instalação</a>
           <a href="#transparencia">Transparência</a>
-          <a href="https://github.com/contabase-app/contabase/tree/beta" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.1 3.29 9.42 7.86 10.96.58.1.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.7 5.41-5.27 5.69.41.35.78 1.05.78 2.12 0 1.53-.01 2.76-.01 3.14 0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z"/></svg>GitHub</a>
+          <a href="#ajuda">Ajuda</a>
         </nav>
+
+        <a class="button button--secondary lp-header-github" href="https://github.com/contabase-app/contabase/tree/beta" target="_blank" rel="noopener noreferrer" data-track="Click Header - GitHub">
+          <svg class="lp-icon lp-icon--fill" aria-hidden="true"><use href="#lp-github"/></svg>
+          GitHub
+        </a>
+
+        <a class="button button--primary lp-header-install" href="#instalacao" data-track="Click Header - Instalar">
+          <svg class="lp-icon" aria-hidden="true"><use href="#lp-download"/></svg>
+          Instalar
+        </a>
 
         <button class="icon-button" type="button" data-theme-toggle aria-label="Ativar tema escuro" aria-pressed="false">
           <svg class="theme-icon theme-icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -76,11 +114,15 @@
         <details class="mobile-menu" data-mobile-menu>
           <summary class="menu-button">Menu</summary>
           <nav class="mobile-nav" aria-label="Menu móvel">
-            <a href="#beneficios">Benefícios</a>
+            <a href="#recursos">Recursos</a>
             <a href="#telas">Telas</a>
             <a href="#instalacao">Instalação</a>
             <a href="#transparencia">Transparência</a>
-            <a href="https://github.com/contabase-app/contabase/tree/beta" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.1 3.29 9.42 7.86 10.96.58.1.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.7 5.41-5.27 5.69.41.35.78 1.05.78 2.12 0 1.53-.01 2.76-.01 3.14 0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z"/></svg>GitHub</a>
+            <a href="#ajuda">Ajuda</a>
+            <a href="https://github.com/contabase-app/contabase/tree/beta" target="_blank" rel="noopener noreferrer" data-track="Click Header - GitHub">
+              <svg class="lp-icon lp-icon--fill" aria-hidden="true"><use href="#lp-github"/></svg>
+              GitHub
+            </a>
           </nav>
         </details>
       </div>
@@ -88,74 +130,151 @@
   </header>
 
   <main id="conteudo">
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="wrap hero-grid">
+    <section class="hero lp-hero" id="top" aria-labelledby="hero-title">
+      <div class="wrap lp-hero-grid">
         <div>
-          <p class="kicker">Base financeira self-hosted</p>
-          <h1 id="hero-title">Suas finanças.<br>Seus dados.<br>Seu controle.</h1>
-          <p class="hero-sub">Uma plataforma financeira open-source, multiusuário e self-hosted para organizar contas pessoais e de negócios, no seu próprio servidor.</p>
+          <h1 id="hero-title">Controle suas finanças.<br><span class="lp-h1-accent">Sem entregar seus dados.</span></h1>
+
+          <p class="hero-sub">O ContaBase organiza as contas da sua casa e do seu negócio: receitas, despesas, orçamentos e relatórios, rodando no seu próprio servidor. Os dados do app ficam na sua instalação, sem telemetria ou envio para terceiros, e o código é aberto para auditoria.</p>
+
           <div class="hero-actions">
-            <a class="button button--primary" href="#instalacao">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
-              Instalar ContaBase Beta
+            <a class="button button--primary" href="#instalacao" data-track="Click Hero - Ver como Instalar">
+              <svg class="lp-icon" aria-hidden="true"><use href="#lp-download"/></svg>
+              Ver como instalar
             </a>
-            <a class="button button--secondary" href="https://github.com/contabase-app/contabase/tree/beta" target="_blank" rel="noopener noreferrer">
-              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.1 3.29 9.42 7.86 10.96.58.1.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.7 5.41-5.27 5.69.41.35.78 1.05.78 2.12 0 1.53-.01 2.76-.01 3.14 0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z"/></svg>
-              Conhecer o código
+            <a class="button button--secondary" href="https://github.com/contabase-app/contabase/tree/beta" target="_blank" rel="noopener noreferrer" data-track="Click Hero - Ver Projeto">
+              <svg class="lp-icon lp-icon--fill" aria-hidden="true"><use href="#lp-github"/></svg>
+              Ver o projeto
             </a>
           </div>
-          <p class="hero-status">Beta pública disponível. Ainda não existe versão Stable pública.</p>
+
+          <p class="hero-status"><span data-stable-hero-status>Canal Beta público. Ainda não existe release Stable pública.</span> <a href="https://github.com/contabase-app/contabase/releases" target="_blank" rel="noopener noreferrer" data-track="Click Hero - Ver Releases">Ver releases</a>.</p>
+
+          <div class="lp-quick">
+            <p class="lp-quick-label"><svg class="lp-icon" aria-hidden="true"><use href="#lp-terminal"/></svg> Instalação rápida</p>
+            <div class="cmd" data-copy-name="Instalação Rápida">
+              <code id="heroCmd">curl -fsSLo /tmp/contabase-install.sh https://get-contabase.pages.dev/beta/install.sh &amp;&amp; bash /tmp/contabase-install.sh</code>
+              <button class="copy-button" type="button" data-copy-target="heroCmd" data-track="Click Install - Instalação Rápida">
+                <span data-copy-label>Copiar</span>
+                <span class="sr-only" data-copy-status aria-live="polite"></span>
+              </button>
+            </div>
+            <p class="lp-quick-note">Se não estiver como root, use <code>sudo bash /tmp/contabase-install.sh</code>.</p>
+          </div>
+
+          <p class="lp-meta">
+            <span><svg class="lp-icon" aria-hidden="true"><use href="#lp-check"/></svg> Sem cadastro em nuvem</span>
+            <span><svg class="lp-icon" aria-hidden="true"><use href="#lp-check"/></svg> Backup sob seu controle</span>
+            <span><svg class="lp-icon" aria-hidden="true"><use href="#lp-check"/></svg> Multiusuário</span>
+          </p>
         </div>
 
-        <aside class="hero-panel" aria-label="Princípios da instalação">
-          <img class="hero-mark" src="/assets/branding/logo-mark.png" width="256" height="256" alt="">
-          <p class="panel-title">O cofre fica no seu servidor.</p>
-          <ul class="panel-list">
-            <li><strong>Dados</strong><span>SQLite na sua instalação</span></li>
-            <li><strong>Acesso</strong><span>Navegador e PWA</span></li>
-            <li><strong>Licença</strong><span>AGPL-3.0</span></li>
-          </ul>
+        <aside class="lp-vault" aria-label="O que roda no seu servidor">
+          <div class="lp-vault-head">
+            <img class="lp-vault-mark" src="/assets/branding/logo-mark.png" width="48" height="48" alt="" fetchpriority="high" decoding="async">
+            <p class="lp-vault-kicker">Arquitetura</p>
+          </div>
+          <p class="lp-vault-title">O cofre fica no seu servidor.</p>
+          <ol class="lp-stack">
+            <li>
+              <span class="lp-stack-index" aria-hidden="true">01</span>
+              <span class="lp-stack-label">Navegador e PWA</span>
+              <span class="lp-stack-note">Acesso por HTTP ou HTTPS</span>
+            </li>
+            <li>
+              <span class="lp-stack-index" aria-hidden="true">02</span>
+              <span class="lp-stack-label">ContaBase</span>
+              <span class="lp-stack-note">Aplicação Go e interface web</span>
+            </li>
+            <li>
+              <span class="lp-stack-index" aria-hidden="true">03</span>
+              <span class="lp-stack-label">SQLite, uploads e backups</span>
+              <span class="lp-stack-note">Pastas no disco que você administra</span>
+            </li>
+          </ol>
+          <p class="lp-vault-foot">O app não envia telemetria. Sem conta em nuvem. Licença AGPL-3.0.</p>
         </aside>
       </div>
     </section>
 
-    <section class="section" id="beneficios" aria-labelledby="beneficios-title">
+    <section class="lp-trust" aria-label="Princípios da instalação">
+      <div class="wrap">
+        <div class="lp-trust-grid">
+          <div class="lp-trust-item">
+            <svg class="lp-icon" aria-hidden="true"><use href="#lp-lock"/></svg>
+            <div><strong>Privacidade por padrão</strong><span>O app não envia telemetria</span></div>
+          </div>
+          <div class="lp-trust-item">
+            <svg class="lp-icon" aria-hidden="true"><use href="#lp-server"/></svg>
+            <div><strong>Self-hosted</strong><span>Roda no seu servidor, VPS ou LXC</span></div>
+          </div>
+          <div class="lp-trust-item">
+            <svg class="lp-icon" aria-hidden="true"><use href="#lp-scale"/></svg>
+            <div><strong>Licença AGPL-3.0</strong><span>Código aberto e auditável</span></div>
+          </div>
+          <div class="lp-trust-item">
+            <svg class="lp-icon" aria-hidden="true"><use href="#lp-cube"/></svg>
+            <div><strong>Deploy com Docker</strong><span>Instalador guiado para Docker, VPS ou LXC</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="recursos" aria-labelledby="recursos-title">
       <div class="wrap">
         <div class="section-head">
           <div>
-            <p class="kicker">Controle</p>
-            <h2 id="beneficios-title">O que fica sob seu controle</h2>
+            <p class="kicker">Recursos</p>
+            <h2 id="recursos-title">Feito para a vida real: casa, família e negócio</h2>
           </div>
-          <p class="section-lede">O ContaBase não é um SaaS. A instalação, o banco e as chaves ficam no ambiente que você administra.</p>
+          <p class="section-lede">Uma base única de contas e categorias que serve tanto para o orçamento doméstico quanto para o fluxo de caixa de uma pequena empresa, sem planilhas paralelas.</p>
         </div>
 
-        <div class="benefit-lead">
-          <h3>Privacidade por arquitetura</h3>
-          <p>Os dados financeiros ficam na sua instalação. Não há telemetria, analytics ou envio de dados para terceiros.</p>
+        <div class="lp-feature-lead">
+          <div>
+            <svg class="lp-icon" aria-hidden="true"><use href="#lp-shield"/></svg>
+            <h3>Privacidade em primeiro lugar</h3>
+            <p>O app não depende de serviços externos, não envia telemetria e não exige conta em nuvem. Seus dados ficam no banco que você controla.</p>
+          </div>
+          <ul class="lp-privacy-list">
+            <li><svg class="lp-icon" aria-hidden="true"><use href="#lp-check"/></svg> App sem telemetria</li>
+            <li><svg class="lp-icon" aria-hidden="true"><use href="#lp-check"/></svg> SQLite no seu volume</li>
+            <li><svg class="lp-icon" aria-hidden="true"><use href="#lp-check"/></svg> Exportação e backup do banco</li>
+          </ul>
         </div>
 
-        <dl class="benefit-list">
-          <div class="benefit-item">
-            <dt>Self-hosted</dt>
-            <dd>Roda em Docker, VPS ou LXC. Você decide onde e como a aplicação é executada, sem depender de uma nuvem externa para operar.</dd>
-          </div>
-          <div class="benefit-item">
-            <dt>Multiusuário</dt>
-            <dd>Pessoas da mesma casa ou equipe podem compartilhar a organização financeira com permissões por workspace.</dd>
-          </div>
-          <div class="benefit-item">
-            <dt>Workspaces</dt>
-            <dd>Separe a vida pessoal e o negócio em ambientes Pessoal e Business, com dados e contexto próprios.</dd>
-          </div>
-          <div class="benefit-item">
-            <dt>Organização</dt>
-            <dd>Contas, cartões, lançamentos, faturas, metas e relatórios no mesmo lugar, com histórico e fechamento mensal.</dd>
-          </div>
-          <div class="benefit-item">
-            <dt>Investimentos <span class="status-label">Experimental</span></dt>
-            <dd>O cadastro e as novas aplicações estão em evolução. Adoção histórica e resgates financeiros das novas aplicações ainda não estão disponíveis.</dd>
-          </div>
-        </dl>
+        <div class="lp-feature-grid">
+          <article class="lp-feature">
+            <svg class="lp-icon" aria-hidden="true"><use href="#lp-wallet"/></svg>
+            <h3>Contas e transações</h3>
+            <p>Receitas, despesas e transferências entre contas, com categorias e conciliação mensal.</p>
+          </article>
+          <article class="lp-feature">
+            <svg class="lp-icon" aria-hidden="true"><use href="#lp-chart"/></svg>
+            <h3>Orçamentos que funcionam</h3>
+            <p>Defina limites por categoria e acompanhe o quanto já foi gasto antes do mês acabar.</p>
+          </article>
+          <article class="lp-feature">
+            <svg class="lp-icon" aria-hidden="true"><use href="#lp-users"/></svg>
+            <h3>Família e multiusuário</h3>
+            <p>Cada pessoa com seu acesso, permissões separadas e uma visão consolidada do orçamento da casa.</p>
+          </article>
+          <article class="lp-feature">
+            <svg class="lp-icon" aria-hidden="true"><use href="#lp-cube"/></svg>
+            <h3>Workspaces</h3>
+            <p>Separe a vida pessoal e o negócio em ambientes Pessoal e Business, com dados e contexto próprios.</p>
+          </article>
+          <article class="lp-feature">
+            <svg class="lp-icon" aria-hidden="true"><use href="#lp-building"/></svg>
+            <h3>Para pequenas empresas</h3>
+            <p>Fluxo de caixa, contas a pagar e receber, e relatórios gerenciais, sem a complexidade de um ERP.</p>
+          </article>
+          <article class="lp-feature">
+            <svg class="lp-icon" aria-hidden="true"><use href="#lp-export"/></svg>
+            <h3>Seus dados, exportáveis</h3>
+            <p>Exportação do banco em <code>.db</code> e backup do diretório de dados. Sem prisão de dados.</p>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -228,66 +347,221 @@
         <div class="section-head">
           <div>
             <p class="kicker">Instalação</p>
-            <h2 id="instalacao-title">Comece pela Beta pública.</h2>
+            <h2 id="instalacao-title">Canais de instalação</h2>
           </div>
-          <p class="section-lede">O canal Beta é o caminho disponível hoje. O instalador guiado escolhe entre Docker, binário de release ou source e pergunta os dados de acesso.</p>
+          <p class="section-lede">A Beta é o canal público disponível hoje. A Stable será aberta quando a release cumprir os gates de publicação.</p>
         </div>
 
-        <div class="version-line" aria-live="polite">
-          <span class="version-label">Canal Beta</span>
-          <span class="version-value" data-beta-version>consultando...</span>
-          <span class="version-state" data-beta-status data-beta-status-text>Consultando o manifest do canal.</span>
-        </div>
-
-        <p class="install-note">Stable: não publicada. Consulte as <a href="https://github.com/contabase-app/contabase/releases" target="_blank" rel="noopener noreferrer">Releases</a> para ver as versões publicadas.</p>
-        <noscript>
-          <p class="install-note">O JavaScript está desativado. A versão é resolvida pelo instalador do canal Beta.</p>
-        </noscript>
-
-        <div class="code-block">
-          <div class="code-head">
-            <span class="code-label">Instalação rápida</span>
-            <button class="copy-button" type="button" data-copy-target="cmd-quick">
-              <span data-copy-label>Copiar</span>
-              <span class="sr-only" data-copy-status aria-live="polite"></span>
-            </button>
+        <aside class="lp-req lp-req--wide" aria-labelledby="req-title">
+          <div class="lp-req-row">
+            <div class="lp-req-title">
+              <h3 id="req-title">Antes de começar</h3>
+              <p>O básico para rodar em um servidor, VPS ou LXC.</p>
+            </div>
+            <ul class="lp-req-grid">
+            <li>
+              <svg class="lp-icon" aria-hidden="true"><use href="#lp-check"/></svg>
+              <div>
+                <strong>Docker Engine e Compose v2</strong>
+                <span>Para o caminho Docker.</span>
+              </div>
+            </li>
+            <li>
+              <svg class="lp-icon" aria-hidden="true"><use href="#lp-check"/></svg>
+              <div>
+                <strong>Debian ou Ubuntu com systemd</strong>
+                <span>Para o binário da release.</span>
+              </div>
+            </li>
+            <li>
+              <svg class="lp-icon" aria-hidden="true"><use href="#lp-check"/></svg>
+              <div>
+                <strong>Porta livre, com 8080 como padrão</strong>
+                <span>Você pode informar outra porta no instalador.</span>
+              </div>
+            </li>
+            <li>
+              <svg class="lp-icon" aria-hidden="true"><use href="#lp-check"/></svg>
+              <div>
+                <strong>HTTPS e backup por sua conta</strong>
+                <span>Configure proxy, domínio e uma rotina de cópia.</span>
+              </div>
+            </li>
+          </ul>
           </div>
-          <pre><code id="cmd-quick">curl -fsSLo /tmp/contabase-install.sh https://get-contabase.pages.dev/beta/install.sh &amp;&amp; bash /tmp/contabase-install.sh</code></pre>
+        </aside>
+
+        <div class="lp-install-layout">
+          <div class="lp-install-channel">
+            <div class="lp-channel-tabs" role="tablist" aria-label="Canal de instalação" data-tabs>
+          <button class="lp-channel-tab" type="button" role="tab" id="channel-beta" aria-controls="channel-panel-beta" aria-selected="true" tabindex="0" data-track="Click Channel - Beta">
+            <span class="lp-channel-name">Beta</span>
+            <span class="lp-channel-meta" data-beta-tab-meta>consultando...</span>
+          </button>
+          <button class="lp-channel-tab" type="button" role="tab" id="channel-stable" aria-controls="channel-panel-stable" aria-selected="false" tabindex="-1" data-track="Click Channel - Stable">
+            <span class="lp-channel-name">Stable</span>
+            <span class="lp-channel-meta" data-stable-tab-meta>Em preparação</span>
+          </button>
         </div>
 
-        <div class="code-block" data-beta-pinned hidden>
-          <div class="code-head">
-            <span class="code-label">Versão fixa</span>
-            <button class="copy-button" type="button" data-copy-target="cmd-pinned" disabled>
-              <span data-copy-label>Copiar</span>
-              <span class="sr-only" data-copy-status aria-live="polite"></span>
-            </button>
+        <div class="lp-channel-panel" role="tabpanel" id="channel-panel-beta" aria-labelledby="channel-beta">
+          <div class="version-line lp-version-line" aria-live="polite">
+            <span class="version-label">Canal Beta</span>
+            <span class="version-value" data-beta-version>consultando...</span>
+            <span class="version-date">última atualização: <span data-beta-date>consultando data...</span></span>
+            <span class="version-state" data-beta-status data-beta-status-text>Consultando o manifest do canal.</span>
           </div>
-          <pre><code id="cmd-pinned">A versão será exibida após consultar o canal.</code></pre>
-        </div>
-        <p class="field-note">O comando com versão fixa usa a tag exibida acima. Não use main, beta ou latest como versão.</p>
+          <noscript>
+            <p class="install-note">O JavaScript está desativado. As datas e a versão são resolvidas pelo instalador do canal Beta. A Stable ainda não está publicada.</p>
+          </noscript>
 
-        <div class="methods">
-          <article class="method">
-            <h3>Docker Compose</h3>
-            <p>Instalação com Docker Compose a partir de um clone da tag publicada. O instalador guiado pergunta porta, URL e proxy.</p>
-            <a href="https://github.com/contabase-app/contabase/blob/beta/docs/instalacao-docker.md" target="_blank" rel="noopener noreferrer">Guia Docker</a>
-          </article>
-          <article class="method">
-            <h3>Linux, VPS ou LXC</h3>
-            <p>Binários oficiais da GitHub Release com systemd. Indicado para VPS ou LXC sem Docker.</p>
-            <a href="https://github.com/contabase-app/contabase/blob/beta/docs/instalacao-lxc-vps.md" target="_blank" rel="noopener noreferrer">Guia LXC/VPS</a>
-          </article>
-          <article class="method">
-            <h3>Compilação por source</h3>
-            <p>Compilação local com Go e Node para quem quer revisar ou adaptar o código.</p>
-            <a href="https://github.com/contabase-app/contabase/blob/beta/docs/instalacao.md" target="_blank" rel="noopener noreferrer">Guia de instalação</a>
-          </article>
-          <article class="method">
-            <h3>Atualização</h3>
-            <p>Use <code>sudo contabase-update vX.Y.Z</code> ou <code>sudo contabase-update --channel beta</code> em uma instalação existente.</p>
-            <a href="https://github.com/contabase-app/contabase/blob/beta/docs/atualizacao.md" target="_blank" rel="noopener noreferrer">Guia de atualização</a>
-          </article>
+          <div class="lp-install-main">
+              <div class="lp-tabs" role="tablist" aria-label="Métodos de instalação" data-tabs>
+                <button class="lp-tab" type="button" role="tab" id="tab-installer" aria-controls="panel-installer" aria-selected="true" tabindex="0" data-track="Click Install - Instalador Guiado">Instalador guiado</button>
+                <button class="lp-tab" type="button" role="tab" id="tab-compose" aria-controls="panel-compose" aria-selected="false" tabindex="-1" data-track="Click Install - Docker Compose">Docker Compose</button>
+                <button class="lp-tab" type="button" role="tab" id="tab-source" aria-controls="panel-source" aria-selected="false" tabindex="-1" data-track="Click Install - Código Fonte">Código-fonte</button>
+              </div>
+
+              <div class="lp-tab-panel" role="tabpanel" id="panel-installer" aria-labelledby="tab-installer">
+                <div class="code-block" data-copy-name="Instalação Rápida">
+                  <div class="code-head">
+                    <span class="code-label">Instalação rápida</span>
+                    <button class="copy-button" type="button" data-copy-target="cmd-installer" data-track="Click Install - Instalação Rápida">
+                      <span data-copy-label>Copiar</span>
+                      <span class="sr-only" data-copy-status aria-live="polite"></span>
+                    </button>
+                  </div>
+                  <pre><code id="cmd-installer">curl -fsSLo /tmp/contabase-install.sh https://get-contabase.pages.dev/beta/install.sh &amp;&amp; bash /tmp/contabase-install.sh</code></pre>
+                </div>
+                <p class="field-note">O instalador pergunta porta, URL e proxy. O menu oferece Docker, binário da release ou código-fonte.</p>
+              </div>
+
+              <div class="lp-tab-panel" role="tabpanel" id="panel-compose" aria-labelledby="tab-compose" hidden>
+                <div class="code-block" data-copy-name="Docker Compose Fixa">
+                  <div class="code-head">
+                    <span class="code-label">docker-compose.yml</span>
+                    <button class="copy-button" type="button" data-copy-target="cmd-compose" data-track="Click Install - Docker Compose Fixa">
+                      <span data-copy-label>Copiar</span>
+                      <span class="sr-only" data-copy-status aria-live="polite"></span>
+                    </button>
+                  </div>
+                  <pre><code id="cmd-compose">services:
+  contabase:
+    image: ghcr.io/contabase-app/contabase:<span data-beta-tag>v1.0.0-beta.6</span>
+    container_name: contabase
+    restart: unless-stopped
+    env_file:
+      - .env.docker
+    ports:
+      - "127.0.0.1:${PORT:-8080}:8080"
+    volumes:
+      - ./data:/app/data
+      - ./uploads:/app/uploads
+      - ./backups:/app/backups</code></pre>
+                </div>
+                <p class="field-note">Copie o <code>.env.docker</code> e gere os secrets no <a href="https://github.com/contabase-app/contabase/blob/beta/docs/instalacao-docker.md" target="_blank" rel="noopener noreferrer" data-track="Click Install - Docker Compose - Guia">guia Docker</a> antes de subir a stack.</p>
+              </div>
+
+              <div class="lp-tab-panel" role="tabpanel" id="panel-source" aria-labelledby="tab-source" hidden>
+                <div class="code-block" data-copy-name="Código Fonte Fixa">
+                  <div class="code-head">
+                    <span class="code-label">Terminal</span>
+                    <button class="copy-button" type="button" data-copy-target="cmd-source" data-track="Click Install - Código Fonte Fixa">
+                      <span data-copy-label>Copiar</span>
+                      <span class="sr-only" data-copy-status aria-live="polite"></span>
+                    </button>
+                  </div>
+                  <pre><code id="cmd-source">export CONTABASE_VERSION=<span data-beta-tag>v1.0.0-beta.6</span>
+git clone --branch "$CONTABASE_VERSION" https://github.com/contabase-app/contabase.git
+cd contabase
+./scripts/install.sh</code></pre>
+                </div>
+                <p class="field-note">No menu do instalador, escolha a opção de código-fonte/systemd. O guia completo fica em <a href="https://github.com/contabase-app/contabase/blob/beta/docs/instalacao.md" target="_blank" rel="noopener noreferrer" data-track="Click Install - Codigo Fonte - Guia">instalação</a>.</p>
+              </div>
+
+              <div class="code-block" data-beta-pinned hidden data-copy-name="Instalação Rápida Fixa">
+                <div class="code-head">
+                  <span class="code-label">Versão fixa</span>
+                  <button class="copy-button" type="button" data-copy-target="cmd-pinned" disabled data-track="Click Install - Instalação Rápida Fixa">
+                    <span data-copy-label>Copiar</span>
+                    <span class="sr-only" data-copy-status aria-live="polite"></span>
+                  </button>
+                </div>
+                <pre><code id="cmd-pinned">A versão será exibida após consultar o canal.</code></pre>
+              </div>
+              <p class="field-note lp-pinned-note">O comando com versão fixa usa a tag exibida acima. Não use <code>main</code>, <code>beta</code> ou <code>latest</code> como versão.</p>
+          </div>
+
+          <p class="lp-update-note">Já instalado? Atualize com <code>sudo contabase-update vX.Y.Z</code> para uma tag fixa ou <code>sudo contabase-update --channel beta</code> para acompanhar o canal. Veja o <a href="https://github.com/contabase-app/contabase/blob/beta/docs/atualizacao.md" target="_blank" rel="noopener noreferrer" data-track="Click Install - Atualizacao">guia de atualização</a>.</p>
+        </div>
+
+        <div class="lp-channel-panel" role="tabpanel" id="channel-panel-stable" aria-labelledby="channel-stable" hidden>
+          <div class="version-line lp-version-line">
+            <span class="version-label">Canal Stable</span>
+            <span class="version-value" data-stable-version>em preparação</span>
+            <span class="version-date">última atualização: <span data-stable-date>sem data de publicação</span></span>
+          </div>
+          <p class="install-note" data-stable-status>Consultando o manifest do canal Stable.</p>
+
+          <div class="lp-stable-soon" data-stable-soon>
+            <div>
+              <span class="lp-status-badge"><svg class="lp-icon" aria-hidden="true"><use href="#lp-clock"/></svg> Em preparação</span>
+              <h3>A primeira Stable ainda não foi publicada.</h3>
+              <p>O canal Stable será aberto quando a release cumprir os gates de publicação. Até lá, a Beta pública é o caminho suportado para instalar e testar.</p>
+              <button class="button button--primary" type="button" data-switch-channel="beta" data-track="Click Stable - Usar Beta">
+                <svg class="lp-icon" aria-hidden="true"><use href="#lp-download"/></svg>
+                Usar a Beta agora
+              </button>
+            </div>
+            <ul class="lp-stable-links">
+              <li><a href="https://github.com/contabase-app/contabase/releases" target="_blank" rel="noopener noreferrer" data-track="Click Stable - Releases"><svg class="lp-icon" aria-hidden="true"><use href="#lp-tag"/></svg> Acompanhar Releases</a></li>
+              <li><a href="https://github.com/contabase-app/contabase/blob/beta/docs/instalacao.md" target="_blank" rel="noopener noreferrer" data-track="Click Stable - Documentacao"><svg class="lp-icon" aria-hidden="true"><use href="#lp-book"/></svg> Ler a documentação</a></li>
+              <li><a href="https://github.com/contabase-app/contabase/blob/beta/docs/checklist-deploy.md" target="_blank" rel="noopener noreferrer" data-track="Click Stable - Checklist"><svg class="lp-icon" aria-hidden="true"><use href="#lp-check"/></svg> Ver o checklist de deploy</a></li>
+            </ul>
+          </div>
+
+          <div data-stable-ready hidden>
+            <div class="code-block" data-copy-name="Stable">
+              <div class="code-head">
+                <span class="code-label">Instalação Stable</span>
+                <button class="copy-button" type="button" data-copy-target="cmd-stable" disabled data-track="Click Install - Stable">
+                  <span data-copy-label>Copiar</span>
+                  <span class="sr-only" data-copy-status aria-live="polite"></span>
+                </button>
+              </div>
+              <pre><code id="cmd-stable">A versão Stable será exibida quando o canal for publicado.</code></pre>
+            </div>
+            <p class="field-note">Comando com a tag Stable publicada. Confirme a versão e os checksums na release antes de executar.</p>
+            <p class="field-note"><a href="https://github.com/contabase-app/contabase/releases" target="_blank" rel="noopener noreferrer" data-stable-release data-track="Click Install - Stable - Release">Ver release Stable</a></p>
+          </div>
+        </div>
+          </div>
+
+          <aside class="lp-hw" aria-labelledby="hw-title">
+            <h3 id="hw-title">Hardware recomendado</h3>
+            <p>Valores de referência para uma instalação Docker ou LXC/VPS.</p>
+            <div class="lp-hw-table-wrap">
+              <table class="lp-hw-table">
+                <caption class="sr-only">Requisitos mínimos e recomendados de hardware</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Recurso</th>
+                    <th scope="col">Mínimo</th>
+                    <th scope="col">Recomendado</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><th scope="row">CPU</th><td>1 vCPU</td><td>2 vCPU</td></tr>
+                  <tr><th scope="row">RAM</th><td>512 MB</td><td>1 GB</td></tr>
+                  <tr><th scope="row">SSD</th><td>10 GB</td><td>20 GB</td></tr>
+                  <tr><th scope="row">Swap</th><td>512 MB</td><td>1 GB</td></tr>
+                  <tr><th scope="row">Usuários</th><td>1 a 3</td><td>5 a 15*</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="lp-hw-note">* A faixa de 5 a 15 usuários depende do uso simultâneo, do volume de dados e da rotina de backup.</p>
+            <a class="lp-hw-link" href="https://github.com/contabase-app/contabase/blob/beta/docs/requisitos.md" target="_blank" rel="noopener noreferrer" data-track="Click Install - Requisitos">Ler requisitos</a>
+          </aside>
         </div>
       </div>
     </section>
@@ -302,59 +576,72 @@
           <p class="section-lede">A instalação pública é uma cadeia de arquivos verificáveis. Cada etapa tem uma responsabilidade e pode ser lida antes da execução.</p>
         </div>
 
-        <ol class="chain">
-          <li>
-            <span class="step">01</span>
-            <div>
-              <h3>Bootstrap do canal</h3>
+        <ol class="lp-flow">
+          <li class="lp-flow-step">
+            <span class="lp-flow-node">01</span>
+            <div class="lp-flow-card">
+              <div class="lp-flow-head">
+                <svg class="lp-icon" aria-hidden="true"><use href="#lp-terminal"/></svg>
+                <h3>Bootstrap do canal</h3>
+              </div>
               <p>O arquivo <code>/beta/install.sh</code> consulta o manifest do canal e baixa o instalador da tag publicada. Ele não executa o conteúdo do manifest.</p>
-              <div class="chain-links">
-                <a href="/beta/install.sh">Abrir o script bruto</a>
-                <a href="/bootstrap.html">Ler como texto</a>
-                <a href="https://github.com/contabase-app/contabase-canal/blob/main/public/beta/install.sh" target="_blank" rel="noopener noreferrer">Código no GitHub</a>
+              <div class="lp-flow-links">
+                <a href="/beta/install.sh" data-track="Click Transparencia - Bootstrap do Canal - Script Bruto">Abrir o script bruto</a>
+                <a href="/bootstrap.html" data-track="Click Transparencia - Bootstrap do Canal - Ler Texto">Ler como texto</a>
+                <a href="https://github.com/contabase-app/contabase-canal/blob/main/public/beta/install.sh" target="_blank" rel="noopener noreferrer" data-track="Click Transparencia - Bootstrap do Canal - Codigo Github">Código no GitHub</a>
               </div>
             </div>
           </li>
-          <li>
-            <span class="step">02</span>
-            <div>
-              <h3>Manifest da versão</h3>
-              <p><code>/channels/beta.json</code> declara a tag Beta atual. A página usa esse manifest para exibir a versão e montar o comando com versão fixa.</p>
-              <div class="chain-links">
-                <a href="/channels/beta.json">Abrir o manifest</a>
-                <a href="https://github.com/contabase-app/contabase-canal/blob/main/public/channels/beta.json" target="_blank" rel="noopener noreferrer">Código no GitHub</a>
+          <li class="lp-flow-step">
+            <span class="lp-flow-node">02</span>
+            <div class="lp-flow-card">
+              <div class="lp-flow-head">
+                <svg class="lp-icon" aria-hidden="true"><use href="#lp-file"/></svg>
+                <h3>Manifest da versão</h3>
+              </div>
+              <p><code>/channels/beta.json</code> declara a tag Beta atual. A página usa esse manifest para exibir a versão, a data e montar o comando com versão fixa.</p>
+              <div class="lp-flow-links">
+                <a href="/channels/beta.json" data-track="Click Transparencia - Manifest da versão - Abrir Manifest">Abrir o manifest</a>
+                <a href="https://github.com/contabase-app/contabase-canal/blob/main/public/channels/beta.json" target="_blank" rel="noopener noreferrer" data-track="Click Transparencia - Manifest da versão - Codigo Github">Código no GitHub</a>
               </div>
             </div>
           </li>
-          <li>
-            <span class="step">03</span>
-            <div>
-              <h3>Instalador da tag</h3>
+          <li class="lp-flow-step">
+            <span class="lp-flow-node">03</span>
+            <div class="lp-flow-card">
+              <div class="lp-flow-head">
+                <svg class="lp-icon" aria-hidden="true"><use href="#lp-tag"/></svg>
+                <h3>Instalador da tag</h3>
+              </div>
               <p>O instalador oficial da tag baixa o helper e valida a versão e os artefatos da release antes de encaminhar a instalação.</p>
-              <div class="chain-links">
-                <a href="https://github.com/contabase-app/contabase/releases" target="_blank" rel="noopener noreferrer" data-tag-script>Script da tag</a>
-                <a href="https://github.com/contabase-app/contabase/releases" target="_blank" rel="noopener noreferrer" data-tag-release>Release da versão</a>
+              <div class="lp-flow-links">
+                <a href="https://github.com/contabase-app/contabase/releases" target="_blank" rel="noopener noreferrer" data-tag-script data-track="Click Transparencia - Instalador da Tag - Script">Script da tag</a>
+                <a href="https://github.com/contabase-app/contabase/releases" target="_blank" rel="noopener noreferrer" data-tag-release data-track="Click Transparencia - Instalador da Tag - Release">Release da versão</a>
+                <a href="https://github.com/contabase-app/contabase/releases" target="_blank" rel="noopener noreferrer" data-tag-checksums data-track="Click Transparencia - Releases - Checksums">Checksums</a>
               </div>
             </div>
           </li>
-          <li>
-            <span class="step">04</span>
-            <div>
-              <h3>Método escolhido</h3>
+          <li class="lp-flow-step">
+            <span class="lp-flow-node">04</span>
+            <div class="lp-flow-card">
+              <div class="lp-flow-head">
+                <svg class="lp-icon" aria-hidden="true"><use href="#lp-cube"/></svg>
+                <h3>Método escolhido</h3>
+              </div>
               <p>O instalador guiado encaminha para Docker, binário de release ou source. Cada método tem seu próprio guia e seus próprios requisitos.</p>
-              <div class="chain-links">
-                <a href="https://github.com/contabase-app/contabase/blob/beta/docs/instalacao-docker.md" target="_blank" rel="noopener noreferrer">Docker</a>
-                <a href="https://github.com/contabase-app/contabase/blob/beta/docs/instalacao-lxc-vps.md" target="_blank" rel="noopener noreferrer">LXC/VPS</a>
-                <a href="https://github.com/contabase-app/contabase/blob/beta/docs/instalacao.md" target="_blank" rel="noopener noreferrer">Source</a>
+              <div class="lp-flow-links">
+                <a href="https://github.com/contabase-app/contabase/blob/beta/docs/instalacao-docker.md" target="_blank" rel="noopener noreferrer" data-track="Click Transparencia - Método - Docker">Docker</a>
+                <a href="https://github.com/contabase-app/contabase/blob/beta/docs/instalacao-lxc-vps.md" target="_blank" rel="noopener noreferrer" data-track="Click Transparencia - Método - LXC VPS">LXC/VPS</a>
+                <a href="https://github.com/contabase-app/contabase/blob/beta/docs/instalacao.md" target="_blank" rel="noopener noreferrer" data-track="Click Transparencia - Método - Source">Source</a>
               </div>
             </div>
           </li>
         </ol>
 
-        <div class="code-block">
+        <div class="code-block" data-copy-name="Transparência - Inspecionar">
           <div class="code-head">
             <span class="code-label">Baixar, inspecionar e executar</span>
-            <button class="copy-button" type="button" data-copy-target="cmd-inspect">
+            <button class="copy-button" type="button" data-copy-target="cmd-inspect" data-track="Click Transparencia - Inspecionar - Copiar">
               <span data-copy-label>Copiar</span>
               <span class="sr-only" data-copy-status aria-live="polite"></span>
             </button>
@@ -365,11 +652,131 @@ bash /tmp/contabase-install.sh</code></pre>
         </div>
 
         <p class="note">Ler apenas o bootstrap não audita a instalação inteira. Confira também o manifest, o instalador da tag e os checksums dos artefatos antes de executar.</p>
+      </div>
+    </section>
 
-        <div class="release-links">
-          <a href="https://github.com/contabase-app/contabase/releases" target="_blank" rel="noopener noreferrer">GitHub Releases</a>
-          <a href="https://github.com/contabase-app/contabase/releases" target="_blank" rel="noopener noreferrer" data-tag-checksums>Checksums dos artefatos</a>
-          <a href="https://github.com/contabase-app/contabase/blob/beta/docs/instalacao.md" target="_blank" rel="noopener noreferrer">Documentação de instalação</a>
+    <section class="section" id="ajuda" aria-labelledby="ajuda-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="kicker">Ajuda e projeto</p>
+            <h2 id="ajuda-title">Documentação, suporte e código-fonte</h2>
+          </div>
+          <p class="section-lede">A documentação cobre instalação, atualização, backup e operação. O código e o histórico ficam no repositório público.</p>
+        </div>
+
+        <div class="lp-res-grid">
+          <a class="lp-res" href="https://github.com/contabase-app/contabase/blob/beta/docs/instalacao.md" target="_blank" rel="noopener noreferrer" data-track="Click Ajuda - Documentacao">
+            <div class="lp-res-top">
+              <svg class="lp-icon" aria-hidden="true"><use href="#lp-book"/></svg>
+              <svg class="lp-icon lp-res-external" aria-hidden="true"><use href="#lp-external"/></svg>
+            </div>
+            <b>Ajuda &amp; documentação</b>
+            <span>Guia de instalação, configuração inicial e uso do dia a dia.</span>
+          </a>
+
+          <a class="lp-res" href="https://github.com/contabase-app/contabase/tree/beta" target="_blank" rel="noopener noreferrer" data-track="Click Ajuda - Codigo Fonte">
+            <div class="lp-res-top">
+              <svg class="lp-icon lp-icon--fill" aria-hidden="true"><use href="#lp-github"/></svg>
+              <svg class="lp-icon lp-res-external" aria-hidden="true"><use href="#lp-external"/></svg>
+            </div>
+            <b>Código-fonte</b>
+            <span>Repositório público e histórico de commits.</span>
+          </a>
+
+          <a class="lp-res" href="https://github.com/contabase-app/contabase/issues" target="_blank" rel="noopener noreferrer" data-track="Click Ajuda - Reportar Problema">
+            <div class="lp-res-top">
+              <svg class="lp-icon" aria-hidden="true"><use href="#lp-alert"/></svg>
+              <svg class="lp-icon lp-res-external" aria-hidden="true"><use href="#lp-external"/></svg>
+            </div>
+            <b>Reportar problema</b>
+            <span>Encontrou um bug ou tem uma sugestão? Abra uma issue.</span>
+          </a>
+
+          <a class="lp-res" href="https://github.com/contabase-app/contabase/releases" target="_blank" rel="noopener noreferrer" data-track="Click Ajuda - Releases">
+            <div class="lp-res-top">
+              <svg class="lp-icon" aria-hidden="true"><use href="#lp-tag"/></svg>
+              <svg class="lp-icon lp-res-external" aria-hidden="true"><use href="#lp-external"/></svg>
+            </div>
+            <b>Versões e releases</b>
+            <span>Tags, artifacts e checksums publicados.</span>
+          </a>
+
+          <a class="lp-res" href="https://github.com/contabase-app/contabase/blob/main/SECURITY.md" target="_blank" rel="noopener noreferrer" data-track="Click Ajuda - Seguranca">
+            <div class="lp-res-top">
+              <svg class="lp-icon" aria-hidden="true"><use href="#lp-shield"/></svg>
+              <svg class="lp-icon lp-res-external" aria-hidden="true"><use href="#lp-external"/></svg>
+            </div>
+            <b>Segurança</b>
+            <span>Como reportar vulnerabilidades.</span>
+          </a>
+
+          <a class="lp-res" href="https://github.com/contabase-app/contabase/blob/main/LICENSE" target="_blank" rel="noopener noreferrer" data-track="Click Ajuda - Licenca">
+            <div class="lp-res-top">
+              <svg class="lp-icon" aria-hidden="true"><use href="#lp-scale"/></svg>
+              <svg class="lp-icon lp-res-external" aria-hidden="true"><use href="#lp-external"/></svg>
+            </div>
+            <b>Licença AGPL-3.0</b>
+            <span>Livre para usar, estudar, modificar e auto-hospedar.</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq" aria-labelledby="faq-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="kicker">Dúvidas frequentes</p>
+            <h2 id="faq-title">Perguntas rápidas</h2>
+          </div>
+          <p class="section-lede">Respostas curtas para as decisões que aparecem antes e depois do primeiro deploy.</p>
+        </div>
+
+        <div class="lp-faq">
+          <details open>
+            <summary>Meus dados ficam salvos onde?</summary>
+            <p>No banco SQLite da sua instalação, dentro do volume ou diretório que você configurar. O ContaBase não envia dados financeiros para servidores de terceiros.</p>
+          </details>
+          <details>
+            <summary>Preciso saber programar para usar?</summary>
+            <p>Não no caminho guiado. O instalador pergunta porta, URL e proxy, e encaminha para Docker ou para o binário da release. A compilação por source exige Go e Node.</p>
+          </details>
+          <details>
+            <summary>Serve para a família e para o negócio ao mesmo tempo?</summary>
+            <p>Sim. O sistema é multiusuário e separa contextos em workspaces Pessoal e Business, com permissões por workspace.</p>
+          </details>
+          <details>
+            <summary>Como faço backup?</summary>
+            <p>O painel administrativo exporta o banco em <code>.db</code>. Para uma cópia completa, preserve também <code>data/uploads</code> e os segredos do ambiente. Agende uma rotina para um destino externo e teste o restore. Veja o <a href="https://github.com/contabase-app/contabase/blob/beta/docs/backup-restauracao.md" target="_blank" rel="noopener noreferrer" data-track="Click FAQ - Backup - Guia">guia de backup</a>.</p>
+          </details>
+          <details>
+            <summary>Posso contribuir com o projeto?</summary>
+            <p>Sim. O projeto é aberto sob AGPL-3.0. Contribuições de código, tradução, documentação e relatos de bugs passam pelo repositório oficial.</p>
+          </details>
+          <details>
+            <summary>Qual é a diferença entre o canal Beta e o comando com versão fixa?</summary>
+            <p>O canal Beta consulta <code>/channels/beta.json</code> e instala a tag publicada no momento. O comando com versão fixa usa a tag exibida nesta página e não muda quando o canal avançar.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="cta-title">
+      <div class="wrap">
+        <div class="lp-cta">
+          <h2 id="cta-title">Assuma o controle das suas finanças</h2>
+          <p>Código aberto, dados no seu servidor<br>e uma instalação guiada para Docker, VPS ou LXC.</p>
+          <div class="hero-actions">
+            <a class="button button--primary" href="#instalacao" data-track="Click CTA - Comecar a Instalar">
+              <svg class="lp-icon" aria-hidden="true"><use href="#lp-download"/></svg>
+              Começar a instalar
+            </a>
+            <a class="button button--secondary" href="#ajuda" data-track="Click CTA - Abrir Ajuda">
+              <svg class="lp-icon" aria-hidden="true"><use href="#lp-help"/></svg>
+              Abrir a ajuda
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -377,21 +784,51 @@ bash /tmp/contabase-install.sh</code></pre>
 
   <footer class="site-footer">
     <div class="wrap">
-      <div class="footer-inner">
-        <div class="footer-brand">
-          <img class="footer-mark" src="/assets/branding/logo-mark.png" width="256" height="256" alt="">
-          <p><strong>ContaBase</strong><br>Beta pública. Sem Stable.</p>
+      <div class="lp-footer-grid">
+        <div class="lp-footer-brand">
+          <a class="brand" href="#top" aria-label="ContaBase, início" data-track="Click Footer - Logo">
+            <img class="footer-mark" src="/assets/branding/logo-mark.png" width="52" height="52" alt="" decoding="async">
+            <span>ContaBase</span>
+          </a>
+          <p>Gestor de finanças para pessoas, famílias e pequenas empresas.<br>Self-hosted e de código aberto.</p>
         </div>
-        <nav class="footer-links" aria-label="Rodapé">
-          <a href="https://github.com/contabase-app/contabase/tree/beta" target="_blank" rel="noopener noreferrer">Código</a>
-          <a href="https://github.com/contabase-app/contabase/blob/beta/docs/instalacao.md" target="_blank" rel="noopener noreferrer">Documentação</a>
-          <a href="https://github.com/contabase-app/contabase/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">Licença AGPL-3.0</a>
+
+        <div>
+          <p class="lp-footer-heading">Projeto</p>
+          <ul class="lp-footer-list">
+            <li><a href="https://github.com/contabase-app/contabase/tree/beta" target="_blank" rel="noopener noreferrer">Repositório</a></li>
+            <li><a href="https://github.com/contabase-app/contabase/releases" target="_blank" rel="noopener noreferrer">Releases</a></li>
+            <li><a href="https://github.com/contabase-app/contabase/issues" target="_blank" rel="noopener noreferrer">Issues</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="lp-footer-heading">Recursos</p>
+          <ul class="lp-footer-list">
+            <li><a href="#ajuda">Ajuda</a></li>
+            <li><a href="#instalacao">Instalação</a></li>
+            <li><a href="#telas">Telas do sistema</a></li>
+            <li><a href="#transparencia">Transparência</a></li>
+            <li><a href="#recursos">Funcionalidades</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="lp-footer-bottom">
+        <span class="lp-license">
+          <svg class="lp-icon" aria-hidden="true"><use href="#lp-scale"/></svg>
+          Software livre sob GNU AGPL-3.0
+        </span>
+        <nav class="lp-footer-legal" aria-label="Legal">
+          <a href="https://github.com/contabase-app/contabase/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">Licença</a>
           <a href="https://github.com/contabase-app/contabase/blob/main/SECURITY.md" target="_blank" rel="noopener noreferrer">Segurança</a>
           <a href="https://github.com/contabase-app/contabase/blob/main/PRIVACY.md" target="_blank" rel="noopener noreferrer">Privacidade</a>
-          <a href="https://github.com/contabase-app/contabase/releases" target="_blank" rel="noopener noreferrer">Releases</a>
         </nav>
+        <span>© <span id="year">2026</span> ContaBase · feito para a comunidade</span>
       </div>
-      <p class="footer-meta">AGPL-3.0. Sem telemetria. Os dados ficam na sua instalação.</p>
+
+      <p class="lp-footer-meta">AGPL-3.0. O app não envia telemetria. Os dados ficam na sua instalação.</p>
+      <p class="lp-analytics-note">Este site usa Umami para medir navegação, cliques de instalação e métricas de desempenho, sem cookies de rastreamento. <a href="https://github.com/contabase-app/contabase/blob/main/PRIVACY.md" target="_blank" rel="noopener noreferrer">Saiba mais</a>.</p>
     </div>
   </footer>
 </body>

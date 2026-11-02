@@ -1112,3 +1112,13 @@ code {
     transition-duration: 0.01ms !important;
   }
 }
+
+@media (max-width: 840px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: block;
+  }
+}
